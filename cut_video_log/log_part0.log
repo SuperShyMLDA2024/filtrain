@@ -101,3 +101,10 @@
 2024/03/04 16:54:52 - __main__ - INFO - 162 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
 2024/03/04 16:58:10 - __main__ - INFO - 136 - cut_videos_mlda - Number of clips processed: 462
 
+2024/03/04 17:16:06 - __main__ - INFO - 164 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0_first_10.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 17:23:46 - __main__ - INFO - 164 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0_first_10.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 17:25:23 - __main__ - INFO - 165 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0_first_10.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 17:25:49 - __main__ - INFO - 165 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0_first_10.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 17:26:08 - __main__ - INFO - 165 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0_first_10.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 17:26:26 - __main__ - INFO - 164 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0_first_10.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 17:30:43 - __main__ - INFO - 136 - cut_videos_mlda - Number of clips processed: 462
