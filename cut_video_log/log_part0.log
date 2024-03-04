@@ -1,0 +1,81 @@
+2024/03/04 14:37:58 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:38:58 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:40:17 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:42:18 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:43:03 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:45:30 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:45:42 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:47:23 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:49:24 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:52:14 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:54:58 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:56:29 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 14:59:57 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:05:56 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:05:56 - __main__ - INFO - 128 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:05:56 - __main__ - INFO - 133 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:07:31 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:07:31 - __main__ - INFO - 128 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:07:31 - __main__ - INFO - 128 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:07:31 - __main__ - INFO - 133 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:22:46 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:22:46 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:22:46 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:22:46 - __main__ - INFO - 132 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:23:29 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:23:29 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:23:29 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:23:29 - __main__ - INFO - 132 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:23:57 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:23:57 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:23:57 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:23:57 - __main__ - INFO - 132 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:24:10 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:24:10 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:24:10 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:24:10 - __main__ - INFO - 132 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:26:00 - __main__ - INFO - 159 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:26:00 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:26:00 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:26:00 - __main__ - INFO - 131 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:26:14 - __main__ - INFO - 159 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:26:14 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:26:14 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:26:14 - __main__ - INFO - 131 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:26:22 - __main__ - INFO - 159 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:26:22 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:26:22 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:26:22 - __main__ - INFO - 131 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:26:34 - __main__ - INFO - 159 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:26:34 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:26:34 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:26:34 - __main__ - INFO - 131 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:26:44 - __main__ - INFO - 159 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:26:44 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:26:44 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:26:44 - __main__ - INFO - 131 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:26:54 - __main__ - INFO - 159 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:26:54 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:26:54 - __main__ - INFO - 126 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:26:54 - __main__ - INFO - 131 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:28:39 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:28:39 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:28:39 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:28:39 - __main__ - INFO - 132 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:28:54 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:28:54 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:28:54 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:28:54 - __main__ - INFO - 132 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:29:50 - __main__ - INFO - 160 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:29:50 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:29:50 - __main__ - INFO - 127 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:29:50 - __main__ - INFO - 132 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:30:30 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:30:30 - __main__ - INFO - 128 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:30:30 - __main__ - INFO - 128 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:30:30 - __main__ - INFO - 133 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:45:04 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
+2024/03/04 15:45:04 - __main__ - INFO - 128 - cut_videos_mlda - Video missing: gpAkjSy_8iY
+2024/03/04 15:45:04 - __main__ - INFO - 128 - cut_videos_mlda - Video missing: gpB2FGY5Fuk
+2024/03/04 15:45:04 - __main__ - INFO - 133 - cut_videos_mlda - Number of clips processed: 0
+2024/03/04 15:56:32 - __main__ - INFO - 161 - cut_videos_mlda - Namespace(workdir='./', metafile='hdvg_0.json', resultfile='cut_part0.jsonl', log='log_part0.log', rm_tmp_file=True)
