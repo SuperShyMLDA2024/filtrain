@@ -123,7 +123,6 @@ class Cutvideos():
         print("Start extracting clips...")
         results = []
         for video_id, meta in tqdm(self.metas.items()):
-            print(self.metas)
             download_videos(video_id, meta)
             print(os.path.join(self.workdir,'download_videos', video_id + '.mp4'))
             if not os.path.exists(os.path.join(self.workdir,'download_videos', video_id + '.mp4')):
