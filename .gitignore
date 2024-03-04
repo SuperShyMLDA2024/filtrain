@@ -1,3 +1,9 @@
-*.log
-*.jsonl
-*.mp4
+# DS_Store
+.DS_Store
+
+# miscellanous
+cut_video_log/*
+cut_video_results/*
+download_videos/*
+video_clips/*
+
