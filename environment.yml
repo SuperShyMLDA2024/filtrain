@@ -11,6 +11,7 @@ dependencies:
   - debugpy=1.6.7=py39hd77b12b_0
   - decorator=5.1.1=pyhd8ed1ab_0
   - executing=2.0.1=pyhd8ed1ab_0
+  - ffmpeg
   - importlib-metadata=7.0.1=pyha770c72_0
   - importlib_metadata=7.0.1=hd8ed1ab_0
   - ipykernel=6.29.3=pyha63f2e9_0
