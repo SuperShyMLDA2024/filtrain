@@ -15,7 +15,7 @@ import cv2
 def parse_args():
     parser = argparse.ArgumentParser(description='youtube video processing')
     parser.add_argument('--workdir', default='./',type=str, help='Working Directory')
-    parser.add_argument('--metafile', default='hdvg_0.json', type=str, help='youtube video meta')
+    parser.add_argument('--metafile', default='hdvg_0_first_10.json', type=str, help='youtube video meta')
     parser.add_argument('--resultfile', default='cut_part0.jsonl', type=str, help='processed videos')
     parser.add_argument('--log', default='log_part0.log', type=str, help='log')
     parser.add_argument('--rm_tmp_file', default=True, type=bool, help='Whether to remove tmp hdvila clips')
@@ -121,6 +121,7 @@ class Cutvideos():
         return result
 
     def extract_all_clip(self):
+        print("Start extracting clips...")
         results = []
         for video_id, meta in tqdm(self.metas.items()):
             print(os.path.join(self.workdir,'download_videos', video_id + '.mp4'))
@@ -151,12 +152,12 @@ if __name__ == '__main__':
     check_dirs(os.path.join(args.workdir, 'tmp_clips'))   #hdvila_root
     check_dirs(logdir)
     check_dirs(redir)
-    print('peko')
+
+    print('Start Logging...')
     logging.basicConfig(level=logging.INFO,
                     filename=os.path.join(logdir, args.log),
                     datefmt='%Y/%m/%d %H:%M:%S',
                     format='%(asctime)s - %(name)s - %(levelname)s - %(lineno)d - %(module)s - %(message)s')
-    print('hi')
     logger = logging.getLogger(__name__)
     logger.info(args)
     cvd = Cutvideos(metafile, args.workdir, args.resultfile, args.rm_tmp_file)

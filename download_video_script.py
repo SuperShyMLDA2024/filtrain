@@ -13,5 +13,5 @@ def download_videos(json_file):
             print(f"Downloaded video: {file_name}")
 
 # Usage
-json_file = './metafiles/hdvg_0.json'
+json_file = './metafiles/hdvg_0_first_10.json'
 download_videos(json_file)
