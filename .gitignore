@@ -1,1 +1,13 @@
+# metafiles
 hdvg_0.json
+
+# DS_Store
+.DS_Store
+
+# miscellanous
+cut_video_log/*
+cut_video_results/*
+metafiles/*
+download_videos/*
+video_clips/*
+

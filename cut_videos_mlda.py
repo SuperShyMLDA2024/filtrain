@@ -10,7 +10,7 @@ import os
 import json
 import shutil
 import cv2
-
+from download_video_script import download_videos
 
 def parse_args():
     parser = argparse.ArgumentParser(description='youtube video processing')
@@ -40,7 +40,6 @@ class Cutvideos():
         print(self.metafile)
         with open(self.metafile, 'r') as f:
             metas = json.load(f)
-            #print(metas.keys())
         return metas
 
     def hhmmss(self, timestamp1, timestamp2):
@@ -123,12 +122,16 @@ class Cutvideos():
     def extract_all_clip(self):
         results = []
         for video_id, meta in tqdm(self.metas.items()):
+            print(self.metas)
+            download_videos(video_id, meta)
             print(os.path.join(self.workdir,'download_videos', video_id + '.mp4'))
             if not os.path.exists(os.path.join(self.workdir,'download_videos', video_id + '.mp4')):
                 logger.info(f'Video missing: {video_id}')
             else:
                 result = self.extract_clips(video_id, meta)
                 results.extend(result)
+            shutil.rmtree(os.path.join(self.workdir,'download_videos'))
+            shutil.rmtree(os.path.join(self.workdir, 'video_clips'))
 
         logger.info(f"Number of clips processed: {len(results)}")
         if self.rm_tmp_file:
@@ -151,12 +154,10 @@ if __name__ == '__main__':
     check_dirs(os.path.join(args.workdir, 'tmp_clips'))   #hdvila_root
     check_dirs(logdir)
     check_dirs(redir)
-    print('peko')
     logging.basicConfig(level=logging.INFO,
                     filename=os.path.join(logdir, args.log),
                     datefmt='%Y/%m/%d %H:%M:%S',
                     format='%(asctime)s - %(name)s - %(levelname)s - %(lineno)d - %(module)s - %(message)s')
-    print('hi')
     logger = logging.getLogger(__name__)
     logger.info(args)
     cvd = Cutvideos(metafile, args.workdir, args.resultfile, args.rm_tmp_file)
