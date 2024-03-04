@@ -7,3 +7,4 @@ cut_video_results/*
 download_videos/*
 video_clips/*
 
+__pycache__/*
