@@ -111,7 +111,6 @@ class DatasetGenerator:
                         frame_cnt += 1
                     
                     if self.generate_scene_video and ret:
-                        print(save_split_path)
                         writer.write(frame)
                     current += 1
                 writer.release()
@@ -161,6 +160,8 @@ class DatasetGenerator:
         self.split_videos()
         self.split_scenes()
         print("Done")
+
+        
 
     
 
