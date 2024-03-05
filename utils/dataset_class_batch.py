@@ -23,22 +23,25 @@ class VideoDataset(Dataset):
         for video_id in self.data:
             for clip_id in self.data[video_id]["clip"]:
                 for scene in self.data[video_id]["clip"][clip_id]["scene_split"]:
-                    scene_dict = scene
-                    scene_dict["video_path"] = os.path.join('video_clips', video_id, clip_id + '.mp4')
-                    scene_dict["frames_path"] = os.path.join('frames_output', video_id, clip_id, scene["clip_id"])
+                    scene_dict = {}
+                    scene_dict["scene_id"] = scene["clip_id"]
+                    scene_dict["video_id"] = video_id
+                    scene_dict["clip_id"] = clip_id[:-4]
+                    scene_dict["caption"] = scene["caption"]
+                    scene_dict["scene_cut"] = scene["scene_cut"]
+                    scene_dict["video_path"] = os.path.join('video_clips', video_id, scene_dict["scene_id"] + '.mp4')
+                    scene_dict["frames_path"] = os.path.join('frames_output', video_id, scene["clip_id"])
+
                     if os.path.exists(scene_dict["frames_path"]) and os.path.exists(scene_dict["video_path"]):
                         self.scene_data.append(scene_dict)
     
     def __len__(self):
-        return len(self.clip_data)
+        return len(self.scene_data)
     
     def __getitem__(self, idx):
-        print(idx, self.clip_data[idx])
-        video_id = self.clip_data[idx]["video_id"]
-        clip_id = self.clip_data[idx]["clip_name"]
-        scenes_details = self.clip_data[idx]
-        split_clip(video_id, clip_id, scenes_details)
-        return self.clip_data[idx]
+        print(idx, self.scene_data[idx])
+
+        return self.scene_data[idx]
     
 if __name__ == '__main__':
     with open("metafiles/hdvg_batch_0-1.json", 'r') as f:
@@ -50,7 +53,7 @@ if __name__ == '__main__':
     print(dataset[0])
 
     for data in dataset:
-        clip_id = data['clip_name']
+        clip_id = data['scene_id']
         video_id = data['video_id']
         print(video_id, clip_id)
         print("------------------------------------------------------------")

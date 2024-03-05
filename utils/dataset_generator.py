@@ -82,10 +82,17 @@ class DatasetGenerator:
     def split_clip(self, info_scene, fps, video_id, clip_input_name, scene_output_name):
         # info: a unit of a scene
         ori_clip_path = os.path.join(self.tmp_output_folder, clip_input_name)
+
+        clip_id = clip_input_name[:-4]
         
         try:
             start, end = int(info_scene['scene_cut'][0]), int(info_scene['scene_cut'][1])
             save_split_path = os.path.join(self.scenes_output_folder, video_id, scene_output_name + '.mp4')
+
+            # Skip if the scene is already split
+            if os.path.exists(save_split_path):
+                return
+
             os.makedirs(os.path.join(self.scenes_output_folder, video_id), exist_ok=True)
             if end == -1:
                 shutil.copy(ori_clip_path, save_split_path)
