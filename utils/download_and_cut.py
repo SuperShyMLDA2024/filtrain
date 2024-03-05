@@ -6,8 +6,6 @@ import time
 import os
 from decimal import *
 from yt_dlp.utils import download_range_func
-from yt_dlp import YoutubeDL
-from pytube import YouTube
 
 temp_dir = "./tmp_clips/"
 output_dir = "./video_clips/"
@@ -82,6 +80,8 @@ def worker(q):
             q.task_done()
 
 def download_video(data):
+    os.makedirs(temp_dir, exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
     q = queue.Queue()
 
     for video_id in data:
@@ -99,8 +99,6 @@ def download_video(data):
     return 
 
 if __name__ == "__main__":
-    os.makedirs(temp_dir, exist_ok=True)
-    os.makedirs(output_dir, exist_ok=True)
     with open('./metafiles/hdvg_0_first_100.json', 'r') as f:
         data = json.load(f)
     download_video(data)

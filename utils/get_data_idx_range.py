@@ -3,7 +3,7 @@
 
 import json
 
-def get_video_from_idx_range(data, list_keys, start_idx, end_idx, to_list=True, save_to_json=False):
+def get_data_idx_range(data, list_keys, start_idx, end_idx, to_list=True, save_to_json=False):
     keys = list_keys[start_idx:end_idx+1]
 
     # take random n records from list_keys
@@ -25,4 +25,4 @@ if __name__ == "__main__":
 
     list_keys = list(data.keys())
     # Call the function with the number of records you want
-    get_video_from_idx_range(data, list_keys, 0, 99, to_list=False, save_to_json=True)
+    get_data_from_idx_range(data, list_keys, 0, 99, to_list=False, save_to_json=True)
