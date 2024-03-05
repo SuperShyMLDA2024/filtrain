@@ -45,7 +45,7 @@ def yt_opts(video_id, video_info):
         'outtmpl': f"{temp_dir}/%(section_start)s {video_id}.mp4",
         'concurrent_fragment_downloads': 3,
         'quiet': True,
-        'format': 'bv',
+        'format': '135/134/232/22/17/18',
         'logger': loggerOutputs,
     }
     return opt
@@ -91,7 +91,7 @@ def worker(q):
                 old_name, new_name = files
                 old_name = temp_dir + '/' +  old_name     
                 os.rename(old_name, new_name)
-
+            print(f"Done video: {current_video}")
         except Exception as e:
             print("Error when downloading video: ", current_video)
             print(e)
