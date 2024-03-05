@@ -12,7 +12,7 @@ time_interval_ms = 250
 num_of_threads = 12
 finished = False
 
-def split_clip(clip_id, scenes_details):
+def split_clip(video_id, clip_id, scenes_details):
     # scene_split = [
     #     scene_cut: [start, end],
     #     clip_id: clip_id, // output video
@@ -31,7 +31,7 @@ def split_clip(clip_id, scenes_details):
         os.makedirs(f"{out_dir}/{scene_id}", exist_ok=True)
 
         output_dir = f'{out_dir}/{scene_id}/%04d.png'
-        input_dir = f"{clip_dir}/{clip_id}"
+        input_dir = f"{clip_dir}/{video_id}/{clip_id}"
 
         ffmpeg.input(input_dir)\
             .trim(start_frame=start, end_frame=end)\
@@ -48,8 +48,8 @@ def split_clip(clip_id, scenes_details):
 def worker(q):
     while not q.empty() or not finished:
         try:
-            clip_id, scenes_details = q.get()
-            split_clip(clip_id, scenes_details)
+            video_id, clip_id, scenes_details = q.get()
+            split_clip(video_id, clip_id, scenes_details)
             print(f"Done clip: {clip_id}")
         except Exception as e:
             print(e)
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     for video_id in video_info:
         clips = video_info[video_id]['clip']
         for clip_id in clips:
-            q.put((clip_id, clips[clip_id]))
+            q.put((video_id, clip_id, clips[clip_id]))
             # split_clip(clip_id, clips[clip_id])
             break
     
