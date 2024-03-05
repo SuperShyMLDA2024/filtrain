@@ -44,7 +44,6 @@ def yt_opts(video_id, video_info):
         # 'force_keyframes_at_cuts': True,
         'outtmpl': f"{temp_dir}/%(section_start)s {video_id}.mp4",
         'concurrent_fragment_downloads': 3,
-        'format': 'bestvideo[height=480][fps<=30]',
         'quiet': True,
         'format': '22',
         'logger': loggerOutputs,
