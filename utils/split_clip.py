@@ -4,7 +4,6 @@ import os
 import queue
 import threading
 
-hdvg_dir = "./metafiles/hdvg_batch_0-99.json"
 clip_dir = "./video_clips"
 out_dir = "./frames_output"
 time_interval_ms = 250
@@ -48,8 +47,8 @@ def split_clip(video_id, clip_id, scenes_details):
 def worker(q):
     while not q.empty() or not finished:
         try:
-            video_id, clip_id, scenes_details = q.get()
-            split_clip(video_id, clip_id, scenes_details)
+            clip_id, scenes_details = q.get()
+            split_clip(clip_id, scenes_details)
             print(f"Done clip: {clip_id}")
         except Exception as e:
             print(e)
@@ -57,6 +56,7 @@ def worker(q):
             q.task_done()
 
 if __name__ == "__main__":
+    hdvg_dir = "metafiles/hdvg_0_first_100.json"
     with open(hdvg_dir, 'r') as f:
         video_info = json.load(f)
 
@@ -69,8 +69,6 @@ if __name__ == "__main__":
         clips = video_info[video_id]['clip']
         for clip_id in clips:
             q.put((video_id, clip_id, clips[clip_id]))
-            # split_clip(clip_id, clips[clip_id])
-            break
     
     q.join()
     
