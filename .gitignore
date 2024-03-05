@@ -6,5 +6,5 @@ cut_video_log/*
 cut_video_results/*
 metafiles/*
 download_videos/*
-video_clips/*
+# video_clips/*
 __pycache__/*

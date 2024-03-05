@@ -15,7 +15,7 @@ from download_video_script import download_videos
 def parse_args():
     parser = argparse.ArgumentParser(description='youtube video processing')
     parser.add_argument('--workdir', default='./',type=str, help='Working Directory')
-    parser.add_argument('--metafile', default='hdvg_0_first_10.json', type=str, help='youtube video meta')
+    parser.add_argument('--metafile', default='mlda_data.json', type=str, help='youtube video meta')
     parser.add_argument('--resultfile', default='cut_part0.jsonl', type=str, help='processed videos')
     parser.add_argument('--log', default='log_part0.log', type=str, help='log')
     parser.add_argument('--rm_tmp_file', default=True, type=bool, help='Whether to remove tmp hdvila clips')
@@ -131,7 +131,7 @@ class Cutvideos():
                 result = self.extract_clips(video_id, meta)
                 results.extend(result)
             shutil.rmtree(os.path.join(self.workdir,'download_videos'))
-            shutil.rmtree(os.path.join(self.workdir, 'video_clips'))
+            # shutil.rmtree(os.path.join(self.workdir, 'video_clips'))
 
         logger.info(f"Number of clips processed: {len(results)}")
         if self.rm_tmp_file:
