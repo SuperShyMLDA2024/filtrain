@@ -20,4 +20,4 @@ def get_first_n_records(n, json_filename='hdvg_0'):
         json.dump(first_n_records, f)
 
 # Call the function with the number of records you want
-get_first_n_records(10)
+get_first_n_records(100)

@@ -9,8 +9,15 @@ from yt_dlp.utils import download_range_func
 from yt_dlp import YoutubeDL
 from pytube import YouTube
 
-temp_dir = "D:/tmp_clips"
-output_dir = "D:/video_clips"
+temp_dir = "./tmp_clips/"
+output_dir = "./video_clips/"
+
+if not os.path.exists(temp_dir):
+    os.makedirs(temp_dir)
+
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
 num_of_threads = 24
 downloading_done = False
 
