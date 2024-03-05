@@ -36,7 +36,7 @@ def split_clip(video_id, clip_id, scenes_details):
             .trim(start_frame=start, end_frame=end)\
             .filter('fps', fps=1/(time_interval_ms/1000), round='up')\
             .setpts('PTS-STARTPTS')\
-            .output(output_dir)\
+            .output(output_dir, quiet=True)\
             .overwrite_output()\
             .run()
         
@@ -47,8 +47,8 @@ def split_clip(video_id, clip_id, scenes_details):
 def worker(q):
     while not q.empty() or not finished:
         try:
-            clip_id, scenes_details = q.get()
-            split_clip(clip_id, scenes_details)
+            video_id, clip_id, scenes_details = q.get()
+            split_clip(video_id, clip_id, scenes_details)
             print(f"Done clip: {clip_id}")
         except Exception as e:
             print(e)
