@@ -18,7 +18,7 @@ class VideoDataset(Dataset):
             for clip_id in self.data[video_id]["clip"]:
                 clip_dict = self.data[video_id]["clip"][clip_id]
                 clip_dict["clip_name"] = clip_id
-                clip_dict["file_path"] = 'video_clips/' + clip_id
+                clip_dict["file_path"] = os.path.join('video_clips', video_id, clip_id) 
                 clip_dict["video_id"] = video_id
                 if os.path.exists(clip_dict["file_path"]):
                     self.clip_data.append(clip_dict)

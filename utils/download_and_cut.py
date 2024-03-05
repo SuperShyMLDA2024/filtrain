@@ -10,7 +10,7 @@ temp_dir = "./tmp_clips/"
 output_dir = "./video_clips/"
 hdvg_dir = './metafiles/hdvg_batch_0-99.json'
 
-num_of_threads = 12
+num_of_threads = 24
 
 def parse_timestamp(timestamp: str) -> float:
     # timestamp format: HH:MM:SS.MS
@@ -45,7 +45,7 @@ def yt_opts(video_id, video_info):
         'outtmpl': f"{temp_dir}/%(section_start)s {video_id}.mp4",
         'concurrent_fragment_downloads': 3,
         'quiet': True,
-        'format': '135/134/232/22/17/18',
+        'format': '22/17/18',
         'logger': loggerOutputs,
     }
     return opt
