@@ -36,7 +36,7 @@ def split_clip(video_id, clip_id, scenes_details):
             .trim(start_frame=start, end_frame=end)\
             .filter('fps', fps=1/(time_interval_ms/1000), round='up')\
             .setpts('PTS-STARTPTS')\
-            .output(output_dir, quiet=True)\
+            .output(output_dir, loglevel="quiet")\
             .overwrite_output()\
             .run()
         
