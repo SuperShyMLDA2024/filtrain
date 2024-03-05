@@ -1,4 +1,5 @@
 from torch.utils.data import Dataset
+from dataset_generator import DatasetGenerator
 import os
 import json
 from get_data_idx_range import get_data_idx_range
@@ -7,21 +8,26 @@ from split_clip import split_clip
 
 class VideoDataset(Dataset):
     def __init__(self, data, start_idx, end_idx):
+        dg = DatasetGenerator(generate_scene_samples=True, generate_scene_video=True)
         self.list_keys = list(data.keys())
         self.data = get_data_idx_range(data, self.list_keys, 
                                        start_idx, end_idx, 
                                        save_to_json=False)
         self.data_list = list(self.data.values())
-        download_video(self.data)
-        self.clip_data = []
+        dg.load_data(self.data)
+        dg.download()
+        dg.split_videos()
+        dg.split_scenes()
+
+        self.scene_data = []
         for video_id in self.data:
             for clip_id in self.data[video_id]["clip"]:
-                clip_dict = self.data[video_id]["clip"][clip_id]
-                clip_dict["clip_name"] = clip_id
-                clip_dict["file_path"] = os.path.join('video_clips', video_id, clip_id) 
-                clip_dict["video_id"] = video_id
-                if os.path.exists(clip_dict["file_path"]):
-                    self.clip_data.append(clip_dict)
+                for scene in self.data[video_id]["clip"][clip_id]["scene_split"]:
+                    scene_dict = self.data[video_id]["clip"][clip_id]["scene_split"][scene]
+                    scene_dict["video_path"] = os.path.join('video_clips', video_id, clip_id + '.mp4')
+                    scene_dict["samples_path"] = os.path.join('frames_output', video_id, clip_id, scene)
+                    if os.path.exists(scene_dict["samples_path"]) and os.path.exists(scene_dict["video_path"]):
+                        self.scene_data.append(scene_dict)
     
     def __len__(self):
         return len(self.clip_data)
