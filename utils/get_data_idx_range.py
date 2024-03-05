@@ -25,4 +25,4 @@ if __name__ == "__main__":
 
     list_keys = list(data.keys())
     # Call the function with the number of records you want
-    get_data_idx_range(data, list_keys, 0, 99, to_list=False, save_to_json=True)
+    get_data_idx_range(data, list_keys, 0, 1, to_list=False, save_to_json=True)
