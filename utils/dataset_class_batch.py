@@ -33,6 +33,7 @@ class VideoDataset(Dataset):
         return len(self.clip_data)
     
     def __getitem__(self, idx):
+        print(idx, self.clip_data[idx])
         video_id = self.clip_data[idx]["video_id"]
         clip_id = self.clip_data[idx]["clip_name"]
         scenes_details = self.clip_data[idx]
@@ -40,10 +41,16 @@ class VideoDataset(Dataset):
         return self.clip_data[idx]
     
 if __name__ == '__main__':
-    with open("metafiles/hdvg_0.json", 'r') as f:
+    with open("metafiles/hdvg_batch_0-1.json", 'r') as f:
         data = json.load(f)
     print("Data loaded")
 
-    dataset = VideoDataset(data, 0, 9)
+    dataset = VideoDataset(data, 0, 0)
     print(len(dataset))
     print(dataset[0])
+
+    for data in dataset:
+        clip_id = data['clip_name']
+        video_id = data['video_id']
+        print(video_id, clip_id)
+        print("------------------------------------------------------------")
