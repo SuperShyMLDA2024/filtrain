@@ -12,14 +12,7 @@ from pytube import YouTube
 temp_dir = "./tmp_clips/"
 output_dir = "./video_clips/"
 
-if not os.path.exists(temp_dir):
-    os.makedirs(temp_dir)
-
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
-
 num_of_threads = 24
-downloading_done = False
 
 def parse_timestamp(timestamp: str) -> float:
     # timestamp format: HH:MM:SS.MS
@@ -46,6 +39,7 @@ def yt_opts(video_id, video_info):
         'outtmpl': f"{temp_dir}/%(section_start)s {video_id}.mp4",
         'format': "22/17/18",
         'concurrent_fragment_downloads': 3,
+        'format': 'bestvideo[height<=480]',
     }
     return opt
 
@@ -67,7 +61,7 @@ def download_clips(video_id, video_info):
 
     return files_to_rename
 
-def worker(q, q_rename):
+def worker(q):
     while not q.empty():
         try:
             video_id, video_info = q.get()
@@ -75,7 +69,10 @@ def worker(q, q_rename):
             
 
             for files in files_to_rename:
-                q_rename.put(files)
+                old_name, new_name = files
+                old_name = temp_dir + '/' +  old_name     
+                new_name = output_dir + '/' +  new_name
+                os.rename(old_name, new_name)
             
             print("Downloaded video: " + video_id )
 
@@ -84,48 +81,26 @@ def worker(q, q_rename):
         finally:
             q.task_done()
 
-def rename_worker(q):
-    print("Start renaming videos...")
-    while not downloading_done or not q.empty():
-        try:
-            old_name, new_name = q.get()
-            print("[Test]", old_name, new_name)
-            old_name = temp_dir + '/' +  old_name     
-            new_name = output_dir + '/' +  new_name
-            print(f"Renaming {old_name} to {new_name}")
-            os.rename(old_name, new_name)
-        except Exception as e:
-            print(e)
-        finally:
-            q.task_done()
-
-if __name__ == "__main__":
-
-    os.rmdir(temp_dir)
-    os.makedirs(temp_dir, exist_ok=True)
-    os.makedirs(output_dir, exist_ok=True)
-
-    getcontext().prec = 3
+def download_video(data):
     q = queue.Queue()
-    q_rename = queue.Queue()
 
-    with open('./metafiles/hdvg_0_first_100.json', 'r') as f:
-        video_info = json.load(f)
-    for video_id in video_info:
-        q.put((video_id, video_info[video_id])) # data video_id, clip_id, video_info
+    for video_id in data:
+        q.put((video_id, data[video_id])) # data video_id, clip_id, video_info
 
     print("Start downloading videos...")
     start_time = time.time()
     for i in range(num_of_threads):
-        threading.Thread(target=worker, daemon=False, args=(q,q_rename,)).start()
-    
-    for i in range(3):
-        threading.Thread(target=rename_worker, daemon=False, args=(q_rename,)).start()
+        threading.Thread(target=worker, daemon=False, args=(q,)).start()
     
     q.join()
-    downloading_done = True
-    q_rename.join()
     end_time = time.time()
-    print(f"Downloaded {len(video_info)} videos in {end_time - start_time} seconds")
+    print(f"Downloaded {len(data)} videos in {end_time - start_time} seconds")
     
-    
+    return 
+
+if __name__ == "__main__":
+    os.makedirs(temp_dir, exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
+    with open('./metafiles/hdvg_0_first_100.json', 'r') as f:
+        data = json.load(f)
+    download_video(data)
