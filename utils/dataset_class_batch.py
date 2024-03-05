@@ -16,7 +16,7 @@ class VideoDataset(Dataset):
         self.data_list = list(self.data.values())
         dg.load_data(self.data)
         dg.run_threaded(num_of_clip_splitter_threads=6, 
-                        num_of_video_downloader_threads=2, 
+                        num_of_downloader_threads=2, 
                         num_of_video_splitter_threads=2)
 
         self.scene_data = []
