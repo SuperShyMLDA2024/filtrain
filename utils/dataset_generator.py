@@ -8,7 +8,8 @@ import os
 import shutil
 
 class DatasetGenerator:
-    def __init__(self, generate_scene_video = True, generate_scene_samples = False, frame_output_folder = "frames_output", scenes_output_folder = "video_clips", download_output_folder="download_videos", tmp_output_folder="tmp_clips"):
+    def __init__(self, filename = None, generate_scene_video = True, generate_scene_samples = False, frame_output_folder = "frames_output", scenes_output_folder = "video_clips", download_output_folder="download_videos", tmp_output_folder="tmp_clips"):
+        self.filename = filename
         self.generate_scene_video = generate_scene_video
         self.generate_scene_samples = generate_scene_samples
         self.frame_output_folder = frame_output_folder
@@ -59,14 +60,15 @@ class DatasetGenerator:
         except:
             print(f"Failed to download video: {video_id}")
 
-    def split_video(self, info, video_id, input_name, output_name):
+    def split_video(self, info, video_id, output_name):
         # info: a unit of a clip (span, scene_split, fps)
         # video_name = the name of the downloaded video
         # output_name = the name of the outputted video
         # cut hdvila clip
-        yt_video = os.path.join(self.download_output_folder, input_name +'.mp4')
+        yt_video = os.path.join(self.download_output_folder, video_id +'.mp4')
 
         ori_clip_path = os.path.join(self.tmp_output_folder, video_id, output_name) # output the clip videos on temporary folder
+        os.makedirs(os.path.join(self.tmp_output_folder, video_id), exist_ok=True)
         if not os.path.exists(ori_clip_path):
             sb = info['span']
             cmd = ['ffmpeg', '-ss', sb[0], '-t', self.hhmmss(sb[0], sb[1]),'-accurate_seek', '-i', yt_video, '-c', 'copy',
@@ -84,6 +86,7 @@ class DatasetGenerator:
         try:
             start, end = int(info_scene['scene_cut'][0]), int(info_scene['scene_cut'][1])
             save_split_path = os.path.join(self.scenes_output_folder, video_id, scene_output_name + '.mp4')
+            os.makedirs(os.path.join(self.scenes_output_folder, video_id), exist_ok=True)
             if end == -1:
                 shutil.copy(ori_clip_path, save_split_path)
             else:
@@ -108,6 +111,7 @@ class DatasetGenerator:
                         frame_cnt += 1
                     
                     if self.generate_scene_video and ret:
+                        print(save_split_path)
                         writer.write(frame)
                     current += 1
                 writer.release()
@@ -115,10 +119,16 @@ class DatasetGenerator:
 
         except Exception as e:
             print("Error occured")
+            os.removedirs(os.path.join(self.scenes_output_folder, video_id))
             print(e)
 
     def load_data(self, data):
         self.data = data
+        print("Metadata loaded")
+
+    def load_from_file(self):
+        with open(self.filename, 'r') as f:
+            self.data = json.load(f)
         print("Metadata loaded")
     
     def download(self):
@@ -129,8 +139,10 @@ class DatasetGenerator:
     def split_videos(self):
         for video_id, video_info in self.data.items():
             for clip_id, clip_info in video_info['clip'].items():
-                self.split_videos(clip_info, video_id, clip_id)
-                print("Done splitting videos: " + clip_id)
+                self.split_video(clip_info, video_id, clip_id)
+            print("Done splitting videos: " + video_id)
+
+            # Can delete video
         print("Done splitting videos")
     
     def split_scenes(self):
@@ -141,14 +153,16 @@ class DatasetGenerator:
                     print("Done splitting clips: " + scene["clip_id"])
         print("Done splitting clips")
 
-        
+                
     
     def run(self):
-        self.load_data()
+        self.load_from_file()
         self.download()
-        self.split_video()
-        self.split_scene()
+        self.split_videos()
+        self.split_scenes()
         print("Done")
+
+    
 
 
 if __name__ == '__main__':

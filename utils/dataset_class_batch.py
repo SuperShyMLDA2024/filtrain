@@ -23,10 +23,10 @@ class VideoDataset(Dataset):
         for video_id in self.data:
             for clip_id in self.data[video_id]["clip"]:
                 for scene in self.data[video_id]["clip"][clip_id]["scene_split"]:
-                    scene_dict = self.data[video_id]["clip"][clip_id]["scene_split"][scene]
+                    scene_dict = scene
                     scene_dict["video_path"] = os.path.join('video_clips', video_id, clip_id + '.mp4')
-                    scene_dict["samples_path"] = os.path.join('frames_output', video_id, clip_id, scene)
-                    if os.path.exists(scene_dict["samples_path"]) and os.path.exists(scene_dict["video_path"]):
+                    scene_dict["frames_path"] = os.path.join('frames_output', video_id, clip_id, scene["clip_id"])
+                    if os.path.exists(scene_dict["frames_path"]) and os.path.exists(scene_dict["video_path"]):
                         self.scene_data.append(scene_dict)
     
     def __len__(self):
