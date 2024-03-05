@@ -4,7 +4,8 @@ import os
 
 hdvg_dir = "./metafiles/hdvg_0_first_1.json"
 clip_dir = "./video_clips"
-out_dir = "./output"
+out_dir = "./frames_output"
+time_interval_ms = 250
 
 def split_clip(clip_id, scenes_details):
     # scene_split = [
@@ -29,6 +30,7 @@ def split_clip(clip_id, scenes_details):
 
         ffmpeg.input(input_dir)\
             .trim(start_frame=start, end_frame=end)\
+            .filter('fps', fps=1/(time_interval_ms/1000), round='up')\
             .setpts('PTS-STARTPTS')\
             .output(output_dir, loglevel="quiet")\
             .overwrite_output()\
