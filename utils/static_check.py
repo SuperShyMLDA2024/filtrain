@@ -31,18 +31,17 @@ if __name__ == '__main__':
     
     dataset = VideoDataset(data, 0, 0)
     
-    # with open("utils/temp.json", 'r') as f:
-    #     dataset = json.load(f)
-    
-    
     for data in dataset:
-        clip_id = data['clip_id']
-        split_clip(data['clip_id'], data)
-        pattern = './frames_output/' + clip_id.split('.mp4')[0] + '*'
-        scene_splits = sorted(glob.glob(pattern))
+        print(data)
+        clip_id = data['clip_name']
+        video_id = clip_id.split('.mp4')[0]
+        print(video_id, clip_id)
+        # split_clip(video_id, clip_id, data)
+        # pattern = './frames_output/' + video_id + '*'
+        # scene_splits = sorted(glob.glob(pattern))
         
-        for scene_split in scene_splits:
-            conv_frames = convert_image(scene_split)
-            diff = get_static_difference(conv_frames)
-            print(f"scene splits {scene_split}, {diff}")
+        # for scene_split in scene_splits:
+        #     conv_frames = convert_image(scene_split)
+        #     diff = get_static_difference(conv_frames)
+        #     print(f"scene splits {scene_split}, {diff}")
         
