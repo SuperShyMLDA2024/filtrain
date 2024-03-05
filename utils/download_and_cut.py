@@ -4,7 +4,6 @@ import threading
 import yt_dlp
 import time
 import os
-from decimal import *
 from yt_dlp.utils import download_range_func
 
 temp_dir = "./tmp_clips/"
@@ -65,7 +64,6 @@ def worker(q):
             video_id, video_info = q.get()
             files_to_rename = download_clips(video_id, video_info)
             
-
             for files in files_to_rename:
                 old_name, new_name = files
                 old_name = temp_dir + '/' +  old_name     
