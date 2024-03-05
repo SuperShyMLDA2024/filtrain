@@ -10,7 +10,7 @@ temp_dir = "./tmp_clips/"
 output_dir = "./video_clips/"
 hdvg_dir = './metafiles/hdvg_batch_0-99.json'
 
-num_of_threads = 28
+num_of_threads = 12
 
 def parse_timestamp(timestamp: str) -> float:
     # timestamp format: HH:MM:SS.MS
@@ -44,8 +44,8 @@ def yt_opts(video_id, video_info):
         # 'force_keyframes_at_cuts': True,
         'outtmpl': f"{temp_dir}/%(section_start)s {video_id}.mp4",
         'concurrent_fragment_downloads': 3,
-        'format': 'bestvideo[height=480][fps<=30]',
         'quiet': True,
+        'format': '22',
         'logger': loggerOutputs,
     }
     return opt
@@ -83,7 +83,8 @@ def worker(q):
 
             if os.path.exists(folder_dir):
                 print(f"Video: {video_id} already downloaded")
-                return []
+                continue
+
             files_to_rename = download_clips(video_id, video_info)
             
             for files in files_to_rename:

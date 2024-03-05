@@ -1,0 +1,1072 @@
+{
+  "44ot5_2UaaU": {
+    "url": "https://www.youtube.com/watch?v=44ot5_2UaaU",
+    "clip": {
+      "44ot5_2UaaU.11.mp4": {
+        "span": ["00:03:03.520", "00:03:16.569"],
+        "fps": 23.976031765318183,
+        "scene_split": [
+          {
+            "scene_cut": [30, 86],
+            "clip_id": "44ot5_2UaaU.11_1",
+            "caption": "a man preparing food on a cutting board in a kitchen"
+          },
+          {
+            "scene_cut": [86, 124],
+            "clip_id": "44ot5_2UaaU.11_2",
+            "caption": "a person cutting up green onions on a wooden cutting board"
+          },
+          {
+            "scene_cut": [124, 178],
+            "clip_id": "44ot5_2UaaU.11_3",
+            "caption": "a person adding vegetables to a pan on a stove"
+          },
+          {
+            "scene_cut": [178, 210],
+            "clip_id": "44ot5_2UaaU.11_4",
+            "caption": "a man preparing food on a stove in a kitchen"
+          },
+          {
+            "scene_cut": [210, 295],
+            "clip_id": "44ot5_2UaaU.11_5",
+            "caption": "a person adding spices to a pan of food"
+          },
+          {
+            "scene_cut": [295, 361],
+            "clip_id": "44ot5_2UaaU.11_6",
+            "caption": "a man preparing food in a kitchen with a brick wall"
+          },
+          {
+            "scene_cut": [361, 409],
+            "clip_id": "44ot5_2UaaU.11_7",
+            "caption": "a pan filled with a variety of vegetables"
+          },
+          {
+            "scene_cut": [0, 30],
+            "clip_id": "44ot5_2UaaU.11_0",
+            "caption": "a person cutting vegetables on a wooden cutting board"
+          }
+        ]
+      },
+      "44ot5_2UaaU.14.mp4": {
+        "span": ["00:03:43.750", "00:03:51.130"],
+        "fps": 23.976030440822456,
+        "scene_split": [
+          {
+            "scene_cut": [207, 246],
+            "clip_id": "44ot5_2UaaU.14_1",
+            "caption": "a pan filled with food on a stove"
+          },
+          {
+            "scene_cut": [0, 207],
+            "clip_id": "44ot5_2UaaU.14_0",
+            "caption": "a man standing in front of a stove cooking food"
+          }
+        ]
+      },
+      "44ot5_2UaaU.3.mp4": {
+        "span": ["00:00:44.100", "00:01:11.700"],
+        "fps": 23.976028123569613,
+        "scene_split": [
+          {
+            "scene_cut": [0, 105],
+            "clip_id": "44ot5_2UaaU.3_0",
+            "caption": "a person preparing food in a bowl on a stove"
+          },
+          {
+            "scene_cut": [621, 664],
+            "clip_id": "44ot5_2UaaU.3_8",
+            "caption": "a man preparing food in a kitchen with a brick wall"
+          },
+          {
+            "scene_cut": [105, 178],
+            "clip_id": "44ot5_2UaaU.3_1",
+            "caption": "a man cutting vegetables on a cutting board in a kitchen"
+          },
+          {
+            "scene_cut": [664, 750],
+            "clip_id": "44ot5_2UaaU.3_9",
+            "caption": "a person cutting up tomatoes on a cutting board"
+          },
+          {
+            "scene_cut": [178, 222],
+            "clip_id": "44ot5_2UaaU.3_2",
+            "caption": "a person cutting red peppers on a cutting board"
+          },
+          {
+            "scene_cut": [750, 769],
+            "clip_id": "44ot5_2UaaU.3_10",
+            "caption": "a man cutting up a tomato in a kitchen"
+          },
+          {
+            "scene_cut": [222, 274],
+            "clip_id": "44ot5_2UaaU.3_3",
+            "caption": "a person chopping peppers on a wooden cutting board"
+          },
+          {
+            "scene_cut": [274, 296],
+            "clip_id": "44ot5_2UaaU.3_4",
+            "caption": "a man standing in a kitchen preparing food"
+          },
+          {
+            "scene_cut": [296, 382],
+            "clip_id": "44ot5_2UaaU.3_5",
+            "caption": "a person adding red peppers to a pan"
+          },
+          {
+            "scene_cut": [382, 409],
+            "clip_id": "44ot5_2UaaU.3_6",
+            "caption": "a man preparing food in a kitchen with a brick wall"
+          },
+          {
+            "scene_cut": [409, 621],
+            "clip_id": "44ot5_2UaaU.3_7",
+            "caption": "a person adding spices to a bowl of food"
+          }
+        ]
+      },
+      "44ot5_2UaaU.9.mp4": {
+        "span": ["00:02:48.330", "00:02:57.819"],
+        "fps": 23.976037861291093,
+        "scene_split": [
+          {
+            "scene_cut": [312, 344],
+            "clip_id": "44ot5_2UaaU.9_5",
+            "caption": "a person cutting vegetables on a wooden cutting board"
+          },
+          {
+            "scene_cut": [0, 8],
+            "clip_id": "44ot5_2UaaU.9_0",
+            "caption": "a person cutting vegetables in a pan on a stove"
+          },
+          {
+            "scene_cut": [8, 130],
+            "clip_id": "44ot5_2UaaU.9_1",
+            "caption": "a wok filled with vegetables cooking on a stove"
+          },
+          {
+            "scene_cut": [130, 167],
+            "clip_id": "44ot5_2UaaU.9_2",
+            "caption": "a man preparing food on a cutting board in a kitchen"
+          },
+          {
+            "scene_cut": [167, 216],
+            "clip_id": "44ot5_2UaaU.9_3",
+            "caption": "a person cutting up a tomato on a cutting board"
+          },
+          {
+            "scene_cut": [216, 312],
+            "clip_id": "44ot5_2UaaU.9_4",
+            "caption": "a man preparing food in a kitchen with a brick wall"
+          }
+        ]
+      },
+      "44ot5_2UaaU.12.mp4": {
+        "span": ["00:03:16.569", "00:03:33.080"],
+        "fps": 23.976034741004945,
+        "scene_split": [
+          {
+            "scene_cut": [113, 245],
+            "clip_id": "44ot5_2UaaU.12_2",
+            "caption": "a person cutting food on a wooden cutting board"
+          },
+          {
+            "scene_cut": [245, 265],
+            "clip_id": "44ot5_2UaaU.12_3",
+            "caption": "a man preparing food in a kitchen with a brick wall"
+          },
+          {
+            "scene_cut": [265, 444],
+            "clip_id": "44ot5_2UaaU.12_4",
+            "caption": "a wok filled with food on a stove top"
+          },
+          {
+            "scene_cut": [0, 50],
+            "clip_id": "44ot5_2UaaU.12_0",
+            "caption": "a pan filled with vegetables cooking on a stove"
+          },
+          {
+            "scene_cut": [50, 113],
+            "clip_id": "44ot5_2UaaU.12_1",
+            "caption": "a man preparing food in a kitchen with a brick wall"
+          }
+        ]
+      },
+      "44ot5_2UaaU.20.mp4": {
+        "span": ["00:04:33.430", "00:04:51.930"],
+        "fps": 23.97603263862092,
+        "scene_split": [
+          {
+            "scene_cut": [143, 325],
+            "clip_id": "44ot5_2UaaU.20_3",
+            "caption": "a bowl of food next to a plate of rice"
+          },
+          {
+            "scene_cut": [325, 357],
+            "clip_id": "44ot5_2UaaU.20_4",
+            "caption": "a man in a kitchen preparing a meal"
+          },
+          {
+            "scene_cut": [357, 383],
+            "clip_id": "44ot5_2UaaU.20_5",
+            "caption": "a bowl of food with a spoon being poured over it"
+          },
+          {
+            "scene_cut": [383, 453],
+            "clip_id": "44ot5_2UaaU.20_6",
+            "caption": "a plate topped with a bowl of food and a bowl of rice"
+          },
+          {
+            "scene_cut": [453, 552],
+            "clip_id": "44ot5_2UaaU.20_7",
+            "caption": "a man standing in a kitchen with a bowl of food"
+          },
+          {
+            "scene_cut": [0, 8],
+            "clip_id": "44ot5_2UaaU.20_0",
+            "caption": "a person stirring a pot of food on a stove"
+          },
+          {
+            "scene_cut": [8, 81],
+            "clip_id": "44ot5_2UaaU.20_1",
+            "caption": "a person pouring rice into a bowl on a plate"
+          },
+          {
+            "scene_cut": [81, 143],
+            "clip_id": "44ot5_2UaaU.20_2",
+            "caption": "a man preparing food on a stove in a kitchen"
+          }
+        ]
+      },
+      "44ot5_2UaaU.6.mp4": {
+        "span": ["00:02:12.910", "00:02:27.180"],
+        "fps": 23.976027454902027,
+        "scene_split": [
+          {
+            "scene_cut": [229, 367],
+            "clip_id": "44ot5_2UaaU.6_3",
+            "caption": "a man standing in a kitchen with a lot of food"
+          },
+          {
+            "scene_cut": [367, 458],
+            "clip_id": "44ot5_2UaaU.6_4",
+            "caption": "a person cutting up an onion on a cutting board"
+          },
+          {
+            "scene_cut": [0, 36],
+            "clip_id": "44ot5_2UaaU.6_0",
+            "caption": "a man preparing food in a kitchen with a brick wall"
+          },
+          {
+            "scene_cut": [36, 145],
+            "clip_id": "44ot5_2UaaU.6_1",
+            "caption": "a person cutting green peppers on a wooden cutting board"
+          },
+          {
+            "scene_cut": [145, 229],
+            "clip_id": "44ot5_2UaaU.6_2",
+            "caption": "a person cutting up peppers on a cutting board"
+          }
+        ]
+      },
+      "44ot5_2UaaU.0.mp4": {
+        "span": ["00:00:00.120", "00:00:28.109"],
+        "fps": 23.97602634166094,
+        "scene_split": [
+          {
+            "scene_cut": [426, 482],
+            "clip_id": "44ot5_2UaaU.0_5",
+            "caption": "a person pouring a cup of soup into a bowl"
+          },
+          {
+            "scene_cut": [482, 674],
+            "clip_id": "44ot5_2UaaU.0_6",
+            "caption": "a close up of a bowl of food"
+          },
+          {
+            "scene_cut": [0, 207],
+            "clip_id": "44ot5_2UaaU.0_0",
+            "caption": "a man holding a plate of food in a kitchen"
+          },
+          {
+            "scene_cut": [207, 223],
+            "clip_id": "44ot5_2UaaU.0_1",
+            "caption": "a picture of a clock on a black background"
+          },
+          {
+            "scene_cut": [223, 286],
+            "clip_id": "44ot5_2UaaU.0_2",
+            "caption": "a close up of a bowl of food with a logo on it"
+          },
+          {
+            "scene_cut": [286, 351],
+            "clip_id": "44ot5_2UaaU.0_3",
+            "caption": "a pan with food in it sitting on top of a stove"
+          },
+          {
+            "scene_cut": [351, 426],
+            "clip_id": "44ot5_2UaaU.0_4",
+            "caption": "a pan full of food on a stove top"
+          }
+        ]
+      },
+      "44ot5_2UaaU.22.mp4": {
+        "span": ["00:05:09.720", "00:05:15.840"],
+        "fps": 23.976023976023978,
+        "scene_split": [
+          {
+            "scene_cut": [0, -1],
+            "clip_id": "44ot5_2UaaU.22_0",
+            "caption": "a man standing in a kitchen with a bowl of food"
+          }
+        ]
+      },
+      "44ot5_2UaaU.4.mp4": {
+        "span": ["00:01:11.700", "00:01:58.930"],
+        "fps": 23.976022614724144,
+        "scene_split": [
+          {
+            "scene_cut": [352, 428],
+            "clip_id": "44ot5_2UaaU.4_7",
+            "caption": "a man standing in front of a stove cooking food"
+          },
+          {
+            "scene_cut": [928, 1073],
+            "clip_id": "44ot5_2UaaU.4_15",
+            "caption": "a pan with food in it on a table"
+          },
+          {
+            "scene_cut": [0, 21],
+            "clip_id": "44ot5_2UaaU.4_0",
+            "caption": "a person cutting up tomatoes on a cutting board"
+          },
+          {
+            "scene_cut": [428, 524],
+            "clip_id": "44ot5_2UaaU.4_8",
+            "caption": "a person cutting a piece of wood with a knife"
+          },
+          {
+            "scene_cut": [1073, 1134],
+            "clip_id": "44ot5_2UaaU.4_16",
+            "caption": "a person stirring something in a pan on a stove"
+          },
+          {
+            "scene_cut": [21, 57],
+            "clip_id": "44ot5_2UaaU.4_1",
+            "caption": "a man cutting tomatoes in a kitchen"
+          },
+          {
+            "scene_cut": [524, 597],
+            "clip_id": "44ot5_2UaaU.4_9",
+            "caption": "a man standing in a kitchen preparing food"
+          },
+          {
+            "scene_cut": [1134, 1172],
+            "clip_id": "44ot5_2UaaU.4_17",
+            "caption": "a man preparing food on a kitchen counter"
+          },
+          {
+            "scene_cut": [57, 109],
+            "clip_id": "44ot5_2UaaU.4_2",
+            "caption": "a person cutting up tomatoes on a cutting board"
+          },
+          {
+            "scene_cut": [597, 647],
+            "clip_id": "44ot5_2UaaU.4_10",
+            "caption": "a person pouring rice into a pot"
+          },
+          {
+            "scene_cut": [109, 126],
+            "clip_id": "44ot5_2UaaU.4_3",
+            "caption": "a man cutting vegetables in a kitchen"
+          },
+          {
+            "scene_cut": [647, 731],
+            "clip_id": "44ot5_2UaaU.4_11",
+            "caption": "a person pouring water into a pot on a stove"
+          },
+          {
+            "scene_cut": [126, 160],
+            "clip_id": "44ot5_2UaaU.4_4",
+            "caption": "a person is cooking some tomatoes in a pan"
+          },
+          {
+            "scene_cut": [731, 758],
+            "clip_id": "44ot5_2UaaU.4_12",
+            "caption": "a pot sitting on top of a stove"
+          },
+          {
+            "scene_cut": [160, 273],
+            "clip_id": "44ot5_2UaaU.4_5",
+            "caption": "a man standing in a kitchen preparing food"
+          },
+          {
+            "scene_cut": [758, 906],
+            "clip_id": "44ot5_2UaaU.4_13",
+            "caption": "a close up of a bowl of tomato sauce"
+          },
+          {
+            "scene_cut": [273, 352],
+            "clip_id": "44ot5_2UaaU.4_6",
+            "caption": "a person pouring food into a bowl from a faucet"
+          },
+          {
+            "scene_cut": [906, 928],
+            "clip_id": "44ot5_2UaaU.4_14",
+            "caption": "a man standing in a kitchen with a blender"
+          }
+        ]
+      },
+      "44ot5_2UaaU.13.mp4": {
+        "span": ["00:03:33.090", "00:03:43.750"],
+        "fps": 23.976033772376407,
+        "scene_split": [
+          {
+            "scene_cut": [87, 325],
+            "clip_id": "44ot5_2UaaU.13_1",
+            "caption": "a man standing in front of a stove cooking food"
+          },
+          {
+            "scene_cut": [0, 87],
+            "clip_id": "44ot5_2UaaU.13_0",
+            "caption": "a bowl of food sitting on top of a stove"
+          }
+        ]
+      },
+      "44ot5_2UaaU.23.mp4": {
+        "span": ["00:05:15.840", "00:05:25.349"],
+        "fps": 23.97603675046913,
+        "scene_split": [
+          {
+            "scene_cut": [0, 103],
+            "clip_id": "44ot5_2UaaU.23_0",
+            "caption": "a man standing in front of a bowl of food"
+          },
+          {
+            "scene_cut": [103, 249],
+            "clip_id": "44ot5_2UaaU.23_1",
+            "caption": "there is a sign that says \"more haste\""
+          }
+        ]
+      },
+      "44ot5_2UaaU.7.mp4": {
+        "span": ["00:02:27.180", "00:02:38.709"],
+        "fps": 23.97602814522782,
+        "scene_split": [
+          {
+            "scene_cut": [0, 14],
+            "clip_id": "44ot5_2UaaU.7_0",
+            "caption": "a man standing in a kitchen with food on a counter"
+          },
+          {
+            "scene_cut": [14, 109],
+            "clip_id": "44ot5_2UaaU.7_1",
+            "caption": "a person cutting up an apple on a cutting board"
+          },
+          {
+            "scene_cut": [109, 167],
+            "clip_id": "44ot5_2UaaU.7_2",
+            "caption": "a man in an apron cutting vegetables on a cutting board"
+          },
+          {
+            "scene_cut": [167, 244],
+            "clip_id": "44ot5_2UaaU.7_3",
+            "caption": "a person cutting onions on a cutting board"
+          },
+          {
+            "scene_cut": [244, 336],
+            "clip_id": "44ot5_2UaaU.7_4",
+            "caption": "a man in an apron preparing food in a kitchen"
+          },
+          {
+            "scene_cut": [336, 381],
+            "clip_id": "44ot5_2UaaU.7_5",
+            "caption": "a cutting board with onions and peppers on it"
+          }
+        ]
+      },
+      "44ot5_2UaaU.18.mp4": {
+        "span": ["00:04:13.090", "00:04:26.500"],
+        "fps": 23.976028859220058,
+        "scene_split": [
+          {
+            "scene_cut": [0, 302],
+            "clip_id": "44ot5_2UaaU.18_0",
+            "caption": "a man in an apron cooking food on a stove"
+          },
+          {
+            "scene_cut": [302, 325],
+            "clip_id": "44ot5_2UaaU.18_1",
+            "caption": "a person stirring a pot of food on a stove"
+          }
+        ]
+      },
+      "44ot5_2UaaU.15.mp4": {
+        "span": ["00:03:51.130", "00:03:59.509"],
+        "fps": 23.976023976023978,
+        "scene_split": [
+          {
+            "scene_cut": [0, 79],
+            "clip_id": "44ot5_2UaaU.15_0",
+            "caption": "a man standing in front of a stove cooking food"
+          },
+          {
+            "scene_cut": [79, 319],
+            "clip_id": "44ot5_2UaaU.15_1",
+            "caption": "a pan filled with food on a stove top"
+          }
+        ]
+      },
+      "44ot5_2UaaU.8.mp4": {
+        "span": ["00:02:38.709", "00:02:48.320"],
+        "fps": 23.97604352875168,
+        "scene_split": [
+          {
+            "scene_cut": [0, 43],
+            "clip_id": "44ot5_2UaaU.8_0",
+            "caption": "a person is cooking something in a frying pan"
+          },
+          {
+            "scene_cut": [43, 96],
+            "clip_id": "44ot5_2UaaU.8_1",
+            "caption": "a man preparing food on a cutting board in a kitchen"
+          },
+          {
+            "scene_cut": [96, 136],
+            "clip_id": "44ot5_2UaaU.8_2",
+            "caption": "a person cutting vegetables in a pan on a stove"
+          },
+          {
+            "scene_cut": [136, 244],
+            "clip_id": "44ot5_2UaaU.8_3",
+            "caption": "a metal bowl filled with chopped vegetables on a stove"
+          }
+        ]
+      },
+      "44ot5_2UaaU.16.mp4": {
+        "span": ["00:03:59.519", "00:04:06.610"],
+        "fps": 23.976037623935962,
+        "scene_split": [
+          {
+            "scene_cut": [0, 112],
+            "clip_id": "44ot5_2UaaU.16_0",
+            "caption": "a pan filled with food on a stove top"
+          },
+          {
+            "scene_cut": [112, 232],
+            "clip_id": "44ot5_2UaaU.16_1",
+            "caption": "a close up of a pot of food on a stove"
+          }
+        ]
+      },
+      "44ot5_2UaaU.5.mp4": {
+        "span": ["00:01:58.930", "00:02:12.910"],
+        "fps": 23.97604959324055,
+        "scene_split": [
+          {
+            "scene_cut": [0, 39],
+            "clip_id": "44ot5_2UaaU.5_0",
+            "caption": "a man preparing food on a kitchen counter"
+          },
+          {
+            "scene_cut": [39, 99],
+            "clip_id": "44ot5_2UaaU.5_1",
+            "caption": "a pot of soup sitting on top of a stove"
+          },
+          {
+            "scene_cut": [99, 126],
+            "clip_id": "44ot5_2UaaU.5_2",
+            "caption": "a man in an apron cooking in a kitchen"
+          },
+          {
+            "scene_cut": [126, 194],
+            "clip_id": "44ot5_2UaaU.5_3",
+            "caption": "a close up of a stove top with a pot on it"
+          },
+          {
+            "scene_cut": [194, 293],
+            "clip_id": "44ot5_2UaaU.5_4",
+            "caption": "a man standing in a kitchen preparing food"
+          },
+          {
+            "scene_cut": [293, 373],
+            "clip_id": "44ot5_2UaaU.5_5",
+            "caption": "a person cutting up green peppers on a cutting board"
+          }
+        ]
+      },
+      "44ot5_2UaaU.21.mp4": {
+        "span": ["00:04:51.930", "00:05:09.720"],
+        "fps": 23.976027395306676,
+        "scene_split": [
+          {
+            "scene_cut": [0, 104],
+            "clip_id": "44ot5_2UaaU.21_0",
+            "caption": "a man preparing a meal in a kitchen"
+          },
+          {
+            "scene_cut": [104, 157],
+            "clip_id": "44ot5_2UaaU.21_1",
+            "caption": "a man in an apron is cooking something on a stove"
+          },
+          {
+            "scene_cut": [157, 203],
+            "clip_id": "44ot5_2UaaU.21_2",
+            "caption": "a man standing in a kitchen with a bowl of food"
+          },
+          {
+            "scene_cut": [203, 249],
+            "clip_id": "44ot5_2UaaU.21_3",
+            "caption": "a person preparing food on a stove top"
+          },
+          {
+            "scene_cut": [249, 466],
+            "clip_id": "44ot5_2UaaU.21_4",
+            "caption": "a man standing in front of a bowl of food"
+          }
+        ]
+      },
+      "44ot5_2UaaU.17.mp4": {
+        "span": ["00:04:06.610", "00:04:13.090"],
+        "fps": 23.976036165379742,
+        "scene_split": [
+          {
+            "scene_cut": [0, 181],
+            "clip_id": "44ot5_2UaaU.17_0",
+            "caption": "a pot of food sitting on a stove"
+          },
+          {
+            "scene_cut": [181, 261],
+            "clip_id": "44ot5_2UaaU.17_1",
+            "caption": "a man preparing food in a kitchen"
+          }
+        ]
+      },
+      "44ot5_2UaaU.10.mp4": {
+        "span": ["00:02:57.819", "00:03:03.520"],
+        "fps": 23.976038107048176,
+        "scene_split": [
+          {
+            "scene_cut": [0, 56],
+            "clip_id": "44ot5_2UaaU.10_0",
+            "caption": "a man in an apron preparing food on a cutting board"
+          },
+          {
+            "scene_cut": [56, 158],
+            "clip_id": "44ot5_2UaaU.10_1",
+            "caption": "a person cutting vegetables on a wooden cutting board"
+          },
+          {
+            "scene_cut": [158, 214],
+            "clip_id": "44ot5_2UaaU.10_2",
+            "caption": "a man preparing food on a cutting board in a kitchen"
+          },
+          {
+            "scene_cut": [214, 225],
+            "clip_id": "44ot5_2UaaU.10_3",
+            "caption": "a person cutting vegetables on a wooden cutting board"
+          }
+        ]
+      },
+      "44ot5_2UaaU.2.mp4": {
+        "span": ["00:00:33.210", "00:00:44.100"],
+        "fps": 23.976028919693086,
+        "scene_split": [
+          {
+            "scene_cut": [0, 97],
+            "clip_id": "44ot5_2UaaU.2_0",
+            "caption": "a man in an apron preparing food in a kitchen"
+          },
+          {
+            "scene_cut": [97, 162],
+            "clip_id": "44ot5_2UaaU.2_1",
+            "caption": "a person adding oil to a frying pan on a stove"
+          },
+          {
+            "scene_cut": [162, 215],
+            "clip_id": "44ot5_2UaaU.2_2",
+            "caption": "a man in an apron preparing food in a kitchen"
+          },
+          {
+            "scene_cut": [215, 320],
+            "clip_id": "44ot5_2UaaU.2_3",
+            "caption": "a person preparing food in a bowl on a stove"
+          },
+          {
+            "scene_cut": [320, 322],
+            "clip_id": "44ot5_2UaaU.2_4",
+            "caption": "a man cutting vegetables on a cutting board in a kitchen"
+          }
+        ]
+      },
+      "44ot5_2UaaU.19.mp4": {
+        "span": ["00:04:26.500", "00:04:33.430"],
+        "fps": 23.97604418875992,
+        "scene_split": [
+          {
+            "scene_cut": [0, 46],
+            "clip_id": "44ot5_2UaaU.19_0",
+            "caption": "a man standing in a kitchen making food"
+          },
+          {
+            "scene_cut": [46, 136],
+            "clip_id": "44ot5_2UaaU.19_1",
+            "caption": "a person stirring a pot of food on a stove"
+          },
+          {
+            "scene_cut": [136, 209],
+            "clip_id": "44ot5_2UaaU.19_2",
+            "caption": "a person pouring rice into a bowl on a plate"
+          },
+          {
+            "scene_cut": [209, 236],
+            "clip_id": "44ot5_2UaaU.19_3",
+            "caption": "a man preparing food in a kitchen"
+          }
+        ]
+      },
+      "44ot5_2UaaU.1.mp4": {
+        "span": ["00:00:28.109", "00:00:33.210"],
+        "fps": 23.976040784507273,
+        "scene_split": [
+          {
+            "scene_cut": [0, -1],
+            "clip_id": "44ot5_2UaaU.1_0",
+            "caption": "a man standing in front of a stove with food on it"
+          }
+        ]
+      }
+    }
+  },
+  "1NRXqc74kQM": {
+    "url": "https://www.youtube.com/watch?v=1NRXqc74kQM",
+    "clip": {
+      "1NRXqc74kQM.4.mp4": {
+        "span": ["00:00:40.290", "00:00:45.450"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [172, 243],
+            "clip_id": "1NRXqc74kQM.4_2",
+            "caption": "a piece of paper with the words \"official democratic ballot\" on it"
+          },
+          {
+            "scene_cut": [0, 90],
+            "clip_id": "1NRXqc74kQM.4_0",
+            "caption": "a pile of paper with a voting machine sitting on top of it"
+          },
+          {
+            "scene_cut": [90, 172],
+            "clip_id": "1NRXqc74kQM.4_1",
+            "caption": "a man looking down at his cell phone"
+          }
+        ]
+      },
+      "1NRXqc74kQM.0.mp4": {
+        "span": ["00:00:00.000", "00:00:08.429"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [0, 58],
+            "clip_id": "1NRXqc74kQM.0_0",
+            "caption": "a news anchor standing in front of a television screen"
+          },
+          {
+            "scene_cut": [58, 149],
+            "clip_id": "1NRXqc74kQM.0_1",
+            "caption": "a news anchor standing in front of a television screen"
+          },
+          {
+            "scene_cut": [149, 194],
+            "clip_id": "1NRXqc74kQM.0_2",
+            "caption": "a news anchor standing in front of a television screen"
+          },
+          {
+            "scene_cut": [194, 229],
+            "clip_id": "1NRXqc74kQM.0_3",
+            "caption": "a news anchor standing in front of a television screen"
+          },
+          {
+            "scene_cut": [229, 253],
+            "clip_id": "1NRXqc74kQM.0_4",
+            "caption": "a news anchor is standing in front of a television screen"
+          }
+        ]
+      },
+      "1NRXqc74kQM.2.mp4": {
+        "span": ["00:00:22.289", "00:00:30.869"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [209, 282],
+            "clip_id": "1NRXqc74kQM.2_3",
+            "caption": "a group of people holding signs in a protest"
+          },
+          {
+            "scene_cut": [0, 84],
+            "clip_id": "1NRXqc74kQM.2_0",
+            "caption": "a group of people holding signs in front of a building"
+          },
+          {
+            "scene_cut": [84, 170],
+            "clip_id": "1NRXqc74kQM.2_1",
+            "caption": "a woman is looking at a piece of paper"
+          },
+          {
+            "scene_cut": [170, 209],
+            "clip_id": "1NRXqc74kQM.2_2",
+            "caption": "a man sitting at a table with papers in his hands"
+          }
+        ]
+      },
+      "1NRXqc74kQM.9.mp4": {
+        "span": ["00:01:34.350", "00:01:57.479"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [266, 376],
+            "clip_id": "1NRXqc74kQM.9_3",
+            "caption": "a man in a black shirt is talking to a man on a screen"
+          },
+          {
+            "scene_cut": [376, 502],
+            "clip_id": "1NRXqc74kQM.9_4",
+            "caption": "a news anchor is standing next to a picture of a man"
+          },
+          {
+            "scene_cut": [502, 556],
+            "clip_id": "1NRXqc74kQM.9_5",
+            "caption": "a man wearing a black shirt with a gold ring on his finger"
+          },
+          {
+            "scene_cut": [556, 696],
+            "clip_id": "1NRXqc74kQM.9_6",
+            "caption": "a man in a black shirt standing next to a tv screen"
+          },
+          {
+            "scene_cut": [0, 66],
+            "clip_id": "1NRXqc74kQM.9_0",
+            "caption": "a person putting a piece of paper into a machine"
+          },
+          {
+            "scene_cut": [66, 145],
+            "clip_id": "1NRXqc74kQM.9_1",
+            "caption": "two men working on a computer in a room"
+          },
+          {
+            "scene_cut": [145, 266],
+            "clip_id": "1NRXqc74kQM.9_2",
+            "caption": "a close up of a cell phone screen"
+          }
+        ]
+      },
+      "1NRXqc74kQM.1.mp4": {
+        "span": ["00:00:08.429", "00:00:22.289"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [69, 159],
+            "clip_id": "1NRXqc74kQM.1_2",
+            "caption": "a news anchor standing in front of a television screen"
+          },
+          {
+            "scene_cut": [159, 206],
+            "clip_id": "1NRXqc74kQM.1_3",
+            "caption": "a news anchor standing in front of a television screen"
+          },
+          {
+            "scene_cut": [206, 315],
+            "clip_id": "1NRXqc74kQM.1_4",
+            "caption": "a man sitting in a chair talking to another man"
+          },
+          {
+            "scene_cut": [315, 383],
+            "clip_id": "1NRXqc74kQM.1_5",
+            "caption": "a close up of an older man wearing glasses"
+          },
+          {
+            "scene_cut": [383, 439],
+            "clip_id": "1NRXqc74kQM.1_6",
+            "caption": "a man looking at a piece of paper with a magnifying glass"
+          },
+          {
+            "scene_cut": [439, 483],
+            "clip_id": "1NRXqc74kQM.1_7",
+            "caption": "a man holding up a piece of paper"
+          },
+          {
+            "scene_cut": [0, 34],
+            "clip_id": "1NRXqc74kQM.1_0",
+            "caption": "a news anchor standing in front of a television screen"
+          },
+          {
+            "scene_cut": [483, 509],
+            "clip_id": "1NRXqc74kQM.1_8",
+            "caption": "a group of people holding signs in front of a fence"
+          },
+          {
+            "scene_cut": [34, 69],
+            "clip_id": "1NRXqc74kQM.1_1",
+            "caption": "a news anchor standing in front of a television screen"
+          }
+        ]
+      },
+      "1NRXqc74kQM.5.mp4": {
+        "span": ["00:00:45.450", "00:01:04.019"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [94, 208],
+            "clip_id": "1NRXqc74kQM.5_1",
+            "caption": "a man in a white shirt is using a printer"
+          },
+          {
+            "scene_cut": [208, 318],
+            "clip_id": "1NRXqc74kQM.5_2",
+            "caption": "a close up of a voting machine"
+          },
+          {
+            "scene_cut": [318, 374],
+            "clip_id": "1NRXqc74kQM.5_3",
+            "caption": "a close up of a control panel on a machine"
+          },
+          {
+            "scene_cut": [374, 627],
+            "clip_id": "1NRXqc74kQM.5_4",
+            "caption": "a man in a suit and tie sitting in front of a flag"
+          },
+          {
+            "scene_cut": [0, 94],
+            "clip_id": "1NRXqc74kQM.5_0",
+            "caption": "a piece of paper with the words \"official democratic ballot\" on it"
+          }
+        ]
+      },
+      "1NRXqc74kQM.8.mp4": {
+        "span": ["00:01:23.009", "00:01:34.350"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [92, 205],
+            "clip_id": "1NRXqc74kQM.8_1",
+            "caption": "a metal machine that is sitting on top of a table"
+          },
+          {
+            "scene_cut": [205, 309],
+            "clip_id": "1NRXqc74kQM.8_2",
+            "caption": "a close up of a sheet of paper"
+          },
+          {
+            "scene_cut": [309, 395],
+            "clip_id": "1NRXqc74kQM.8_3",
+            "caption": "a man using a printer in a room"
+          },
+          {
+            "scene_cut": [395, 399],
+            "clip_id": "1NRXqc74kQM.8_4",
+            "caption": "a person putting a piece of paper in a machine"
+          },
+          {
+            "scene_cut": [0, 92],
+            "clip_id": "1NRXqc74kQM.8_0",
+            "caption": "a close up of a blue and gold coin"
+          }
+        ]
+      },
+      "1NRXqc74kQM.7.mp4": {
+        "span": ["00:01:14.040", "00:01:23.009"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [0, 121],
+            "clip_id": "1NRXqc74kQM.7_0",
+            "caption": "a man in a suit and tie sitting in front of a flag"
+          },
+          {
+            "scene_cut": [121, 187],
+            "clip_id": "1NRXqc74kQM.7_1",
+            "caption": "a tall building with a clock on top of it"
+          },
+          {
+            "scene_cut": [187, 257],
+            "clip_id": "1NRXqc74kQM.7_2",
+            "caption": "a close up of a man wearing glasses"
+          },
+          {
+            "scene_cut": [257, 323],
+            "clip_id": "1NRXqc74kQM.7_3",
+            "caption": "a man in a suit and tie sitting in a chair"
+          },
+          {
+            "scene_cut": [323, 381],
+            "clip_id": "1NRXqc74kQM.7_4",
+            "caption": "a close up of a blue and gold coin"
+          }
+        ]
+      },
+      "1NRXqc74kQM.6.mp4": {
+        "span": ["00:01:04.019", "00:01:14.040"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [0, 162],
+            "clip_id": "1NRXqc74kQM.6_0",
+            "caption": "a man in a suit and tie talking to the camera"
+          },
+          {
+            "scene_cut": [162, 240],
+            "clip_id": "1NRXqc74kQM.6_1",
+            "caption": "two people standing in front of a voting booth"
+          },
+          {
+            "scene_cut": [240, 346],
+            "clip_id": "1NRXqc74kQM.6_2",
+            "caption": "a woman is using a touch screen to vote"
+          },
+          {
+            "scene_cut": [346, 459],
+            "clip_id": "1NRXqc74kQM.6_3",
+            "caption": "a man in a suit and tie sitting in front of a flag"
+          }
+        ]
+      },
+      "1NRXqc74kQM.10.mp4": {
+        "span": ["00:01:57.479", "00:02:01.130"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [0, 20],
+            "clip_id": "1NRXqc74kQM.10_0",
+            "caption": "a news anchor is holding up a picture of a man and a woman"
+          },
+          {
+            "scene_cut": [20, 213],
+            "clip_id": "1NRXqc74kQM.10_1",
+            "caption": "a man in a black shirt is standing next to a tv screen"
+          }
+        ]
+      },
+      "1NRXqc74kQM.3.mp4": {
+        "span": ["00:00:30.869", "00:00:40.290"],
+        "fps": 29.97002997002997,
+        "scene_split": [
+          {
+            "scene_cut": [0, 97],
+            "clip_id": "1NRXqc74kQM.3_0",
+            "caption": "a group of people holding signs in the street"
+          },
+          {
+            "scene_cut": [97, 243],
+            "clip_id": "1NRXqc74kQM.3_1",
+            "caption": "a man in a suit and tie making gestures"
+          },
+          {
+            "scene_cut": [243, 356],
+            "clip_id": "1NRXqc74kQM.3_2",
+            "caption": "a voting machine with a piece of paper on top of it"
+          }
+        ]
+      }
+    }
+  }
+}
