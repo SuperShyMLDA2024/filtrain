@@ -15,9 +15,9 @@ class VideoDataset(Dataset):
                                        save_to_json=False)
         self.data_list = list(self.data.values())
         dg.load_data(self.data)
-        dg.download()
-        dg.split_videos()
-        dg.split_scenes()
+        dg.run_threaded(num_of_clip_splitter_threads=6, 
+                        num_of_video_downloader_threads=2, 
+                        num_of_video_splitter_threads=2)
 
         self.scene_data = []
         for video_id in self.data:
@@ -44,11 +44,11 @@ class VideoDataset(Dataset):
         return self.scene_data[idx]
     
 if __name__ == '__main__':
-    with open("metafiles/hdvg_batch_0-1.json", 'r') as f:
+    with open("metafiles/hdvg_0.json", 'r') as f:
         data = json.load(f)
     print("Data loaded")
 
-    dataset = VideoDataset(data, 0, 0)
+    dataset = VideoDataset(data, 0, 9)
     print(len(dataset))
     print(dataset[0])
 
