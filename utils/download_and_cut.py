@@ -45,7 +45,7 @@ def yt_opts(video_id, video_info):
         'outtmpl': f"{temp_dir}/%(section_start)s {video_id}.mp4",
         'concurrent_fragment_downloads': 3,
         'quiet': True,
-        'format': '22',
+        'format': 'bv[res<=?480][fps<=?30]',
         'logger': loggerOutputs,
     }
     return opt
