@@ -8,6 +8,7 @@ from split_clip import split_clip
 
 
 temp_path = './temp.json'
+enter = "-" * 20
 def convert_image(folder_path):
     frames = sorted(os.listdir(folder_path))
     conv_frames = []
@@ -25,15 +26,33 @@ def get_static_difference(frames):
         diff.append(np.mean((frames[i] - frames[i+1])**2))
     return np.mean(diff)
 
-if __name__ == '__main__':
-    with open("metafiles/hdvg_0.json", 'r') as f:
+
+def run(metafile_path, min_idx, max_idx):
+    with open(metafile_path, 'r') as f:
         data = json.load(f)
     
-    dataset = VideoDataset(data, 0, 0)
-    print(len(dataset))
+    dataset = VideoDataset(data, min_idx, max_idx)
+    static_diffs = {}
     for data in dataset:
-        clip_id = data['clip_name']
-        video_id = data['video_id']
-        print(video_id, clip_id)
-        print("------------------------------------------------------------")
+        clip_id = data['clip_id']
+        frames_path = data['frames_path']
+        frames = convert_image(frames_path)
+        static_diff = get_static_difference(frames)
+        if frames.shape[0] > 1:
+            if clip_id in static_diffs:
+                static_diffs[clip_id].append(static_diff)
+            else:
+                static_diffs[clip_id] = [static_diff]
+    
+    for clip_id in static_diffs:
+        if len(static_diffs[clip_id]):
+            static_diffs[clip_id] = np.mean(static_diffs[clip_id])
+        else:
+            static_diffs[clip_id] = np.inf
+    
+    return static_diffs
+
+if __name__ == '__main__':
+    res = run('./metafiles/hdvg_batch_0-1.json', 0, 4)
+    print(res)
     print("Done!")

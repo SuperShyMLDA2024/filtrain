@@ -39,7 +39,8 @@ class VideoDataset(Dataset):
         return len(self.scene_data)
     
     def __getitem__(self, idx):
-        print(idx, self.scene_data[idx])
+        # uncomment to print the scene data
+        # print(idx, self.scene_data[idx])
 
         return self.scene_data[idx]
     
