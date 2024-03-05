@@ -46,7 +46,6 @@ def yt_opts(video_id, video_info):
         'concurrent_fragment_downloads': 3,
         'format': 'bestvideo[height=480][fps<=30]',
         'quiet': True,
-        'format': 'wv[height<=720][height>=360][fps<=30]',
         'logger': loggerOutputs,
     }
     return opt
