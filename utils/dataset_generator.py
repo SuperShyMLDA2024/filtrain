@@ -67,7 +67,7 @@ class DatasetGenerator:
         # cut hdvila clip
         yt_video = os.path.join(self.download_output_folder, video_id +'.mp4')
 
-        ori_clip_path = os.path.join(self.tmp_output_folder, video_id, output_name) # output the clip videos on temporary folder
+        ori_clip_path = os.path.join(self.tmp_output_folder, output_name) # output the clip videos on temporary folder
         os.makedirs(os.path.join(self.tmp_output_folder, video_id), exist_ok=True)
         if not os.path.exists(ori_clip_path):
             sb = info['span']
@@ -89,6 +89,8 @@ class DatasetGenerator:
             start, end = int(info_scene['scene_cut'][0]), int(info_scene['scene_cut'][1])
             save_split_path = os.path.join(self.scenes_output_folder, video_id, scene_output_name + '.mp4')
 
+
+            print (ori_clip_path, save_split_path)
             # Skip if the scene is already split
             if os.path.exists(save_split_path):
                 return
@@ -125,7 +127,6 @@ class DatasetGenerator:
 
         except Exception as e:
             print("Error occured")
-            os.removedirs(os.path.join(self.scenes_output_folder, video_id))
             print(e)
 
     def load_data(self, data):
