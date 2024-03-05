@@ -32,7 +32,8 @@ class VideoDataset(Dataset):
 if __name__ == '__main__':
     with open("metafiles/hdvg_0.json", 'r') as f:
         data = json.load(f)
-    dataset = VideoDataset(data, 0, 9)
+    print("Data loaded")
 
+    dataset = VideoDataset(data, 0, 9)
     print(len(dataset))
     print(dataset[0])
