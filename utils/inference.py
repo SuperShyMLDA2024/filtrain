@@ -44,7 +44,7 @@ def get_dataset(metafile_path, min_idx, max_idx):
 
 def run(dataset, model):
     res = {}
-    for data in dataset[:10]:
+    for data in dataset[:3]:
         clip_id = data['clip_id']
         frames_path = data['frames_path']
         frames = convert_image(frames_path)
