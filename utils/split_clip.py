@@ -4,7 +4,6 @@ import os
 import queue
 import threading
 
-hdvg_dir = "./metafiles/hdvg_batch_0-99.json"
 clip_dir = "./video_clips"
 out_dir = "./frames_output"
 time_interval_ms = 250
@@ -12,7 +11,7 @@ time_interval_ms = 250
 num_of_threads = 12
 finished = False
 
-def split_clip(clip_id, scenes_details):
+def split_clip(video_id, clip_id, scenes_details):
     # scene_split = [
     #     scene_cut: [start, end],
     #     clip_id: clip_id, // output video
@@ -31,7 +30,7 @@ def split_clip(clip_id, scenes_details):
         os.makedirs(f"{out_dir}/{scene_id}", exist_ok=True)
 
         output_dir = f'{out_dir}/{scene_id}/%04d.png'
-        input_dir = f"{clip_dir}/{clip_id}"
+        input_dir = f"{clip_dir}/{video_id}/{clip_id}"
 
         ffmpeg.input(input_dir)\
             .trim(start_frame=start, end_frame=end)\
@@ -57,6 +56,7 @@ def worker(q):
             q.task_done()
 
 if __name__ == "__main__":
+    hdvg_dir = "metafiles/hdvg_0_first_100.json"
     with open(hdvg_dir, 'r') as f:
         video_info = json.load(f)
 
@@ -68,9 +68,7 @@ if __name__ == "__main__":
     for video_id in video_info:
         clips = video_info[video_id]['clip']
         for clip_id in clips:
-            q.put((clip_id, clips[clip_id]))
-            # split_clip(clip_id, clips[clip_id])
-            break
+            q.put((video_id, clip_id, clips[clip_id]))
     
     q.join()
     
