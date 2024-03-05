@@ -8,8 +8,9 @@ from yt_dlp.utils import download_range_func
 
 temp_dir = "./tmp_clips/"
 output_dir = "./video_clips/"
+hdvg_dir = './metafiles/hdvg_batch_0-99.json'
 
-num_of_threads = 24
+num_of_threads = 28
 
 def parse_timestamp(timestamp: str) -> float:
     # timestamp format: HH:MM:SS.MS
@@ -17,6 +18,14 @@ def parse_timestamp(timestamp: str) -> float:
     s, ms = s.split('.')
     secs = int(h) * 3600 * 1000 + int(m) * 60 * 1000 + int(s) * 1000 + int(ms)
     return secs/1000
+
+class loggerOutputs:
+    def debug(msg):
+        pass
+    def warning(msg):
+        pass
+    def error(msg):
+        pass
 
 def yt_opts(video_id, video_info):
     
@@ -28,51 +37,62 @@ def yt_opts(video_id, video_info):
 
         ranges.append((start, end))
     # download video-only in mp4
+        
     opt = {
         'verbose': True,
         'download_ranges': download_range_func(None, ranges),
         # 'force_keyframes_at_cuts': True,
-        'quiet': True,
         'outtmpl': f"{temp_dir}/%(section_start)s {video_id}.mp4",
-        'format': "22/17/18",
         'concurrent_fragment_downloads': 3,
-        'format': 'bestvideo[height<=480]',
+        'quiet': True,
+        'format': 'wv[height<=720][height>=360][fps<=30]',
+        'logger': loggerOutputs,
     }
     return opt
 
 def download_clips(video_id, video_info):
     url = video_info['url']
     
+    
     with yt_dlp.YoutubeDL(yt_opts(video_id, video_info)) as ydl:
         ydl.download(url)
 
-    print(f"Downloaded video: {video_id}")
 
     files_to_rename = [] # [(old_name, new_name)]
 
+    folder_dir = os.path.join(output_dir, video_id)
+
+    os.makedirs(folder_dir, exist_ok=True)
+
     for clip_id in video_info["clip"]:
+        cur_folder_dir = os.path.join(folder_dir, clip_id)
         start_time = parse_timestamp(video_info["clip"][clip_id]["span"][0])
         old_name = f"{start_time} {video_id}.mp4"      
-        new_name = f"{clip_id}"
+        new_name = cur_folder_dir
         files_to_rename.append((old_name, new_name))
 
     return files_to_rename
 
 def worker(q):
+    current_video = None
     while not q.empty():
         try:
             video_id, video_info = q.get()
+            current_video = video_id
+            folder_dir = os.path.join(output_dir, video_id)
+
+            if os.path.exists(folder_dir):
+                print(f"Video: {video_id} already downloaded")
+                return []
             files_to_rename = download_clips(video_id, video_info)
             
             for files in files_to_rename:
                 old_name, new_name = files
                 old_name = temp_dir + '/' +  old_name     
-                new_name = output_dir + '/' +  new_name
                 os.rename(old_name, new_name)
-            
-            print("Downloaded video: " + video_id )
 
         except Exception as e:
+            print("Error when downloading video: ", current_video)
             print(e)
         finally:
             q.task_done()
@@ -97,6 +117,6 @@ def download_video(data):
     return 
 
 if __name__ == "__main__":
-    with open('./metafiles/hdvg_0_first_100.json', 'r') as f:
+    with open(hdvg_dir, 'r') as f:
         data = json.load(f)
     download_video(data)
