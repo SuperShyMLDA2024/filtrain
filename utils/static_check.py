@@ -30,18 +30,10 @@ if __name__ == '__main__':
         data = json.load(f)
     
     dataset = VideoDataset(data, 0, 0)
-    print(dataset[0])
+    print(len(dataset))
     for data in dataset:
         clip_id = data['clip_name']
         video_id = data['video_id']
         print(video_id, clip_id)
         print("------------------------------------------------------------")
-        # split_clip(video_id, clip_id, data)
-        # pattern = './frames_output/' + video_id + '*'
-        # scene_splits = sorted(glob.glob(pattern))
-        
-        # for scene_split in scene_splits:
-        #     conv_frames = convert_image(scene_split)
-        #     diff = get_static_difference(conv_frames)
-        #     print(f"scene splits {scene_split}, {diff}")
     print("Done!")

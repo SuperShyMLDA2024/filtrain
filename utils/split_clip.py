@@ -11,7 +11,7 @@ time_interval_ms = 250
 num_of_threads = 12
 finished = False
 
-def split_clip(video_id, clip_id, scenes_details):
+def split_clip(video_id, clip_id, scenes_details, verbose=True):
     # scene_split = [
     #     scene_cut: [start, end],
     #     clip_id: clip_id, // output video
@@ -40,7 +40,8 @@ def split_clip(video_id, clip_id, scenes_details):
             .overwrite_output()\
             .run()
         
-        print(f'clip_id: {clip_id} start: {start} end: {end} caption: {caption}')
+        if verbose:
+            print(f'clip_id: {clip_id} start: {start} end: {end} caption: {caption}')
 
     return
 
