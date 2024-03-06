@@ -10,9 +10,10 @@ warnings.filterwarnings("ignore")
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 from dataset_class_batch import VideoDataset
+from diffusers import AutoencoderKL
 from image_to_embedding import get_image_to_embedding
 from static_check import get_static_difference
-from diffusers import AutoencoderKL
+from optical_flow_check import get_optical_flow
 
 def image_transform(image):
     transform = transforms.Compose([
@@ -52,7 +53,7 @@ def run(dataset, model):
         starttime = time.time()
 
         scene_id = data['scene_id']
-        print(f'Processing clip id: {scene_id}')
+        print(f'Processing scene id: {scene_id}')
         frames_path = data['frames_path']
         frames = load_image(frames_path)
         
@@ -65,14 +66,21 @@ def run(dataset, model):
         
         # Getting image context similarity
         frame_mse, frame_cos_sim = get_image_to_embedding(frames, model)
+
+        # getting optical flow
+        avg_velocity = get_optical_flow(frames)
         
         # Storing the results
         if scene_id in res:
             res[scene_id]['static_diff'].append(static_diff)
             res[scene_id]['mse'].append(frame_mse)
             res[scene_id]['cos_sim'].append(frame_cos_sim)
+            res[scene_id]['avg_velocity'].append(avg_velocity)
         else:
-            res[scene_id] = {'static_diff': [static_diff], 'mse': [frame_mse], 'cos_sim': [frame_cos_sim]}
+            res[scene_id] = {'static_diff': [static_diff], 
+                             'mse': [frame_mse], 
+                             'cos_sim': [frame_cos_sim], 
+                             'avg_velocity': [avg_velocity]}
         
         print(f'Processing time for scene id {scene_id}: {time.time() - starttime}')
     
@@ -82,6 +90,7 @@ def run(dataset, model):
         res[clip_id]['static_diff'] = np.mean(res[clip_id]['static_diff'])
         res[clip_id]['mse'] = np.mean(res[clip_id]['mse'])
         res[clip_id]['cos_sim'] = np.mean(res[clip_id]['cos_sim'])
+        res[clip_id]['avg_velocity'] = np.mean(res[clip_id]['avg_velocity'])
     
     return res
 
