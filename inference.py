@@ -50,10 +50,6 @@ def get_metrics(dataset, model, device):
         frames_path = data['frames_path']
         frames = load_image(frames_path)
         
-        # Assert clips with less than 2 frames
-        if(len(frames) < 2):
-            assert(f'Scene id {scene_id} has less than 2 frames')
-        
         # Getting static difference
         rgb_diff = get_static_difference(frames)
 
