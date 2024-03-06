@@ -1,10 +1,8 @@
 from torch.utils.data import Dataset
-from dataset_generator import DatasetGenerator
+from utils.dataset_generator import DatasetGenerator
 import os
 import json
-from get_data_idx_range import get_data_idx_range
-from download_and_cut import download_video
-from split_clip import split_clip
+from utils.get_data_idx_range import get_data_idx_range
 
 class VideoDataset(Dataset):
     def __init__(self, data, start_idx, end_idx):
@@ -33,14 +31,15 @@ class VideoDataset(Dataset):
                     scene_dict["frames_path"] = os.path.join('frames_output', video_id, scene["clip_id"])
 
                     if os.path.exists(scene_dict["frames_path"]) and os.path.exists(scene_dict["video_path"]):
-                        self.scene_data.append(scene_dict)
+                        if len(os.listdir(scene_dict["frames_path"])) > 2:
+                            self.scene_data.append(scene_dict)
     
     def __len__(self):
         return len(self.scene_data)
     
     def __getitem__(self, idx):
-        print(idx, self.scene_data[idx])
-
+        # uncomment to print the scene data
+        # print(idx, self.scene_data[idx])
         return self.scene_data[idx]
     
 if __name__ == '__main__':

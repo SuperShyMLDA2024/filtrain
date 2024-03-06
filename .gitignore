@@ -1,8 +1,8 @@
 # DS_Store files
 .DS_Store
 
-metafiles
-hdvg_0.json
+#metafiles
+metafiles/*
 
 # folders
 cut_video_log

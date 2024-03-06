@@ -1,0 +1,75 @@
+{
+    "span": [
+        "00:03:03.520",
+        "00:03:16.569"
+    ],
+    "fps": 23.976031765318183,
+    "scene_split": [
+        {
+            "scene_cut": [
+                30,
+                86
+            ],
+            "clip_id": "44ot5_2UaaU.11_1",
+            "caption": "a man preparing food on a cutting board in a kitchen"
+        },
+        {
+            "scene_cut": [
+                86,
+                124
+            ],
+            "clip_id": "44ot5_2UaaU.11_2",
+            "caption": "a person cutting up green onions on a wooden cutting board"
+        },
+        {
+            "scene_cut": [
+                124,
+                178
+            ],
+            "clip_id": "44ot5_2UaaU.11_3",
+            "caption": "a person adding vegetables to a pan on a stove"
+        },
+        {
+            "scene_cut": [
+                178,
+                210
+            ],
+            "clip_id": "44ot5_2UaaU.11_4",
+            "caption": "a man preparing food on a stove in a kitchen"
+        },
+        {
+            "scene_cut": [
+                210,
+                295
+            ],
+            "clip_id": "44ot5_2UaaU.11_5",
+            "caption": "a person adding spices to a pan of food"
+        },
+        {
+            "scene_cut": [
+                295,
+                361
+            ],
+            "clip_id": "44ot5_2UaaU.11_6",
+            "caption": "a man preparing food in a kitchen with a brick wall"
+        },
+        {
+            "scene_cut": [
+                361,
+                409
+            ],
+            "clip_id": "44ot5_2UaaU.11_7",
+            "caption": "a pan filled with a variety of vegetables"
+        },
+        {
+            "scene_cut": [
+                0,
+                30
+            ],
+            "clip_id": "44ot5_2UaaU.11_0",
+            "caption": "a person cutting vegetables on a wooden cutting board"
+        }
+    ],
+    "clip_id": "44ot5_2UaaU.11.mp4",
+    "file_path": "video_clips/44ot5_2UaaU.11.mp4"
+}
