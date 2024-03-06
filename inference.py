@@ -86,7 +86,7 @@ def get_metrics(dataset, model, device):
 # returning the inference result in the form of
 # {'clip_id': {'static_diff': static_diff, 'mse': mse, 'cos_sim': cos_sim, 'avg_velocity': avg_velocity}}
 
-N_VIDEOS_PER_BATCH = 1
+N_VIDEOS_PER_BATCH = 10
 N_TOTAL_VIDEOS = 18_750
 N_TOTAL_CLIPS = 1_500_000
 
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     if not os.path.exists(inference_output_dir):
         os.makedirs(inference_output_dir)
 
-    for i in range(0, 10, N_VIDEOS_PER_BATCH):
+    for i in range(0, 50, N_VIDEOS_PER_BATCH):
         j = i + N_VIDEOS_PER_BATCH - 1
         print(f'Processing Video {i}-{j}')
         starttime = time.time()
