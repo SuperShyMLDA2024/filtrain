@@ -1,6 +1,5 @@
 # read mlda_data.json
 # get videos per batch
-
 import json
 
 def get_data_idx_range(data, list_keys, start_idx, end_idx, save_to_json=False):

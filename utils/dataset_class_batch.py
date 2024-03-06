@@ -1,8 +1,8 @@
 from torch.utils.data import Dataset
-from dataset_generator import DatasetGenerator
+from utils.dataset_generator import DatasetGenerator
 import os
 import json
-from get_data_idx_range import get_data_idx_range
+from utils.get_data_idx_range import get_data_idx_range
 
 class VideoDataset(Dataset):
     def __init__(self, data, start_idx, end_idx):

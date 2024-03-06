@@ -8,8 +8,6 @@ import os
 import shutil
 import multiprocessing as mp
 
-
-
 class DatasetGenerator:
     def download_worker(self, q, vq, initialize_finished):
         while not q.empty() or not initialize_finished.is_set():

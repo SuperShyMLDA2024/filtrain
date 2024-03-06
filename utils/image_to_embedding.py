@@ -8,8 +8,8 @@ import json
 import cv2
 import numpy as np
 import glob
-from dataset_class_batch import VideoDataset 
-from split_clip import split_clip
+from utils.dataset_class_batch import VideoDataset 
+from utils.split_clip import split_clip
 import numpy as np
 
 def tensor_to_flat_latent(tensor, model):

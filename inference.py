@@ -105,8 +105,8 @@ if __name__ == '__main__':
     if not os.path.exists(inference_output_dir):
         os.makedirs(inference_output_dir)
 
-    N_VIDEOS_PER_BATCH = 1
-    for i in range(0, 1, N_VIDEOS_PER_BATCH):
+    N_VIDEOS_PER_BATCH = 5
+    for i in range(0, 10, N_VIDEOS_PER_BATCH):
         j = i + N_VIDEOS_PER_BATCH - 1
         print(f'Processing Video {i}-{j}')
         starttime = time.time()
