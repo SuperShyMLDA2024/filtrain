@@ -9,11 +9,11 @@ import time
 warnings.filterwarnings("ignore")
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
-from dataset_class_batch import VideoDataset
 from diffusers import AutoencoderKL
-from image_to_embedding import get_image_to_embedding
-from static_check import get_static_difference
-from optical_flow_check import get_optical_flow
+from utils.dataset_class_batch import VideoDataset
+from utils.image_to_embedding import get_image_to_embedding
+from utils.static_check import get_static_difference
+from utils.optical_flow_check import get_optical_flow
 
 def image_transform(image):
     transform = transforms.Compose([
