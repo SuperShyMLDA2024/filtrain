@@ -87,6 +87,10 @@ def get_metrics(dataset, model, device):
 
     return res
 
+def select_random_scenes(dataset, n_taken):
+    ids = torch.arange(len(dataset))
+    select_ids = ids[torch.randperm(len(dataset))[:n_taken]]
+    return [dataset[idx] for idx in select_ids]
 
 # returning the inference result in the form of
 # {'clip_id': {'static_diff': static_diff, ...}}
@@ -167,7 +171,7 @@ if __name__ == '__main__':
 
         json_info = {
             'length': len(filtered_scenes),
-            'filtered_scenes': filtered_scenes
+            'scenes': filtered_scenes
         }
 
         print(f'Total time: {(time.time() - starttime):.2f}')
@@ -176,4 +180,17 @@ if __name__ == '__main__':
         with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
             json.dump(json_info, f)
         
+        print(f"Saved to json: {json_filename}")
+
+        # select CLIPS_TAKEN_PER_BATCH random idx from the dataset
+        random_scenes = select_random_scenes(dataset, CLIPS_TAKEN_PER_BATCH)
+        json_info = {
+            'length': len(random_scenes),
+            'scenes': filtered_scenes
+        }
+
+        json_filename = f'random_scenes_{i}-{j}.json'
+        with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
+            json.dump(json_info, f)
+
         print(f"Saved to json: {json_filename}")
