@@ -1,7 +1,6 @@
 # read mlda_data.json
 # get random n records
 # write to mlda_data_first_n.json
-
 import json
 import random 
 

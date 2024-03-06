@@ -3,8 +3,6 @@ from dataset_generator import DatasetGenerator
 import os
 import json
 from get_data_idx_range import get_data_idx_range
-from download_and_cut import download_video
-from split_clip import split_clip
 
 class VideoDataset(Dataset):
     def __init__(self, data, start_idx, end_idx):
@@ -42,7 +40,6 @@ class VideoDataset(Dataset):
     def __getitem__(self, idx):
         # uncomment to print the scene data
         # print(idx, self.scene_data[idx])
-
         return self.scene_data[idx]
     
 if __name__ == '__main__':

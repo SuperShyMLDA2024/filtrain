@@ -2,7 +2,6 @@ import torch
 import numpy as np
 import time
 
-
 # Example ground truth and predicted values
 ground_truth = torch.tensor([1, 2, 3]).to('cuda')
 predictions = torch.tensor([2, 2, 4]).to('cuda')

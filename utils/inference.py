@@ -35,14 +35,6 @@ def load_image(folder_path):
         conv_frames.append(image)
     return conv_frames
 
-
-def get_dataset(metafile_path, min_idx, max_idx):
-    with open(metafile_path, 'r') as f:
-        data = json.load(f)
-    
-    dataset = VideoDataset(data, min_idx, max_idx)
-    return dataset
-
 def get_model():
     model = AutoencoderKL.from_pretrained("stabilityai/sdxl-vae")
     return model
@@ -87,33 +79,40 @@ def run(dataset, model):
     
     # Taking the average result for each clip
     for clip_id in res:
-        res[clip_id]['static_diff'] = np.mean(res[clip_id]['static_diff'])
-        res[clip_id]['mse'] = np.mean(res[clip_id]['mse'])
-        res[clip_id]['cos_sim'] = np.mean(res[clip_id]['cos_sim'])
-        res[clip_id]['avg_velocity'] = np.mean(res[clip_id]['avg_velocity'])
+        res[clip_id]['static_diff'] = float(np.mean(res[clip_id]['static_diff']))
+        res[clip_id]['mse'] = float(np.mean(res[clip_id]['mse']))
+        res[clip_id]['cos_sim'] = float(np.mean(res[clip_id]['cos_sim']))
+        res[clip_id]['avg_velocity'] = float(np.mean(res[clip_id]['avg_velocity']))
     
     return res
 
 
 # returning the inference result in the form of
-# {'clip_id': {'static_diff': static_diff, 'mse': mse, 'cos_sim': cos_sim}}
+# {'clip_id': {'static_diff': static_diff, 'mse': mse, 'cos_sim': cos_sim, 'avg_velocity': avg_velocity}}
 
 if __name__ == '__main__':
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f'using device: {device}')
 
-    starttime = time.time()
-    dataset = get_dataset('./metafiles/hdvg_0.json', 0, 99)
+    metafile_path = './metafiles/hdvg_0.json'
+    with open(metafile_path, 'r') as f:
+        data = json.load(f)
+
     model = get_model()
     model.to(device)
     
-    res = run(dataset, model)
-    print(f'Total time: {time.time() - starttime}')
-    print(res)
+    inference_output_dir = 'frame_score_results'
+    if not os.path.exists(inference_output_dir):
+        os.makedirs(inference_output_dir)
 
-    # save result
-    if not os.path.exists('frame_score_results'):
-        os.makedirs('frame_score_results')
-    
-    with open('frame_score_results/inference_result.json', 'w') as f:
-        json.dump(res, f)
+    for i in range(100):
+        print(f'Processing Video {i}')
+        starttime = time.time()
+        dataset = VideoDataset(data, i, i)
+        
+        res = run(dataset, model)
+        print(f'Total time: {time.time() - starttime}')
+        print(res)
+        
+        with open(os.path.join(inference_output_dir, 'inference_result_{i}.json'), 'w') as f:
+            json.dump(res, f)
