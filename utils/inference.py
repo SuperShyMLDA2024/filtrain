@@ -2,7 +2,11 @@ import json
 import os
 import numpy as np
 from PIL import Image
+import torch
 from torchvision import transforms
+import warnings
+import time
+warnings.filterwarnings("ignore")
 
 from dataset_class_batch import VideoDataset
 from image_to_embedding import get_model, get_image_to_embedding
@@ -31,6 +35,7 @@ def convert_image(folder_path):
     # Convert the frames to tensor
     for frame in frames:
         image = image_to_tensor(os.path.join(folder_path, frame))
+        image = image.to(device) # Move tensor to GPU
         conv_frames.append(image)
     return conv_frames
 
@@ -43,9 +48,13 @@ def get_dataset(metafile_path, min_idx, max_idx):
     return dataset
 
 def run(dataset, model):
+    
     res = {}
     for data in dataset[:3]:
+        starttime = time.time()
+
         clip_id = data['clip_id']
+        print(f'Processing clip id: {clip_id}')
         frames_path = data['frames_path']
         frames = convert_image(frames_path)
         
@@ -66,6 +75,9 @@ def run(dataset, model):
             res[clip_id]['cos_sim'].append(frame_cos_sim)
         else:
             res[clip_id] = {'static_diff': [static_diff], 'mse': [frame_mse], 'cos_sim': [frame_cos_sim]}
+        
+        print(f'Processing time for clip id {clip_id}: {time.time() - starttime}')
+    
     
     # Taking the average result for each clip
     for clip_id in res:
@@ -80,7 +92,14 @@ def run(dataset, model):
 # {'clip_id': {'static_diff': static_diff, 'mse': mse, 'cos_sim': cos_sim}}
 
 if __name__ == '__main__':
-    dataset = get_dataset('./metafiles/hdvg_batch_0-1.json', 0, 0)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f'using device: {device}')
+
+    starttime = time.time()
+    dataset = get_dataset('./metafiles/hdvg_batch_0-99.json', 0, 99)
     model = get_model()
+    model.to(device)
+    
     res = run(dataset, model)
+    print(f'Total time: {time.time() - starttime}')
     print(res)
