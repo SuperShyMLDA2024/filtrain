@@ -6,13 +6,12 @@ from utils.dataset_class_batch import VideoDataset
 from diffusers import AutoencoderKL
 import json
 import os
-import numpy as np
 from PIL import Image
 import torch
 from torchvision import transforms
-import warnings
 import time
 import pickle
+import warnings
 warnings.filterwarnings("ignore")
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
@@ -85,10 +84,13 @@ def get_metrics(dataset, model, device):
 # returning the inference result in the form of
 # {'clip_id': {'static_diff': static_diff, ...}}
 
-N_VIDEOS_PER_BATCH = 1
+N_VIDEOS_PER_BATCH = 4
 N_TOTAL_VIDEOS = 18_750
 N_TOTAL_CLIPS = 1_500_000
 TOTAL_CLIPS_TAKEN = 10_000
+CLIPS_IDX_START = 100
+LENGTH = 4
+CLIPS_IDX_END = CLIPS_IDX_START + LENGTH - 1
 CLIPS_TAKEN_PER_BATCH = max(1, int(N_VIDEOS_PER_BATCH / N_TOTAL_VIDEOS * TOTAL_CLIPS_TAKEN))
 metafile_path = './metafiles/hdvg_0.json'
 filename = 'xgboost_model.pth'
@@ -110,7 +112,7 @@ if __name__ == '__main__':
 
     classifier_model = pickle.load(open(filename, 'rb'))
 
-    for i in range(100, 101, N_VIDEOS_PER_BATCH):
+    for i in range(CLIPS_IDX_START, CLIPS_IDX_END+1, N_VIDEOS_PER_BATCH):
         j = i + N_VIDEOS_PER_BATCH - 1
         print(f'Processing Video {i}-{j}')
         starttime = time.time()
@@ -118,13 +120,17 @@ if __name__ == '__main__':
         dataset = VideoDataset(data, i, j)
         res = get_metrics(dataset, model, device)
 
-        # save res to json
-        with open(os.path.join(inference_output_dir, f'inference_result_{i}-{j}.json'), 'w') as f:
-            json.dump(res, f)
+        # save res to json for DEBUGGING
+        # with open(os.path.join(inference_output_dir, f'inference_result_{i}-{j}.json'), 'w') as f:
+        #     json.dump(res, f)
 
         filtered_scenes = filter_scenes(res, CLIPS_TAKEN_PER_BATCH, classifier_model)
         print("No. Scenes Taken:", len(filtered_scenes))
         print(f'Total time: {time.time() - starttime}')
 
+        json_info = {
+            'length': len(filtered_scenes),
+            'filtered_scenes': filtered_scenes
+        }
         with open(os.path.join(inference_output_dir, f'filtered_scenes_{i}-{j}.json'), 'w') as f:
-            json.dump(filtered_scenes, f)
+            json.dump(json_info, f)
