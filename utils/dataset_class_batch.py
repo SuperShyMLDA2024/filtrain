@@ -31,7 +31,7 @@ class VideoDataset(Dataset):
                     scene_dict["frames_path"] = os.path.join('frames_output', video_id, scene["clip_id"])
 
                     if os.path.exists(scene_dict["frames_path"]) and os.path.exists(scene_dict["video_path"]):
-                        if len(os.listdir(scene_dict["frames_path"])) > 2:
+                        if len(os.listdir(scene_dict["frames_path"])) >= 4:
                             self.scene_data.append(scene_dict)
     
     def __len__(self):

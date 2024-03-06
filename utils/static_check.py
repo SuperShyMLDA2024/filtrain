@@ -19,7 +19,7 @@ def convert_image(folder_path):
 def get_static_difference(frames):
     diff = []
     for i in range(len(frames)-1):
-        frame1 = frames[i].cpu()
-        frame2 = frames[i+1].cpu()
+        frame1 = frames[i]
+        frame2 = frames[i+1]
         diff.append(torch.mean(torch.square(frame1 - frame2)))
     return np.mean(diff)

@@ -32,7 +32,7 @@ def load_image(folder_path):
     # Convert the frames to tensor
     for frame in frames:
         image = Image.open(os.path.join(folder_path, frame)).convert('RGB')
-        image = image_transform(image).to(device)
+        image = image_transform(image)
         conv_frames.append(image)
     return conv_frames
 
@@ -40,7 +40,7 @@ def get_model():
     model = AutoencoderKL.from_pretrained("stabilityai/sdxl-vae")
     return model
 
-def get_metrics(dataset, model):
+def get_metrics(dataset, model, device):
     res = {}
     for data in dataset:
         starttime = time.time()
@@ -56,12 +56,12 @@ def get_metrics(dataset, model):
         
         # Getting static difference
         rgb_diff = get_static_difference(frames)
-        
-        # Getting image context similarity
-        frame_mse, frame_cos_sim = get_image_to_embedding(frames, model)
 
         # getting optical flow
         avg_velocity = get_optical_flow(frames)
+        
+        # Getting image context similarity
+        frame_mse, frame_cos_sim = get_image_to_embedding(frames, model, device)
         
         # Storing the results
         if scene_id in res:
@@ -90,7 +90,7 @@ def get_metrics(dataset, model):
 # returning the inference result in the form of
 # {'clip_id': {'static_diff': static_diff, 'mse': mse, 'cos_sim': cos_sim, 'avg_velocity': avg_velocity}}
 
-N_VIDEOS_PER_BATCH = 5
+N_VIDEOS_PER_BATCH = 1
 N_TOTAL_VIDEOS = 18_750
 N_TOTAL_CLIPS = 1_500_000
 
@@ -115,7 +115,7 @@ if __name__ == '__main__':
         starttime = time.time()
 
         dataset = VideoDataset(data, i, j)
-        res = get_metrics(dataset, model)
+        res = get_metrics(dataset, model, device)
         
         n_clips_taken = int(N_VIDEOS_PER_BATCH / N_TOTAL_VIDEOS * N_TOTAL_CLIPS)
         filtered_scenes = filter_scenes(res, n_clips_taken) 

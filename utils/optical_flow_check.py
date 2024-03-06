@@ -1,13 +1,36 @@
 import cv2
 import numpy as np
+from PIL import Image
+import os
+from torchvision import transforms
+
+def image_transform(image):
+    transform = transforms.Compose([
+        transforms.Resize((320, 240)),
+        transforms.CenterCrop(240),
+        transforms.ToTensor(),  
+    ])
+    return transform(image).unsqueeze(0)
+
+def load_image(folder_path):
+    # Sort the frames
+    frames = sorted(os.listdir(folder_path))
+    conv_frames = []
+    
+    # Convert the frames to tensor
+    for frame in frames:
+        image = Image.open(os.path.join(folder_path, frame)).convert('RGB')
+        image = image_transform(image)
+        conv_frames.append(image)
+    return conv_frames
 
 def get_optical_flow(frames):
     avg_velocities = []
-    prv = frames[0].squeeze(0).cpu().numpy().transpose((1, 2, 0))
+    prv = frames[0].squeeze(0).numpy().transpose((1, 2, 0))
     prv_gray = cv2.cvtColor(prv, cv2.COLOR_BGR2GRAY)
 
     for i in range(len(frames)-1):
-        nxt = frames[i+1].squeeze(0).cpu().numpy().transpose((1, 2, 0))
+        nxt = frames[i+1].squeeze(0).numpy().transpose((1, 2, 0))
         nxt_gray = cv2.cvtColor(nxt, cv2.COLOR_BGR2GRAY)
 
         flow = cv2.calcOpticalFlowFarneback(prv_gray, nxt_gray, None, 0.5, 3, 15, 3, 5, 1.2, 0)
@@ -23,3 +46,9 @@ def get_optical_flow(frames):
         prv = nxt
 
     return np.mean(avg_velocities)
+
+if __name__ == '__main__':
+    # Test the function
+    
+    frames_1 = load_image("frames_output/1gul68uPqQk/1gul68uPqQk.4_3")
+    frames_2 = load_image("frames_output/1NRXqc74kQM/1NRXqc74kQM.4_1")
