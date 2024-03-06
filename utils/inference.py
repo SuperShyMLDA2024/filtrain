@@ -78,11 +78,11 @@ def run(dataset, model):
     
     
     # Taking the average result for each clip
-    for clip_id in res:
-        res[clip_id]['static_diff'] = float(np.mean(res[clip_id]['static_diff']))
-        res[clip_id]['mse'] = float(np.mean(res[clip_id]['mse']))
-        res[clip_id]['cos_sim'] = float(np.mean(res[clip_id]['cos_sim']))
-        res[clip_id]['avg_velocity'] = float(np.mean(res[clip_id]['avg_velocity']))
+    for scene_id in res:
+        res[scene_id]['static_diff'] = float(np.mean(res[scene_id]['static_diff']))
+        res[scene_id]['mse'] = float(np.mean(res[scene_id]['mse']))
+        res[scene_id]['cos_sim'] = float(np.mean(res[scene_id]['cos_sim']))
+        res[scene_id]['avg_velocity'] = float(np.mean(res[scene_id]['avg_velocity']))
     
     return res
 
@@ -105,14 +105,16 @@ if __name__ == '__main__':
     if not os.path.exists(inference_output_dir):
         os.makedirs(inference_output_dir)
 
-    for i in range(100):
-        print(f'Processing Video {i}')
+    N_VIDEOS_PER_BATCH = 5
+    for i in range(0, 100, N_VIDEOS_PER_BATCH):
+        j = i + N_VIDEOS_PER_BATCH - 1
+        print(f'Processing Video {i}-{j}')
         starttime = time.time()
-        dataset = VideoDataset(data, i, i)
+        dataset = VideoDataset(data, i, j)
         
         res = run(dataset, model)
         print(f'Total time: {time.time() - starttime}')
         print(res)
         
-        with open(os.path.join(inference_output_dir, f'inference_result_{i}.json'), 'w') as f:
+        with open(os.path.join(inference_output_dir, f'inference_result_{i}-{j}.json'), 'w') as f:
             json.dump(res, f)

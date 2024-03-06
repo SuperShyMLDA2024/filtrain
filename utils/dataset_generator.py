@@ -101,7 +101,7 @@ class DatasetGenerator:
         file_name = f"{video_id}.mp4"
         
         yt = YouTube(url)
-        stream = yt.streams.get_highest_resolution()
+        stream = yt.streams.get_by_resolution('360p')
         stream.download(output_path=self.download_output_folder, filename=file_name)
 
     def split_video(self, info, video_id, output_name):
