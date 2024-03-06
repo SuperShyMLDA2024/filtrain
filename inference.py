@@ -60,8 +60,7 @@ def get_metrics(dataset, model, device):
         max_velocity, mean_velocity = get_optical_flow(frames)
 
         # Getting image context similarity
-        frame_mse, frame_cos_sim = get_image_to_embedding(
-            frames, model, device)
+        frame_mse, frame_cos_sim = get_image_to_embedding(frames, model, device)
 
         # No. frames
         no_frames = len(frames)
@@ -84,14 +83,13 @@ def get_metrics(dataset, model, device):
 
 
 # returning the inference result in the form of
-# {'clip_id': {'static_diff': static_diff, 'mse': mse, 'cos_sim': cos_sim, 'avg_velocity': avg_velocity}}
+# {'clip_id': {'static_diff': static_diff, ...}}
 
 N_VIDEOS_PER_BATCH = 1
 N_TOTAL_VIDEOS = 18_750
 N_TOTAL_CLIPS = 1_500_000
 TOTAL_CLIPS_TAKEN = 10_000
-CLIPS_TAKEN_PER_BATCH = max(
-    1, int(N_VIDEOS_PER_BATCH / N_TOTAL_VIDEOS * TOTAL_CLIPS_TAKEN))
+CLIPS_TAKEN_PER_BATCH = max(1, int(N_VIDEOS_PER_BATCH / N_TOTAL_VIDEOS * TOTAL_CLIPS_TAKEN))
 metafile_path = './metafiles/hdvg_0.json'
 filename = 'xgboost_model.pth'
 
@@ -124,8 +122,7 @@ if __name__ == '__main__':
         with open(os.path.join(inference_output_dir, f'inference_result_{i}-{j}.json'), 'w') as f:
             json.dump(res, f)
 
-        filtered_scenes = filter_scenes(
-            res, CLIPS_TAKEN_PER_BATCH, classifier_model)
+        filtered_scenes = filter_scenes(res, CLIPS_TAKEN_PER_BATCH, classifier_model)
         print("No. Scenes Taken:", len(filtered_scenes))
         print(f'Total time: {time.time() - starttime}')
 
