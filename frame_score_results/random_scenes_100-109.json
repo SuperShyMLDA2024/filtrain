@@ -1,0 +1,70 @@
+{
+    "length": 5,
+    "scenes": [
+        {
+            "scene_id": "1cl7QVlkVSw.9_1",
+            "video_id": "1cl7QVlkVSw",
+            "clip_id": "1cl7QVlkVSw.9",
+            "caption": "a red and white sign with the word source fed on it",
+            "scene_cut": [
+                1204,
+                1240
+            ],
+            "video_path": "video_clips/1cl7QVlkVSw/1cl7QVlkVSw.9_1.mp4",
+            "frames_path": "frames_output/1cl7QVlkVSw/1cl7QVlkVSw.9_1",
+            "recaption": "\u4e3b\u6301\u4eba\u7a7f\u8457\u689d\u7d0b\u896f\u886b\uff0c\u7559\u8457\u68d5\u8272\u7684\u982d\u9aee\u548c\u9b0d\u5b50\uff0c\u5f71\u7247\u53f3\u4e0b\u89d2\u6709\u4e00\u500b\u9ec3\u8272\u6309\u9215\uff0c\u4e0a\u9762\u5beb\u8457\"sourcefed\"\u3002"
+        },
+        {
+            "scene_id": "3ntE0lNL5j8.7_1",
+            "video_id": "3ntE0lNL5j8",
+            "clip_id": "3ntE0lNL5j8.7",
+            "caption": "a man standing on a stage with a drum in front of him",
+            "scene_cut": [
+                14,
+                219
+            ],
+            "video_path": "video_clips/3ntE0lNL5j8/3ntE0lNL5j8.7_1.mp4",
+            "frames_path": "frames_output/3ntE0lNL5j8/3ntE0lNL5j8.7_1",
+            "recaption": "a young man stands on a stage in front of a large screen with a ted logo on it. he is wearing casual clothes and has a drum set behind him. the stage is lit with red and blue lights."
+        },
+        {
+            "scene_id": "3ntE0lNL5j8.9_0",
+            "video_id": "3ntE0lNL5j8",
+            "clip_id": "3ntE0lNL5j8.9",
+            "caption": "a man standing on a stage with a drum in front of him",
+            "scene_cut": [
+                0,
+                242
+            ],
+            "video_path": "video_clips/3ntE0lNL5j8/3ntE0lNL5j8.9_0.mp4",
+            "frames_path": "frames_output/3ntE0lNL5j8/3ntE0lNL5j8.9_0",
+            "recaption": "a young man stands on a stage in front of a large screen with a ted logo on it. he is casually dressed and has a drum set behind him. the stage is lit with red and blue lights."
+        },
+        {
+            "scene_id": "0_nsWSNeHQs.53_0",
+            "video_id": "0_nsWSNeHQs",
+            "clip_id": "0_nsWSNeHQs.53",
+            "caption": "a close up of the rear bumper of a truck",
+            "scene_cut": [
+                0,
+                161
+            ],
+            "video_path": "video_clips/0_nsWSNeHQs/0_nsWSNeHQs.53_0.mp4",
+            "frames_path": "frames_output/0_nsWSNeHQs/0_nsWSNeHQs.53_0",
+            "recaption": "The image shows the undercarriage of a black truck. The truck is lifted and has a metal skid plate protecting the bottom of the engine and transmission. The skid plate is made of 3/16\" steel and is bolted to the frame of the truck. The truck is also equipped with rock sliders, which are metal bars that protect the sides of the truck from damage when off-roading. The rock sliders are made of 2\" steel tubing and are welded to the frame of the truck."
+        },
+        {
+            "scene_id": "0_nsWSNeHQs.43_0",
+            "video_id": "0_nsWSNeHQs",
+            "clip_id": "0_nsWSNeHQs.43",
+            "caption": "a close up of the engine of a car",
+            "scene_cut": [
+                0,
+                238
+            ],
+            "video_path": "video_clips/0_nsWSNeHQs/0_nsWSNeHQs.43_0.mp4",
+            "frames_path": "frames_output/0_nsWSNeHQs/0_nsWSNeHQs.43_0",
+            "recaption": "a close up of the engine bay of a car. the engine is a v8 with a chrome air intake and a black valve cover. the car has a black radiator and a blue coolant overflow tank."
+        }
+    ]
+}
