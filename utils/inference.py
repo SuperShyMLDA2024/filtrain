@@ -114,5 +114,5 @@ if __name__ == '__main__':
         print(f'Total time: {time.time() - starttime}')
         print(res)
         
-        with open(os.path.join(inference_output_dir, 'inference_result_{i}.json'), 'w') as f:
+        with open(os.path.join(inference_output_dir, f'inference_result_{i}.json'), 'w') as f:
             json.dump(res, f)
