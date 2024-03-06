@@ -51,7 +51,7 @@ def get_model():
 
 def get_metrics(dataset, model, device):
     res = {}
-    for data in dataset:
+    for idx, data in enumerate(dataset):
         starttime = time.time()
 
         scene_id = data['scene_id']
@@ -79,7 +79,8 @@ def get_metrics(dataset, model, device):
             'mse': float(frame_mse),
             'cos_sim': float(frame_cos_sim),
             'no_frames': float(no_frames),
-            'info': data
+            'idx': idx,
+            'clip_id': data['clip_id'],
         }
 
         print(f'Processing time for scene id {scene_id}: {time.time() - starttime}')
@@ -94,7 +95,7 @@ N_TOTAL_VIDEOS = 18_750
 N_TOTAL_CLIPS = 1_500_000
 TOTAL_CLIPS_TAKEN = 10_000
 metafile_path = './metafiles/hdvg_0.json'
-classifier_filename = 'xgboost_model.pth'
+classifier_filename = 'xgboost_model.pkl'
 api_key = os.getenv("GEMINI_API_KEY")
 
 if __name__ == '__main__':
@@ -143,6 +144,7 @@ if __name__ == '__main__':
         filtered_scenes = filter_scenes(res, CLIPS_TAKEN_PER_BATCH, classifier_model)
         print("No. Scenes Taken:", len(filtered_scenes))
 
+        filtered_scenes = [dataset[idx] for idx in filtered_scenes]
         for scene in filtered_scenes:
             frames_path = scene['frames_path']
             assert(os.path.exists(frames_path))

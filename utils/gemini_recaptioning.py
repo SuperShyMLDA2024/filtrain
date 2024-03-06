@@ -51,7 +51,8 @@ class GeminiRecaptioning:
                "Provide additional visual details from these video frames with these following rules:",
                "All lowercase",
                "No more than 100 words",
-               "Only use information available in the image and no assumptions",]
+               "Only use information available in the image and no assumptions",
+               "Answer in English only",]
         for image in images:
             res.append(image)
         
