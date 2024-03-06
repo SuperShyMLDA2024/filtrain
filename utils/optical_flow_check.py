@@ -45,7 +45,7 @@ def get_optical_flow(frames):
         # Update the previous frame
         prv = nxt
 
-    return np.mean(avg_velocities)
+    return np.max(avg_velocities), np.mean(avg_velocities)
 
 if __name__ == '__main__':
     # Test the function

@@ -9,4 +9,4 @@ def get_static_difference(frames):
         frame1 = frames[i] * 255
         frame2 = frames[i+1] * 255
         diff.append(torch.mean(torch.square(frame1 - frame2)))
-    return np.max(diff)
+    return np.max(diff), np.mean(diff)
