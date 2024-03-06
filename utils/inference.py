@@ -7,6 +7,7 @@ from torchvision import transforms
 import warnings
 import time
 warnings.filterwarnings("ignore")
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 from dataset_class_batch import VideoDataset
 from image_to_embedding import get_model, get_image_to_embedding
@@ -50,7 +51,7 @@ def get_dataset(metafile_path, min_idx, max_idx):
 def run(dataset, model):
     
     res = {}
-    for data in dataset[:3]:
+    for data in dataset:
         starttime = time.time()
 
         clip_id = data['clip_id']
@@ -81,10 +82,10 @@ def run(dataset, model):
     
     # Taking the average result for each clip
     for clip_id in res:
-        res[clip_id]['static_diff'] = np.mean(res[clip_id]['static_diff'])
-        res[clip_id]['mse'] = np.mean(res[clip_id]['mse'])
-        res[clip_id]['cos_sim'] = np.mean(res[clip_id]['cos_sim'])
-    
+        res[clip_id]['static_diff'] = float(np.mean(res[clip_id]['static_diff']))
+        res[clip_id]['mse'] = float(np.mean(res[clip_id]['mse']))
+        res[clip_id]['cos_sim'] = float(np.mean(res[clip_id]['cos_sim']))
+    print(res)
     return res
 
 
@@ -96,10 +97,17 @@ if __name__ == '__main__':
     print(f'using device: {device}')
 
     starttime = time.time()
-    dataset = get_dataset('./metafiles/hdvg_batch_0-99.json', 0, 99)
+    dataset = get_dataset('./metafiles/hdvg_0.json', 0, 1)
     model = get_model()
     model.to(device)
+    model.eval()
     
     res = run(dataset, model)
     print(f'Total time: {time.time() - starttime}')
-    print(res)
+    
+    # Create the directory if it doesn't exist
+    os.makedirs('./frame_score_results', exist_ok=True)
+    
+    # Dumping the result as JSON
+    with open('./frame_score_results/inference_result.json', 'w') as f:
+        json.dump(res, f)
