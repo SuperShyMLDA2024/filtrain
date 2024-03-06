@@ -94,10 +94,17 @@ if __name__ == '__main__':
     print(f'using device: {device}')
 
     starttime = time.time()
-    dataset = get_dataset('./metafiles/hdvg_0.json', 0, 9)
+    dataset = get_dataset('./metafiles/hdvg_0.json', 0, 99)
     model = get_model()
     model.to(device)
     
     res = run(dataset, model)
     print(f'Total time: {time.time() - starttime}')
     print(res)
+
+    # save result
+    if not os.path.exists('frame_score_results'):
+        os.makedirs('frame_score_results')
+    
+    with open('frame_score_results/inference_result.json', 'w') as f:
+        json.dump(res, f)
