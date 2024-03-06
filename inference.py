@@ -14,6 +14,7 @@ from utils.dataset_class_batch import VideoDataset
 from utils.image_to_embedding import get_image_to_embedding
 from utils.static_check import get_static_difference
 from utils.optical_flow_check import get_optical_flow
+from utils.filter_scenes import filter_scenes
 
 def image_transform(image):
     transform = transforms.Compose([
@@ -39,7 +40,7 @@ def get_model():
     model = AutoencoderKL.from_pretrained("stabilityai/sdxl-vae")
     return model
 
-def run(dataset, model):
+def get_metrics(dataset, model):
     res = {}
     for data in dataset:
         starttime = time.time()
@@ -54,7 +55,7 @@ def run(dataset, model):
             assert(f'Scene id {scene_id} has less than 2 frames')
         
         # Getting static difference
-        static_diff = get_static_difference(frames)
+        rgb_diff = get_static_difference(frames)
         
         # Getting image context similarity
         frame_mse, frame_cos_sim = get_image_to_embedding(frames, model)
@@ -64,22 +65,21 @@ def run(dataset, model):
         
         # Storing the results
         if scene_id in res:
-            res[scene_id]['static_diff'].append(static_diff)
+            res[scene_id]['rgb_diff'].append(rgb_diff)
             res[scene_id]['mse'].append(frame_mse)
             res[scene_id]['cos_sim'].append(frame_cos_sim)
             res[scene_id]['avg_velocity'].append(avg_velocity)
         else:
-            res[scene_id] = {'static_diff': [static_diff], 
+            res[scene_id] = {'rgb_diff': [rgb_diff], 
                              'mse': [frame_mse], 
                              'cos_sim': [frame_cos_sim], 
                              'avg_velocity': [avg_velocity]}
         
         print(f'Processing time for scene id {scene_id}: {time.time() - starttime}')
     
-    
     # Taking the average result for each clip
     for scene_id in res:
-        res[scene_id]['static_diff'] = float(np.mean(res[scene_id]['static_diff']))
+        res[scene_id]['rgb_diff'] = float(np.mean(res[scene_id]['rgb_diff']))
         res[scene_id]['mse'] = float(np.mean(res[scene_id]['mse']))
         res[scene_id]['cos_sim'] = float(np.mean(res[scene_id]['cos_sim']))
         res[scene_id]['avg_velocity'] = float(np.mean(res[scene_id]['avg_velocity']))
@@ -89,6 +89,10 @@ def run(dataset, model):
 
 # returning the inference result in the form of
 # {'clip_id': {'static_diff': static_diff, 'mse': mse, 'cos_sim': cos_sim, 'avg_velocity': avg_velocity}}
+
+N_VIDEOS_PER_BATCH = 5
+N_TOTAL_VIDEOS = 18_750
+N_TOTAL_CLIPS = 1_500_000
 
 if __name__ == '__main__':
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -105,16 +109,20 @@ if __name__ == '__main__':
     if not os.path.exists(inference_output_dir):
         os.makedirs(inference_output_dir)
 
-    N_VIDEOS_PER_BATCH = 5
     for i in range(0, 10, N_VIDEOS_PER_BATCH):
         j = i + N_VIDEOS_PER_BATCH - 1
         print(f'Processing Video {i}-{j}')
         starttime = time.time()
+
         dataset = VideoDataset(data, i, j)
+        res = get_metrics(dataset, model)
         
-        res = run(dataset, model)
+        n_clips_taken = int(N_VIDEOS_PER_BATCH / N_TOTAL_VIDEOS * N_TOTAL_CLIPS)
+        filtered_scenes = filter_scenes(res, n_clips_taken) 
+        print("No. Scenes Taken:", len(filtered_scenes))
+
         print(f'Total time: {time.time() - starttime}')
-        print(res)
+        print(filtered_scenes)
         
         with open(os.path.join(inference_output_dir, f'inference_result_{i}-{j}.json'), 'w') as f:
-            json.dump(res, f)
+            json.dump(filtered_scenes, f)
