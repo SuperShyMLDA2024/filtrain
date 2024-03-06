@@ -6,6 +6,9 @@ import textwrap
 import PIL.Image
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 def to_markdown(text):
   text = text.replace('•', '  *')
   return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
@@ -74,17 +77,17 @@ if __name__ == '__main__':
         data = json.load(f)
     print("Data loaded")
 
-    api_key = "YOUR_API_KEY"
+    api_key = os.getenv("GEMINI_API_KEY")
     # Create an instance of the GeminiRecaptioning class
     gemini_recaptioning = GeminiRecaptioning(api_key, data)
 
     # Run the recaptioning process
-    folder_path = './frames_output/1QFn-Yh2Y9k'
+    folder_path = 'frames_output/0BMjAgU-JmA/0BMjAgU-JmA.0_0'
 
     # gets all folder in the frames_output/1QFn-Yh2Y9k
     folder_lists = list(os.listdir(folder_path))
-    results = gemini_recaptioning.run_threaded([f'{folder_path}/{folder}' for folder in folder_lists])
 
+    results = gemini_recaptioning.run(folder_path)
     print(results)
        
        

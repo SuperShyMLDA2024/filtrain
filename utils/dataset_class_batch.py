@@ -27,8 +27,8 @@ class VideoDataset(Dataset):
                     scene_dict["clip_id"] = clip_id[:-4]
                     scene_dict["caption"] = scene["caption"]
                     scene_dict["scene_cut"] = scene["scene_cut"]
-                    scene_dict["video_path"] = os.path.join('video_clips', video_id, scene_dict["scene_id"] + '.mp4')
-                    scene_dict["frames_path"] = os.path.join('frames_output', video_id, scene["clip_id"])
+                    scene_dict["video_path"] = os.path.join('video_clips', video_id, scene_dict["scene_id"] + '.mp4').replace('\\','/')
+                    scene_dict["frames_path"] = os.path.join('frames_output', video_id, scene["clip_id"]).replace('\\','/')
 
                     if os.path.exists(scene_dict["frames_path"]) and os.path.exists(scene_dict["video_path"]):
                         if len(os.listdir(scene_dict["frames_path"])) >= 4:

@@ -12,3 +12,6 @@ tmp_clips
 video_clips
 __pycache__
 frames_output
+
+# env files
+.env

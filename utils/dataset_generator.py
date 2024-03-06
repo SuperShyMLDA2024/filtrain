@@ -46,7 +46,6 @@ class DatasetGenerator:
             try:
                 video_id, clip_id, info_scene = q.get()
                 self.split_clip(info_scene, self.data[video_id]['clip'][clip_id]['fps'], video_id, clip_id, info_scene["clip_id"])
-
                 print("Done splitting clip: " + video_id + "/" + clip_id + "/" + info_scene["clip_id"])
             except Exception as e:
                 print(f"Error when splitting clip: {video_id}/{clip_id}")
