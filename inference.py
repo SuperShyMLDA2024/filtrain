@@ -94,7 +94,7 @@ N_TOTAL_VIDEOS = 18_750
 N_TOTAL_CLIPS = 1_500_000
 TOTAL_CLIPS_TAKEN = 10_000
 metafile_path = './metafiles/hdvg_0.json'
-filename = 'xgboost_model.pth'
+classifier_filename = 'xgboost_model.pth'
 api_key = os.getenv("GEMINI_API_KEY")
 
 if __name__ == '__main__':
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     if not os.path.exists(inference_output_dir):
         os.makedirs(inference_output_dir)
 
-    classifier_model = pickle.load(open(filename, 'rb'))
+    classifier_model = pickle.load(open(classifier_filename, 'rb'))
     
     # Create an instance of the GeminiRecaptioning class
     gemini_recaptioning = GeminiRecaptioning(api_key, data)
@@ -136,16 +136,31 @@ if __name__ == '__main__':
         dataset = VideoDataset(data, i, j)
         res = get_metrics(dataset, model, device)
 
+        # save the result
+        with open(os.path.join(inference_output_dir, f'inference_result_{i}-{j}.json'), 'w') as f:
+            json.dump(res, f)
+
         filtered_scenes = filter_scenes(res, CLIPS_TAKEN_PER_BATCH, classifier_model)
         print("No. Scenes Taken:", len(filtered_scenes))
 
         for scene in filtered_scenes:
             frames_path = scene['frames_path']
+            assert(os.path.exists(frames_path))
             print(f"Recaptioning for {frames_path}")
-            try:
-                recaption = gemini_recaptioning.run(frames_path).strip()
-            except:
-                recaption = ""
+            
+            # Initialize the recaption variable
+            recaption = ""
+
+            # Try the operation three times max
+            for _ in range(3):
+                try:
+                    recaption = gemini_recaptioning.run(frames_path).strip()
+                    # If the operation is successful, break out of the loop
+                    break
+                except:
+                    # If the operation is not successful, continue to the next iteration
+                    continue
+
             scene['recaption'] = recaption
 
         json_info = {
@@ -153,7 +168,7 @@ if __name__ == '__main__':
             'filtered_scenes': filtered_scenes
         }
 
-        print(f'Total time: {time.time() - starttime}')
+        print(f'Total time: {(time.time() - starttime):.2f}')
 
         json_filename = f'filtered_scenes_{i}-{j}.json'
         with open(os.path.join(inference_output_dir, json_filename), 'w') as f:

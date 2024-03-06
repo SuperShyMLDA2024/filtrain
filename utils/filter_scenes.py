@@ -24,8 +24,17 @@ def filter_scenes(data, n_taken, classifier_model):
     # sort the data_info based on the prediction values
     data_info = [x for _, x in sorted(zip(pred, data_info), key=lambda pair: pair[0], reverse=True)]
 
-    # return the top n_taken scene_ids
-    return data_info[:n_taken]
+    # return the top n_taken scene_ids but skip if the clip_id is the same
+    clip_id_taken = []
+    filtered_data = []
+    for info in data_info:
+        if info['clip_id'] not in clip_id_taken:
+            filtered_data.append(info)
+            clip_id_taken.append(info['clip_id'])
+        if len(filtered_data) == n_taken:
+            break
+
+    return filtered_data
 
 
 # Example usage

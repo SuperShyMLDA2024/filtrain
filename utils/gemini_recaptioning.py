@@ -15,6 +15,28 @@ def to_markdown(text):
 
 class GeminiRecaptioning:
     def __init__(self, api_key, data):
+        self.safety_settings = [
+            {
+                "category": "HARM_CATEGORY_DANGEROUS",
+                "threshold": "BLOCK_NONE",
+            },
+            {
+                "category": "HARM_CATEGORY_HARASSMENT",
+                "threshold": "BLOCK_NONE",
+            },
+            {
+                "category": "HARM_CATEGORY_HATE_SPEECH",
+                "threshold": "BLOCK_NONE",
+            },
+            {
+                "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                "threshold": "BLOCK_NONE",
+            },
+            {
+                "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+                "threshold": "BLOCK_NONE",
+            },
+        ]
         self.api_key = api_key
         self.data = data
 
@@ -68,7 +90,8 @@ class GeminiRecaptioning:
 
         for image in images:
             content.append(image)
-        response = self.model.generate_content(content)
+
+        response = self.model.generate_content(content, safety_settings=self.safety_settings)
         return response.text
     
 if __name__ == '__main__':
@@ -82,7 +105,7 @@ if __name__ == '__main__':
     gemini_recaptioning = GeminiRecaptioning(api_key, data)
 
     # Run the recaptioning process
-    folder_path = 'frames_output/0BMjAgU-JmA/0BMjAgU-JmA.0_0'
+    folder_path = 'frames_output/0_nsWSNeHQs/0_nsWSNeHQs.12_2'
 
     # gets all folder in the frames_output/1QFn-Yh2Y9k
     folder_lists = list(os.listdir(folder_path))
