@@ -138,16 +138,22 @@ if __name__ == '__main__':
 
         filtered_scenes = filter_scenes(res, CLIPS_TAKEN_PER_BATCH, classifier_model)
         print("No. Scenes Taken:", len(filtered_scenes))
-        print(f'Total time: {time.time() - starttime}')
 
         for scene in filtered_scenes:
             frames_path = scene['frames_path']
-            scene['recaption'] = gemini_recaptioning.run(frames_path).strip()
+            print(f"Recaptioning for {frames_path}")
+            try:
+                recaption = gemini_recaptioning.run(frames_path).strip()
+            except:
+                recaption = ""
+            scene['recaption'] = recaption
 
         json_info = {
             'length': len(filtered_scenes),
             'filtered_scenes': filtered_scenes
         }
+
+        print(f'Total time: {time.time() - starttime}')
 
         json_filename = f'filtered_scenes_{i}-{j}.json'
         with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
