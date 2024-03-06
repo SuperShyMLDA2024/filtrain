@@ -10,7 +10,7 @@ import os
 import json
 import shutil
 import cv2
-from utils._download_video_script import download_videos
+from others._download_video_script import download_videos
 
 def parse_args():
     parser = argparse.ArgumentParser(description='youtube video processing')

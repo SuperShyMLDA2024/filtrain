@@ -8,8 +8,8 @@ import json
 import cv2
 import numpy as np
 import glob
-from dataset_class_batch import VideoDataset 
-from split_clip import split_clip
+from utils.dataset_class_batch import VideoDataset 
+from utils.split_clip import split_clip
 import numpy as np
 
 def tensor_to_flat_latent(tensor, model):
@@ -27,14 +27,13 @@ def cosine_similarity(x1, x2):
     cosine_score = np.dot(x1, x2) / (norm_x1 * norm_x2)
     return cosine_score
 
-def get_image_to_embedding(frames, model):
-    mses, cos_sims = [], []
+def get_image_to_embedding(frames, model, device):
     final_mse = 0
     final_cos_sim = 0
 
-    curr_latent = tensor_to_flat_latent(frames[0], model).cpu().numpy()
+    curr_latent = tensor_to_flat_latent(frames[0].to(device), model).cpu().numpy()
     for i in range(len(frames) - 1):
-        next_latent = tensor_to_flat_latent(frames[i+1], model).cpu().numpy()
+        next_latent = tensor_to_flat_latent(frames[i+1].to(device), model).cpu().numpy()
         mse = MSELoss(curr_latent, next_latent)
         cos_sim = cosine_similarity(curr_latent, next_latent)
         final_mse += mse

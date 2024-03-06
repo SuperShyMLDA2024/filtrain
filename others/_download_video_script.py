@@ -14,7 +14,6 @@ def download_videos(video_id, video_info):
         yt = YouTube(url)
         stream = yt.streams.get_highest_resolution()
         stream.download(output_path='./download_videos', filename=file_name)
-        print(f"Downloaded video: {file_name}")
     except:
         print(f"Failed to download video: {video_id}")
 

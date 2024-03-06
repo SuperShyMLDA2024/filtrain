@@ -1,0 +1,14 @@
+[
+    {
+        "scene_id": "2lGqcpzQhyo.3_2",
+        "video_id": "2lGqcpzQhyo",
+        "clip_id": "2lGqcpzQhyo.3",
+        "caption": "a person is sitting in front of a computer screen",
+        "scene_cut": [
+            312,
+            629
+        ],
+        "video_path": "video_clips\\2lGqcpzQhyo\\2lGqcpzQhyo.3_2.mp4",
+        "frames_path": "frames_output\\2lGqcpzQhyo\\2lGqcpzQhyo.3_2"
+    }
+]

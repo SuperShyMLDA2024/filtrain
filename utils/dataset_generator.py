@@ -8,8 +8,6 @@ import os
 import shutil
 import multiprocessing as mp
 
-
-
 class DatasetGenerator:
     def download_worker(self, q, vq, initialize_finished):
         while not q.empty() or not initialize_finished.is_set():
@@ -66,6 +64,7 @@ class DatasetGenerator:
         self.download_output_folder = download_output_folder
         self.tmp_output_folder = tmp_output_folder
         self.data = None
+        self.FRAME_INTERVAL = 250
 
         os.makedirs(download_output_folder, exist_ok=True)
         os.makedirs(tmp_output_folder, exist_ok=True)
@@ -101,7 +100,7 @@ class DatasetGenerator:
         file_name = f"{video_id}.mp4"
         
         yt = YouTube(url)
-        stream = yt.streams.get_highest_resolution()
+        stream = yt.streams.get_by_resolution('360p')
         stream.download(output_path=self.download_output_folder, filename=file_name)
 
     def split_video(self, info, video_id, output_name):
@@ -156,7 +155,7 @@ class DatasetGenerator:
                 while current < end:
                     ret, frame = oricap.read()
 
-                    if self.generate_scene_samples and (frame_cnt * 500 < current / fps * 1000):
+                    if self.generate_scene_samples and (frame_cnt * self.FRAME_INTERVAL < current / fps * 1000):
                         frame_name = os.path.join(self.frame_output_folder, video_id, scene_output_name, f"{frame_cnt:04d}.jpg")
                         cv2.imwrite(frame_name, frame)
                         frame_cnt += 1

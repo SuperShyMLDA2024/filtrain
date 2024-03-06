@@ -5,8 +5,8 @@ To make the conda env, use:
 After creating the conda, activate it using:
 ```conda activate mlda```
 
-First, remove the contents of `tmp_clips` and `video_clips` folder. Run the python file:
-```python utils/dataset_class_batch.py.py```
+Run the python file:
+```python utils/inference.py```
 
 ## Notes
 Don't forget to run it from root folder (".dummy-1")
