@@ -4,11 +4,13 @@ import torch
 import PIL
 import json
 import os
+import warnings
+warnings.filterwarnings("ignore")
 
 def get_eval_dataset(path):
     with open(path, 'r') as file:
         eval_dataset = json.load(file)
-        eval_dataset = eval_dataset['filtered_scenes']
+        eval_dataset = eval_dataset['scenes']
 
     return eval_dataset
 
@@ -34,21 +36,40 @@ def eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, toke
         # Load the image, caption and recaption
         frames_path1, caption1 = data1['frames_path'], data1['recaption']
         frames_path2, caption2 = data2['frames_path'], data2['recaption']
-        imagepath1 = frames_path1 + '0000' + '.jpg'
-        imagepath2 = frames_path2 + '0000' + '.jpg'
-
-        image1 = PIL.Image.open(imagepath1)
-        image2 = PIL.Image.open(imagepath2)
-
-        image_input1 = preprocess(image1).unsqueeze(0)
-        image_input2 = preprocess(image2).unsqueeze(0)
-            
+        
         text_input1 = tokenizer([caption1])
         text_input2 = tokenizer([caption2])
+        text_input1 = text_input1.to(device)
+        text_input2 = text_input2.to(device)
 
+        image_features1, image_features2 = 0, 0
+        frame_list1 = os.listdir(frames_path1)
+        frame_list2 = os.listdir(frames_path2)
+        length = min(len(frame_list1), len(frame_list2))
+        print(f'length: {length}')
+        for i in range(0, length, 3):
+            endpath1 = frame_list1[i]
+            endpath2 = frame_list2[i]
+            print(f'{endpath1} | {endpath2}')
+            imagepath1 = frames_path1 + '/' + endpath1
+            imagepath2 = frames_path2 + '/' + endpath2
+
+            image1 = PIL.Image.open(imagepath1)
+            image2 = PIL.Image.open(imagepath2)
+
+            image_input1 = preprocess(image1).unsqueeze(0)
+            image_input2 = preprocess(image2).unsqueeze(0)
+
+            image_input1 = image_input1.to(device)
+            image_input2 = image_input2.to(device)
+            with torch.inference_mode():
+                image_features1 += model.encode_image(image_input1)
+                image_features2 += model.encode_image(image_input2)
+        
+        image_features1 = image_features1 / length
+        image_features2 = image_features2 / length
+        
         with torch.inference_mode():
-            image_features1 = model.encode_image(image_input1)
-            image_features2 = model.encode_image(image_input2)
             text_features1 = model.encode_text(text_input1)
             text_features2 = model.encode_text(text_input2)
 
@@ -63,7 +84,7 @@ def eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, toke
 
     total_score1 = total_score1 / len(eval_dataset1)
     total_score2 = total_score2 / len(eval_dataset2)
-        
+    
     return total_score1, total_score2 
     
 
@@ -77,16 +98,28 @@ def eval_same_dataset(eval_dataset, preprocess, model, tokenizer, device):
     for i, data in enumerate(eval_dataset):
         # Load the image, caption and recaption
         frames_path, caption, recaption = data['frames_path'], data['caption'], data['recaption']
-        imagepath = frames_path + '0000' + '.jpg'
-        print(imagepath)
-        image = PIL.Image.open(imagepath)
 
-        image_input = preprocess(image).unsqueeze(0)
         caption_input = tokenizer([caption])
         recaption_input = tokenizer([recaption])
+        caption_input = caption_input.to(device)
+        recaption_input = recaption_input.to(device)
+
+        image_features = 0
+        frame_list = os.listdir(frames_path)
+        for i in range(0, len(frame_list), 3):
+            endpath = frame_list[i]
+            imagepath = frames_path + '/' + endpath
+            print(endpath)
+            image = PIL.Image.open(imagepath)
+            image_input = preprocess(image).unsqueeze(0)
+            image_input = image_input.to(device)
+            with torch.inference_mode():
+                image_features += model.encode_image(image_input)
+
+        image_features = image_features / len(os.listdir(frames_path))
+        
         
         with torch.inference_mode():
-            image_features = model.encode_image(image_input)
             caption_features = model.encode_text(caption_input)
             recaption_features = model.encode_text(recaption_input)
 
@@ -108,15 +141,16 @@ if __name__ == "__main__":
     model, preprocess, tokenizer = get_eval_model()
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f'using device: {device}')
+    model = model.to(device)
 
     # Evaluation if caption and recaption similarity to image on different datasets
-    # eval_dataset1 = 
-    # eval_dataset2 = 
+    eval_dataset1 = get_eval_dataset('./frame_score_results/filtered_scenes_100-109.json')
+    eval_dataset2 = get_eval_dataset('./frame_score_results/random_scenes_100-109.json')
 
-    # total_score1, total_score2 = eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, tokenizer, device)
+    total_score1, total_score2 = eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, tokenizer, device)
     
     # Evaluation if caption and recaption similarity to image on the same dataset
-    eval_dataset = get_eval_dataset('./frame_score_results/filtered_scenes_100-100.json')
+    eval_dataset = get_eval_dataset('./frame_score_results/filtered_scenes_100-109.json')
     
     caption_score, recaption_score = eval_same_dataset(eval_dataset, preprocess, model, tokenizer, device)
 
