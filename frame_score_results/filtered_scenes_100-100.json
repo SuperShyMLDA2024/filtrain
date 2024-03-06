@@ -2,17 +2,17 @@
     "length": 1,
     "scenes": [
         {
-            "scene_id": "2lGqcpzQhyo.3_2",
+            "scene_id": "2lGqcpzQhyo.0_0",
             "video_id": "2lGqcpzQhyo",
-            "clip_id": "2lGqcpzQhyo.3",
-            "caption": "a person is sitting in front of a computer screen",
+            "clip_id": "2lGqcpzQhyo.0",
+            "caption": "a black background with red and white text on it",
             "scene_cut": [
-                312,
-                629
+                0,
+                105
             ],
-            "video_path": "video_clips/2lGqcpzQhyo/2lGqcpzQhyo.3_2.mp4",
-            "frames_path": "frames_output/2lGqcpzQhyo/2lGqcpzQhyo.3_2",
-            "recaption": "a person is sitting in front of a computer screen. the person is using a calculator on the left side of the screen and a notepad on the right side. the person is wearing a white shirt and has long blond hair."
+            "video_path": "video_clips/2lGqcpzQhyo/2lGqcpzQhyo.0_0.mp4",
+            "frames_path": "frames_output/2lGqcpzQhyo/2lGqcpzQhyo.0_0",
+            "recaption": "a black background with red and white text. a blue and green orb. a woman with long dark hair wearing a white shirt talking into a microphone."
         }
     ]
 }

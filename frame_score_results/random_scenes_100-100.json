@@ -2,17 +2,17 @@
     "length": 1,
     "scenes": [
         {
-            "scene_id": "2lGqcpzQhyo.3_2",
+            "scene_id": "2lGqcpzQhyo.0_1",
             "video_id": "2lGqcpzQhyo",
-            "clip_id": "2lGqcpzQhyo.3",
-            "caption": "a person is sitting in front of a computer screen",
+            "clip_id": "2lGqcpzQhyo.0",
+            "caption": "a man sitting in front of a computer screen",
             "scene_cut": [
-                312,
-                629
+                105,
+                241
             ],
-            "video_path": "video_clips/2lGqcpzQhyo/2lGqcpzQhyo.3_2.mp4",
-            "frames_path": "frames_output/2lGqcpzQhyo/2lGqcpzQhyo.3_2",
-            "recaption": "a person is sitting in front of a computer screen. the person is using a calculator on the left side of the screen and a notepad on the right side. the person is wearing a white shirt and has long blond hair."
+            "video_path": "video_clips/2lGqcpzQhyo/2lGqcpzQhyo.0_1.mp4",
+            "frames_path": "frames_output/2lGqcpzQhyo/2lGqcpzQhyo.0_1",
+            "recaption": "a man wearing glasses and a brown shirt is sitting in front of his computer. he has a small webcam window in the corner of the screen. the man is looking at the camera."
         }
     ]
 }

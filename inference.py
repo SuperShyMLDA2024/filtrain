@@ -90,7 +90,7 @@ def get_metrics(dataset, model, device):
 def select_random_scenes(dataset, n_taken):
     ids = torch.arange(len(dataset))
     select_ids = ids[torch.randperm(len(dataset))[:n_taken]]
-    return [dataset[idx] for idx in select_ids]
+    return select_ids
 
 # returning the inference result in the form of
 # {'clip_id': {'static_diff': static_diff, ...}}
@@ -146,8 +146,6 @@ if __name__ == '__main__':
             json.dump(res, f)
 
         filtered_scenes = filter_scenes(res, CLIPS_TAKEN_PER_BATCH, classifier_model)
-        print("No. Scenes Taken:", len(filtered_scenes))
-
         filtered_scenes = [dataset[idx] for idx in filtered_scenes]
         for scene in filtered_scenes:
             frames_path = scene['frames_path']
@@ -161,10 +159,8 @@ if __name__ == '__main__':
             for _ in range(3):
                 try:
                     recaption = gemini_recaptioning.run(frames_path).strip()
-                    # If the operation is successful, break out of the loop
                     break
                 except:
-                    # If the operation is not successful, continue to the next iteration
                     continue
 
             scene['recaption'] = recaption
@@ -184,9 +180,28 @@ if __name__ == '__main__':
 
         # select CLIPS_TAKEN_PER_BATCH random idx from the dataset
         random_scenes = select_random_scenes(dataset, CLIPS_TAKEN_PER_BATCH)
+        random_scenes = [dataset[idx] for idx in random_scenes]
+        for scene in random_scenes:
+            frames_path = scene['frames_path']
+            assert(os.path.exists(frames_path))
+            print(f"Recaptioning for {frames_path}")
+            
+            # Initialize the recaption variable
+            recaption = ""
+
+            # Try the operation three times max
+            for _ in range(3):
+                try:
+                    recaption = gemini_recaptioning.run(frames_path).strip()
+                    break
+                except:
+                    continue
+
+            scene['recaption'] = recaption
+        
         json_info = {
             'length': len(random_scenes),
-            'scenes': filtered_scenes
+            'scenes': random_scenes
         }
 
         json_filename = f'random_scenes_{i}-{j}.json'
