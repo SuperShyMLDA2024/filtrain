@@ -22,8 +22,8 @@ def eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, toke
     total_score2 = 0
 
 
-    for i, data1, data2 in enumerate(zip(eval_dataset1.values(), eval_dataset2.values())):
-            
+    for i, data in enumerate(zip(eval_dataset1.values(), eval_dataset2.values())):
+        data1, data2 = data
         image1, caption1 = data1['image'], data1['recaption']
         image2, caption2 = data2['image'], data2['recaption']
             
@@ -52,7 +52,7 @@ def eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, toke
     total_score1 = total_score1 / len(eval_dataset1)
     total_score2 = total_score2 / len(eval_dataset2)
         
-    return total_score1, total_score2  
+    return total_score1, total_score2 
     
 
 def eval_same_dataset(eval_dataset, preprocess, model, tokenizer, device):
