@@ -2,12 +2,16 @@ import open_clip
 import time
 import torch
 import PIL
+import json
+import os
 
-def get_eval_data():
-    """
-    Please implement this later on!
-    """
-    return None
+def get_eval_dataset(path):
+    with open(path, 'r') as file:
+        eval_dataset = json.load(file)
+        eval_dataset = eval_dataset['filtered_scenes']
+
+    return eval_dataset
+
 
 def get_eval_model():
     # Load the model and tokenizer
@@ -25,14 +29,16 @@ def eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, toke
 
     # Evaluate the similarity between the caption and the image of randomized and refined datasets
     # Both of these datasets have been recaptioned
-    for i, data in enumerate(zip(eval_dataset1.values(), eval_dataset2.values())):
+    for i, data in enumerate(zip(eval_dataset1, eval_dataset2)):
         data1, data2 = data
         # Load the image, caption and recaption
-        image1, caption1 = data1['image'], data1['recaption']
-        image2, caption2 = data2['image'], data2['recaption']
-            
-        image1 = PIL.Image.open(image1)
-        image2 = PIL.Image.open(image2)
+        frames_path1, caption1 = data1['frames_path'], data1['recaption']
+        frames_path2, caption2 = data2['frames_path'], data2['recaption']
+        imagepath1 = frames_path1 + '0000' + '.jpg'
+        imagepath2 = frames_path2 + '0000' + '.jpg'
+
+        image1 = PIL.Image.open(imagepath1)
+        image2 = PIL.Image.open(imagepath2)
 
         image_input1 = preprocess(image1).unsqueeze(0)
         image_input2 = preprocess(image2).unsqueeze(0)
@@ -68,10 +74,12 @@ def eval_same_dataset(eval_dataset, preprocess, model, tokenizer, device):
     total_caption_score = 0
     total_recaption_score = 0
 
-    for i, data in enumerate(eval_dataset.values()):
+    for i, data in enumerate(eval_dataset):
         # Load the image, caption and recaption
-        image, caption, recaption = data['image'], data['caption'], data['recaption']
-        image = PIL.Image.open(image)
+        frames_path, caption, recaption = data['frames_path'], data['caption'], data['recaption']
+        imagepath = frames_path + '0000' + '.jpg'
+        print(imagepath)
+        image = PIL.Image.open(imagepath)
 
         image_input = preprocess(image).unsqueeze(0)
         caption_input = tokenizer([caption])
@@ -102,13 +110,13 @@ if __name__ == "__main__":
     print(f'using device: {device}')
 
     # Evaluation if caption and recaption similarity to image on different datasets
-    eval_dataset1 = get_eval_data()
-    eval_dataset2 = get_eval_data()
+    # eval_dataset1 = 
+    # eval_dataset2 = 
 
-    total_score1, total_score2 = eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, tokenizer, device)
+    # total_score1, total_score2 = eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, tokenizer, device)
     
     # Evaluation if caption and recaption similarity to image on the same dataset
-    eval_dataset = get_eval_data()
+    eval_dataset = get_eval_dataset('./frame_score_results/filtered_scenes_100-100.json')
     
     caption_score, recaption_score = eval_same_dataset(eval_dataset, preprocess, model, tokenizer, device)
 
