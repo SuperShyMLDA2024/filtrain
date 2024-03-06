@@ -10,33 +10,27 @@ warnings.filterwarnings("ignore")
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 from dataset_class_batch import VideoDataset
-from image_to_embedding import get_model, get_image_to_embedding
+from image_to_embedding import get_image_to_embedding
 from static_check import get_static_difference
+from diffusers import AutoencoderKL
 
-def image_to_tensor(image_path):
-    # Load the image using Pillow
-    img = Image.open(image_path)
-
-    # Convert the image to RGB format (if necessary)
-    img = img.convert('RGB')
-
+def image_transform(image):
     transform = transforms.Compose([
-        transforms.CenterCrop(256),
-        # transforms.Resize((256, 256)),  
+        transforms.Resize((320, 240)),
+        transforms.CenterCrop(240),
         transforms.ToTensor(),  
     ])
+    return transform(image).unsqueeze(0)
 
-    return transform(img).unsqueeze(0)
-
-def convert_image(folder_path):
+def load_image(folder_path):
     # Sort the frames
     frames = sorted(os.listdir(folder_path))
     conv_frames = []
     
     # Convert the frames to tensor
     for frame in frames:
-        image = image_to_tensor(os.path.join(folder_path, frame))
-        image = image.to(device) # Move tensor to GPU
+        image = Image.open(os.path.join(folder_path, frame)).convert('RGB')
+        image = image_transform(image).to(device)
         conv_frames.append(image)
     return conv_frames
 
@@ -48,20 +42,23 @@ def get_dataset(metafile_path, min_idx, max_idx):
     dataset = VideoDataset(data, min_idx, max_idx)
     return dataset
 
+def get_model():
+    model = AutoencoderKL.from_pretrained("stabilityai/sdxl-vae")
+    return model
+
 def run(dataset, model):
-    
     res = {}
     for data in dataset:
         starttime = time.time()
 
-        clip_id = data['clip_id']
-        print(f'Processing clip id: {clip_id}')
+        scene_id = data['scene_id']
+        print(f'Processing clip id: {scene_id}')
         frames_path = data['frames_path']
-        frames = convert_image(frames_path)
+        frames = load_image(frames_path)
         
-        # Skipping clips with less than 2 frames
+        # Assert clips with less than 2 frames
         if(len(frames) < 2):
-            continue
+            assert(f'Scene id {scene_id} has less than 2 frames')
         
         # Getting static difference
         static_diff = get_static_difference(frames)
@@ -70,22 +67,22 @@ def run(dataset, model):
         frame_mse, frame_cos_sim = get_image_to_embedding(frames, model)
         
         # Storing the results
-        if clip_id in res:
-            res[clip_id]['static_diff'].append(static_diff)
-            res[clip_id]['mse'].append(frame_mse)
-            res[clip_id]['cos_sim'].append(frame_cos_sim)
+        if scene_id in res:
+            res[scene_id]['static_diff'].append(static_diff)
+            res[scene_id]['mse'].append(frame_mse)
+            res[scene_id]['cos_sim'].append(frame_cos_sim)
         else:
-            res[clip_id] = {'static_diff': [static_diff], 'mse': [frame_mse], 'cos_sim': [frame_cos_sim]}
+            res[scene_id] = {'static_diff': [static_diff], 'mse': [frame_mse], 'cos_sim': [frame_cos_sim]}
         
-        print(f'Processing time for clip id {clip_id}: {time.time() - starttime}')
+        print(f'Processing time for scene id {scene_id}: {time.time() - starttime}')
     
     
     # Taking the average result for each clip
     for clip_id in res:
-        res[clip_id]['static_diff'] = float(np.mean(res[clip_id]['static_diff']))
-        res[clip_id]['mse'] = float(np.mean(res[clip_id]['mse']))
-        res[clip_id]['cos_sim'] = float(np.mean(res[clip_id]['cos_sim']))
-    print(res)
+        res[clip_id]['static_diff'] = np.mean(res[clip_id]['static_diff'])
+        res[clip_id]['mse'] = np.mean(res[clip_id]['mse'])
+        res[clip_id]['cos_sim'] = np.mean(res[clip_id]['cos_sim'])
+    
     return res
 
 
@@ -97,17 +94,10 @@ if __name__ == '__main__':
     print(f'using device: {device}')
 
     starttime = time.time()
-    dataset = get_dataset('./metafiles/hdvg_0.json', 0, 1)
+    dataset = get_dataset('./metafiles/hdvg_0.json', 0, 9)
     model = get_model()
     model.to(device)
-    model.eval()
     
     res = run(dataset, model)
     print(f'Total time: {time.time() - starttime}')
-    
-    # Create the directory if it doesn't exist
-    os.makedirs('./frame_score_results', exist_ok=True)
-    
-    # Dumping the result as JSON
-    with open('./frame_score_results/inference_result.json', 'w') as f:
-        json.dump(res, f)
+    print(res)
