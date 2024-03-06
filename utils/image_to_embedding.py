@@ -1,16 +1,7 @@
 import torch
-from PIL import Image
-from torchvision import transforms
-from torch import nn
-
-import os
-import json
-import cv2
 import numpy as np
-import glob
-from utils.dataset_class_batch import VideoDataset 
-from utils.split_clip import split_clip
-import numpy as np
+import warnings
+warnings.filterwarnings("ignore")
 
 def tensor_to_flat_latent(tensor, model):
     with torch.inference_mode():

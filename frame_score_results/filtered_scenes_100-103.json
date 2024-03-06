@@ -1,0 +1,31 @@
+{
+    "length": 2,
+    "filtered_scenes": [
+        {
+            "scene_id": "0_nsWSNeHQs.12_2",
+            "video_id": "0_nsWSNeHQs",
+            "clip_id": "0_nsWSNeHQs.12",
+            "caption": "two men standing next to a jeep on a dirt road",
+            "scene_cut": [
+                141,
+                289
+            ],
+            "video_path": "video_clips/0_nsWSNeHQs/0_nsWSNeHQs.12_2.mp4",
+            "frames_path": "frames_output/0_nsWSNeHQs/0_nsWSNeHQs.12_2",
+            "recaption": "two men standing next to a black suburban on a rocky dirt road. the men are wearing black and gray t-shirts and cargo pants. the suburban has a brush guard on the front and a roof rack on top. there are trees and rocks in the background."
+        },
+        {
+            "scene_id": "0_nsWSNeHQs.19_1",
+            "video_id": "0_nsWSNeHQs",
+            "clip_id": "0_nsWSNeHQs.19",
+            "caption": "two men standing next to a truck on a dirt road",
+            "scene_cut": [
+                180,
+                362
+            ],
+            "video_path": "video_clips/0_nsWSNeHQs/0_nsWSNeHQs.19_1.mp4",
+            "frames_path": "frames_output/0_nsWSNeHQs/0_nsWSNeHQs.19_1",
+            "recaption": "two men in tactical gear standing next to a black suburban on a rocky road. the men are wearing hats and sunglasses. the suburban has a brush guard and a roof rack."
+        }
+    ]
+}
