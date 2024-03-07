@@ -44,7 +44,6 @@ def eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, toke
         text_input1 = text_input1.to(device)
         text_input2 = text_input2.to(device)
 
-        total_score1, total_score2 = 0, 0
         frame_list1 = os.listdir(frames_path1)
         frame_list2 = os.listdir(frames_path2)
 
