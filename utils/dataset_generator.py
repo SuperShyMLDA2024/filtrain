@@ -1,9 +1,7 @@
 import json
-import queue
 from pytube import YouTube
 import cv2
 import subprocess
-import time
 import os
 import shutil
 import multiprocessing as mp

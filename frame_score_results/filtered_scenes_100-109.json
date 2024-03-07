@@ -1,0 +1,70 @@
+{
+    "length": 5,
+    "scenes": [
+        {
+            "scene_id": "3ntE0lNL5j8.68_1",
+            "video_id": "3ntE0lNL5j8",
+            "clip_id": "3ntE0lNL5j8.68",
+            "caption": "a man standing in front of a drum set",
+            "scene_cut": [
+                80,
+                215
+            ],
+            "video_path": "video_clips/3ntE0lNL5j8/3ntE0lNL5j8.68_1.mp4",
+            "frames_path": "frames_output/3ntE0lNL5j8/3ntE0lNL5j8.68_1",
+            "recaption": "a young man with short brown hair and glasses stands on a stage in front of a large red TEDx logo. he is wearing a gray t-shirt and jeans. there is a drum set behind him."
+        },
+        {
+            "scene_id": "3ntE0lNL5j8.73_0",
+            "video_id": "3ntE0lNL5j8",
+            "clip_id": "3ntE0lNL5j8.73",
+            "caption": "a man standing in front of a drum set",
+            "scene_cut": [
+                0,
+                198
+            ],
+            "video_path": "video_clips/3ntE0lNL5j8/3ntE0lNL5j8.73_0.mp4",
+            "frames_path": "frames_output/3ntE0lNL5j8/3ntE0lNL5j8.73_0",
+            "recaption": "a young man with short brown hair and glasses is standing on a stage in front of a large red TED sign. he is wearing a black t-shirt and jeans. there is a drum set behind him."
+        },
+        {
+            "scene_id": "0_nsWSNeHQs.12_2",
+            "video_id": "0_nsWSNeHQs",
+            "clip_id": "0_nsWSNeHQs.12",
+            "caption": "two men standing next to a jeep on a dirt road",
+            "scene_cut": [
+                141,
+                289
+            ],
+            "video_path": "video_clips/0_nsWSNeHQs/0_nsWSNeHQs.12_2.mp4",
+            "frames_path": "frames_output/0_nsWSNeHQs/0_nsWSNeHQs.12_2",
+            "recaption": "two men standing next to a black suburban on a rocky dirt road. the men are wearing casual clothes and the suburban has a brush guard on the front. there are trees and rocks in the background."
+        },
+        {
+            "scene_id": "0_nsWSNeHQs.19_1",
+            "video_id": "0_nsWSNeHQs",
+            "clip_id": "0_nsWSNeHQs.19",
+            "caption": "two men standing next to a truck on a dirt road",
+            "scene_cut": [
+                180,
+                362
+            ],
+            "video_path": "video_clips/0_nsWSNeHQs/0_nsWSNeHQs.19_1.mp4",
+            "frames_path": "frames_output/0_nsWSNeHQs/0_nsWSNeHQs.19_1",
+            "recaption": "two men in tactical gear standing next to a black suburban on a rocky road. the men are wearing hats and sunglasses. the suburban has a brush guard and a roof rack."
+        },
+        {
+            "scene_id": "4W9T7dWN8yE.3_2",
+            "video_id": "4W9T7dWN8yE",
+            "clip_id": "4W9T7dWN8yE.3",
+            "caption": "a television screen showing a soccer game",
+            "scene_cut": [
+                248,
+                274
+            ],
+            "video_path": "video_clips/4W9T7dWN8yE/4W9T7dWN8yE.3_2.mp4",
+            "frames_path": "frames_output/4W9T7dWN8yE/4W9T7dWN8yE.3_2",
+            "recaption": "A soccer match is taking place. The score is 1-0. The game is being played on a grass field. The stadium is filled with people."
+        }
+    ]
+}

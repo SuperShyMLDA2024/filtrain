@@ -1,3 +1,18 @@
 INFO:root:Loaded hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K model config.
 INFO:root:Loading pretrained hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K weights (D:/Joshua/hf_cache\hub\models--laion--CLIP-ViT-g-14-laion2B-s12B-b42K\snapshots\4b0305adc6802b2632e11cbe6606a9bdd43d35c9\open_clip_pytorch_model.bin).
 INFO:root:Processing Video Index 100-109...
+INFO:root:image 35 | caption: 0.0027457399973793636 | recaption: 0.004960241014995272
+INFO:root:image 33 | caption: 0.006148260997857455 | recaption: 0.010655825313968617
+INFO:root:image 39 | caption: 0.009115375651286844 | recaption: 0.013277135490884277
+INFO:root:image 49 | caption: 0.010074600650879223 | recaption: 0.013811354388260982
+INFO:root:image 25 | caption: 0.023847677923306283 | recaption: 0.030788841713418284
+INFO:root:Random Dataset similarity: 0.011910759485684909 | Filtered Dataset similarity: 0.005164182084238427
+INFO:root:Random Dataset similarity: 0.0035041084631087034 | Filtered Dataset similarity: 0.005394963631397874
+INFO:root:Random Dataset similarity: 0.004906130231116429 | Filtered Dataset similarity: 0.00425163386121867
+INFO:root:Random Dataset similarity: 0.04597082734107971 | Filtered Dataset similarity: 0.004127417697387488
+INFO:root:Random Dataset similarity: 0.0036297078359694705 | Filtered Dataset similarity: 0.0037185871124267578
+INFO:root:Total caption score: 0.11923838961653141
+INFO:root:Total recaption score: 0.1539442085670914
+INFO:root:Total score random: 0.018148539179847354
+INFO:root:Total score selected: 0.01859293556213379
+INFO:root:Processing Video Index 110-119...

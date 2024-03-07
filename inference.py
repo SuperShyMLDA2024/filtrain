@@ -15,6 +15,7 @@ from torchvision import transforms
 import time
 import pickle
 import yaml
+from tqdm import tqdm
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -55,9 +56,9 @@ def get_model():
 
 def get_metrics(dataset, model, device):
     res = {}
-    for idx, data in enumerate(dataset):
-        starttime = time.time()
-
+    print("Processing the dataset metrics...")
+    print("Total number of scene videos: ", len(dataset))
+    for idx, data in tqdm(enumerate(dataset)):
         scene_id = data['scene_id']
         frames_path = data['frames_path']
         frames = load_image(frames_path)
@@ -87,7 +88,7 @@ def get_metrics(dataset, model, device):
             'clip_id': data['clip_id'],
         }
 
-        print(f'Processing time for scene id {scene_id}: {(time.time() - starttime):.2f}s')
+        # print(f'Processing time for scene id {scene_id}: {(time.time() - starttime):.2f}s')
 
     return res
 
