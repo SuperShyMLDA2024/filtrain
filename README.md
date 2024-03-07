@@ -13,7 +13,7 @@ Run the python file to run filtering and recaptioning:
 Use config.yaml to change the batch to run.
 
 ## Notes
-Don't forget to run it from root folder (".dummy-1")
+Don't forget to run it from root folder ("./filtrain")
 Use ```python utils/get_first_n_videos.py``` to get the first few videos for easier testing.
 
 ## Dataset
