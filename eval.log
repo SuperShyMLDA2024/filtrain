@@ -1,0 +1,3 @@
+INFO:root:Loaded hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K model config.
+INFO:root:Loading pretrained hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K weights (D:/Joshua/hf_cache\hub\models--laion--CLIP-ViT-g-14-laion2B-s12B-b42K\snapshots\4b0305adc6802b2632e11cbe6606a9bdd43d35c9\open_clip_pytorch_model.bin).
+INFO:root:Processing Video Index 100-109...

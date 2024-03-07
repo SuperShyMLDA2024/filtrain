@@ -1,3 +1,4 @@
 clip_idx_start: 100
-clip_idx_end: 124
-n_videos_per_batch: 25
+clip_idx_end: 149
+n_videos_per_batch: 10
+store_intermediate_json: False

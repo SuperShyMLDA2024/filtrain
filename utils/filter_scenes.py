@@ -10,11 +10,11 @@ def filter_scenes(data, n_taken, classifier_model):
 
     # data is dict of dict and we want to convert it to list of dict
     data = list(data.values())
-    data_idx = []
-    infos = []
+    data_ids = []
+    clip_ids = []
     for scene_data in data:
-        data_idx.append(scene_data['idx'])
-        infos.append(scene_data['clip_id'])
+        data_ids.append(scene_data['idx'])
+        clip_ids.append(scene_data['clip_id'])
         scene_data.pop('idx')
         scene_data.pop('clip_id')
 
@@ -24,20 +24,22 @@ def filter_scenes(data, n_taken, classifier_model):
     # get the prediction
     pred = classifier_model.predict_proba(data)[:, 1]
 
-    # sort the data_info based on the prediction values
-    data_info = [x for _, x in sorted(zip(pred, data_idx), key=lambda pair: pair[0], reverse=True)]
+    # sort data_ids and clip_ids based on pred descending
+    sorted_data_ids = numpy.argsort(pred)[::-1]
+    sorted_clip_ids = [clip_ids[i] for i in sorted_data_ids]
+    sorted_data_ids = [data_ids[i] for i in sorted_data_ids]
 
-    # return the top n_taken scene_ids but skip if the clip_id is the same
-    clip_id_taken = []
+    # take the top n_taken but skip clips that have been taken
     filtered_data = []
-    for idx in data_info:
-        info_clip_id = infos[idx]
-        if info_clip_id not in clip_id_taken:
-            filtered_data.append(idx)
-            clip_id_taken.append(info_clip_id)
+    clips_taken = []
+    for i in range(len(data)):
         if len(filtered_data) == n_taken:
             break
+        if sorted_clip_ids[i] not in clips_taken:
+            filtered_data.append(sorted_data_ids[i])
+            clips_taken.append(sorted_clip_ids[i])
 
+    
     return filtered_data
 
 

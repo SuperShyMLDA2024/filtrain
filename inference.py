@@ -4,6 +4,7 @@ from utils.static_check import get_static_difference
 from utils.image_to_embedding import get_image_to_embedding
 from utils.dataset_class_batch import VideoDataset
 from utils.gemini_recaptioning import GeminiRecaptioning
+from utils.evaluation import eval_same_dataset, eval_different_dataset, get_eval_model
 
 from diffusers import AutoencoderKL
 import json
@@ -17,6 +18,9 @@ import yaml
 
 import warnings
 warnings.filterwarnings("ignore")
+
+import logging
+logging.basicConfig(filename = "eval.log", level = logging.INFO)
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -83,7 +87,7 @@ def get_metrics(dataset, model, device):
             'clip_id': data['clip_id'],
         }
 
-        print(f'Processing time for scene id {scene_id}: {time.time() - starttime}')
+        print(f'Processing time for scene id {scene_id}: {(time.time() - starttime):.2f}s')
 
     return res
 
@@ -114,6 +118,7 @@ if __name__ == '__main__':
     n_videos_per_batch = config["n_videos_per_batch"]
     clip_idx_start = config["clip_idx_start"]
     clip_idx_end = config["clip_idx_end"]
+    store_intermediate_json = config["store_intermediate_json"]
 
     CLIPS_TAKEN_PER_BATCH = max(1, int(n_videos_per_batch / N_TOTAL_VIDEOS * TOTAL_CLIPS_TAKEN))
     print(f'CLIPS_TAKEN_PER_BATCH: {CLIPS_TAKEN_PER_BATCH}')
@@ -133,17 +138,26 @@ if __name__ == '__main__':
     # Create an instance of the GeminiRecaptioning class
     gemini_recaptioning = GeminiRecaptioning(api_key, data)
 
+    # Load the model for evaluation
+    eval_model, preprocess, tokenizer = get_eval_model()
+    eval_model = eval_model.to(device)
+
+    evaluation_results = {}
+
     for i in range(clip_idx_start, clip_idx_end+1, n_videos_per_batch):
         j = i + n_videos_per_batch - 1
-        print(f'Processing Video {i}-{j}')
+        print(f'Processing Video Index {i}-{j}...')
+        logging.info(f'Processing Video Index {i}-{j}...')
+
         starttime = time.time()
 
         dataset = VideoDataset(data, i, j)
         res = get_metrics(dataset, model, device)
 
-        # save the result
-        with open(os.path.join(inference_output_dir, f'inference_result_{i}-{j}.json'), 'w') as f:
-            json.dump(res, f)
+        if store_intermediate_json:
+            # save the result
+            with open(os.path.join(inference_output_dir, f'inference_result_{i}-{j}.json'), 'w') as f:
+                json.dump(res, f)
 
         filtered_scenes = filter_scenes(res, CLIPS_TAKEN_PER_BATCH, classifier_model)
         filtered_scenes = [dataset[idx] for idx in filtered_scenes]
@@ -165,16 +179,16 @@ if __name__ == '__main__':
 
             scene['recaption'] = recaption
 
-        json_info = {
+        json_info_selected = {
             'length': len(filtered_scenes),
             'scenes': filtered_scenes
         }
 
-        print(f'Total time: {(time.time() - starttime):.2f}')
+        print(f'Total time: {(time.time() - starttime):.2f}s')
 
         json_filename = f'filtered_scenes_{i}-{j}.json'
         with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
-            json.dump(json_info, f)
+            json.dump(json_info_selected, f)
         
         print(f"Saved to json: {json_filename}")
 
@@ -199,13 +213,43 @@ if __name__ == '__main__':
 
             scene['recaption'] = recaption
         
-        json_info = {
+        json_info_random = {
             'length': len(random_scenes),
             'scenes': random_scenes
         }
 
-        json_filename = f'random_scenes_{i}-{j}.json'
-        with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
-            json.dump(json_info, f)
+        if store_intermediate_json:
+            json_filename = f'random_scenes_{i}-{j}.json'
+            with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
+                json.dump(json_info_random, f)
 
         print(f"Saved to json: {json_filename}")
+
+        # Run the evaluation
+        print("Running the evaluation...")
+
+        total_caption_score, total_recaption_score = eval_same_dataset(json_info_selected["scenes"], preprocess, eval_model, tokenizer, device, logging)
+        print(f"Total caption score: {total_caption_score}")
+        print(f"Total recaption score: {total_recaption_score}")
+
+        total_score_random, total_score_selected  = eval_different_dataset(json_info_random["scenes"], json_info_selected["scenes"], preprocess, eval_model, tokenizer, device, logging)
+        print(f"Total score random: {total_score_random}")
+        print(f"Total score selected: {total_score_selected}")
+
+        # Add logging
+        logging.info(f"Total caption score: {total_caption_score}")
+        logging.info(f"Total recaption score: {total_recaption_score}")
+        logging.info(f"Total score random: {total_score_random}")
+        logging.info(f"Total score selected: {total_score_selected}")
+
+        evaluation_json = {
+            "total_caption_score": total_caption_score,
+            "total_recaption_score": total_recaption_score,
+            "total_score_random": total_score_random,
+            "total_score_selected": total_score_selected
+        }
+        evaluation_results[f"video_{i}-{j}"] = evaluation_json
+
+    # Save the evaluation results
+    with open(os.path.join(inference_output_dir, f"evaluation_results_{clip_idx_start}-{clip_idx_end}.json"), "w") as f:
+        json.dump(evaluation_results, f)
