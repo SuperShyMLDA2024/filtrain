@@ -136,3 +136,440 @@ INFO:root:Total caption score: 10.996526899791899
 INFO:root:Total recaption score: 13.46426754906064
 INFO:root:Total score random: 7.7224477132161455
 INFO:root:Total score selected: 7.183577219645183
+INFO:root:Loaded hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K model config.
+INFO:root:Loading pretrained hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K weights (D:/Joshua/hf_cache\hub\models--laion--CLIP-ViT-g-14-laion2B-s12B-b42K\snapshots\4b0305adc6802b2632e11cbe6606a9bdd43d35c9\open_clip_pytorch_model.bin).
+INFO:root:Processing Video Index 100-124...
+INFO:root:image 37 | caption: 0.508794947555241 | recaption: 0.5009408063310354
+INFO:root:image 39 | caption: 0.8757916968084487 | recaption: 0.9588152200832488
+INFO:root:image 35 | caption: 1.250456141364955 | recaption: 1.5644181463547917
+INFO:root:image 35 | caption: 1.6566942332814092 | recaption: 1.9713081933892305
+INFO:root:image 35 | caption: 2.0353950563840875 | recaption: 2.371820564841718
+INFO:root:image 29 | caption: 2.895816747121829 | recaption: 3.4295373256747546
+INFO:root:image 29 | caption: 3.248063823046757 | recaption: 3.9611519581168344
+INFO:root:image 35 | caption: 3.0584736606453635 | recaption: 3.6610784516729837
+INFO:root:image 33 | caption: 3.688699059180396 | recaption: 4.377160118450095
+INFO:root:image 37 | caption: 3.6554227832151476 | recaption: 4.280330643476405
+INFO:root:image 33 | caption: 4.422115589529018 | recaption: 5.330494464227792
+INFO:root:image 39 | caption: 4.133090232868242 | recaption: 4.922508385835437
+INFO:root:image 47 | caption: 3.760243982523478 | recaption: 4.456541829344279
+INFO:root:image 33 | caption: 5.873042325240481 | recaption: 6.879232053640532
+INFO:root:image 25 | caption: 8.401997070489308 | recaption: 9.752673713149251
+INFO:root:image 33 | caption: 6.739173875694469 | recaption: 7.847878478829926
+INFO:root:image 37 | caption: 6.348188179345609 | recaption: 7.427192951074352
+INFO:root:image 37 | caption: 6.619450965472865 | recaption: 7.901537348411656
+INFO:root:image 35 | caption: 7.395336367244925 | recaption: 8.758866785666505
+INFO:root:image 49 | caption: 5.564333689169571 | recaption: 6.580717275929987
+INFO:root:image 53 | caption: 5.391651171376724 | recaption: 6.376661800744878
+INFO:root:image 31 | caption: 9.655019236838696 | recaption: 11.33909283275071
+INFO:root:image 33 | caption: 9.609004724180327 | recaption: 11.183890527097008
+INFO:root:image 35 | caption: 9.368044699065337 | recaption: 10.92828766481417
+INFO:root:image 27 | caption: 12.688383704522924 | recaption: 14.915779732895253
+INFO:root:image 29 | caption: 12.247169612959418 | recaption: 14.39956761690597
+INFO:root:image 3 | caption: 123.69896176601331 | recaption: 145.0238575587206
+INFO:root:image 41 | caption: 9.383060733963335 | recaption: 10.94243609110521
+INFO:root:image 43 | caption: 9.267400275884356 | recaption: 10.729435871166281
+INFO:root:image 39 | caption: 10.343505956621529 | recaption: 12.031376751448827
+INFO:root:image 29 | caption: 14.225189303476938 | recaption: 16.704122735594193
+INFO:root:image 23 | caption: 18.405709225357356 | recaption: 21.76641221301748
+INFO:root:image 25 | caption: 17.58709887592552 | recaption: 20.69673624581683
+INFO:root:image 25 | caption: 18.240945264522278 | recaption: 21.38133078457885
+INFO:root:image 59 | caption: 7.970613082636782 | recaption: 9.298599068219637
+INFO:root:image 5 | caption: 97.15788616954762 | recaption: 113.50350165880032
+INFO:root:image 25 | caption: 19.948457257572386 | recaption: 23.32283074041391
+INFO:root:image 33 | caption: 15.494788601410189 | recaption: 18.1544662189069
+INFO:root:image 27 | caption: 19.446604418529223 | recaption: 22.713686477115957
+INFO:root:image 27 | caption: 19.85675953824855 | recaption: 23.26821665879141
+INFO:root:image 27 | caption: 20.566202974650086 | recaption: 24.08177543874469
+INFO:root:image 59 | caption: 9.670389443080072 | recaption: 11.27659722861074
+INFO:root:image 25 | caption: 23.347745696997094 | recaption: 27.206279322802597
+INFO:root:image 25 | caption: 23.757891790747095 | recaption: 27.568320509326036
+INFO:root:image 25 | caption: 24.23479223771224 | recaption: 28.215015033064013
+INFO:root:image 7 | caption: 89.0952594417258 | recaption: 103.16847366370519
+INFO:root:image 5 | caption: 127.78489275943176 | recaption: 147.60194406180443
+INFO:root:image 35 | caption: 18.63972811912393 | recaption: 21.581613656739673
+INFO:root:image 21 | caption: 31.795501023236948 | recaption: 36.691410366307366
+INFO:root:image 29 | caption: 23.454006356199063 | recaption: 27.08806338172617
+INFO:root:image 45 | caption: 15.407250096320963 | recaption: 17.775623762054675
+INFO:root:image 5 | caption: 141.1867527894961 | recaption: 163.83139383692634
+INFO:root:image 41 | caption: 17.46971644731056 | recaption: 20.287239558206206
+INFO:root:image 21 | caption: 34.42864876867121 | recaption: 40.154762762235414
+INFO:root:image 55 | caption: 13.39561320033619 | recaption: 15.623808120557968
+INFO:root:image 35 | caption: 21.43176044563353 | recaption: 25.02239048927285
+INFO:root:image 29 | caption: 26.416534900766848 | recaption: 30.733285527025153
+INFO:root:image 31 | caption: 25.108794873855604 | recaption: 29.24007792745996
+INFO:root:image 41 | caption: 19.311357337079794 | recaption: 22.404798825930364
+INFO:root:image 21 | caption: 38.158795122256585 | recaption: 44.41997915020255
+INFO:root:image 59 | caption: 13.813419615262054 | recaption: 16.092820944577966
+INFO:root:image 57 | caption: 14.56114877748241 | recaption: 16.9696386938753
+INFO:root:image 53 | caption: 15.914946100397257 | recaption: 18.548286822699016
+INFO:root:image 39 | caption: 22.018925986534953 | recaption: 25.516985080917493
+INFO:root:image 31 | caption: 28.224070365744563 | recaption: 32.67423198789626
+INFO:root:image 37 | caption: 23.90603709905813 | recaption: 27.752743798778067
+INFO:root:image 37 | caption: 24.166891058023957 | recaption: 28.351740058022955
+INFO:root:image 37 | caption: 24.47010288042226 | recaption: 28.877445845564615
+INFO:root:image 33 | caption: 27.77791171508303 | recaption: 33.01254286055312
+INFO:root:image 43 | caption: 21.64652961697607 | recaption: 25.657057574028546
+INFO:root:image 25 | caption: 37.926474723124926 | recaption: 44.79380705241924
+INFO:root:image 27 | caption: 35.7461959992069 | recaption: 42.11167314979876
+INFO:root:image 53 | caption: 18.460898069076876 | recaption: 21.696304799972854
+INFO:root:image 39 | caption: 25.421404902615123 | recaption: 29.95260449415279
+INFO:root:image 49 | caption: 20.480346916954783 | recaption: 24.16588031185159
+INFO:root:image 9 | caption: 111.68419162982913 | recaption: 132.99175615924224
+INFO:root:image 25 | caption: 40.70398744414533 | recaption: 48.499429959965425
+INFO:root:image 49 | caption: 21.07617882194915 | recaption: 25.08554404944824
+INFO:root:image 45 | caption: 23.21575065421457 | recaption: 27.657165882753663
+INFO:root:image 59 | caption: 17.93503027516785 | recaption: 21.32021323549428
+INFO:root:image 31 | caption: 34.62338799203179 | recaption: 41.107574552218445
+INFO:root:image 51 | caption: 21.34454171353981 | recaption: 25.273857251548197
+INFO:root:image 31 | caption: 35.489513692590116 | recaption: 42.230172965630736
+INFO:root:image 37 | caption: 30.078765308095093 | recaption: 35.731305064370694
+INFO:root:image 43 | caption: 26.201340452030447 | recaption: 31.142656495588675
+INFO:root:image 41 | caption: 27.820963239559315 | recaption: 33.02646670035982
+INFO:root:image 25 | caption: 46.26771613865853 | recaption: 54.860004216715105
+INFO:root:image 33 | caption: 35.341907686633434 | recaption: 41.86877763574291
+INFO:root:image 35 | caption: 33.45664805864166 | recaption: 39.80066789727826
+INFO:root:image 37 | caption: 31.791897590660906 | recaption: 38.03369006711299
+INFO:root:image 39 | caption: 30.402020114432105 | recaption: 36.317019321859405
+INFO:root:image 25 | caption: 47.88745622564449 | recaption: 57.131086350033364
+INFO:root:image 45 | caption: 26.925246800846804 | recaption: 32.11251924148895
+INFO:root:image 33 | caption: 37.12612344861706 | recaption: 44.26145466341281
+INFO:root:image 29 | caption: 42.64070992419858 | recaption: 51.04455092670324
+INFO:root:image 31 | caption: 40.23623103825466 | recaption: 48.34904197176277
+INFO:root:image 33 | caption: 37.98392260462718 | recaption: 45.62830044959795
+INFO:root:image 51 | caption: 24.844092020795483 | recaption: 29.83188855743687
+INFO:root:image 39 | caption: 32.744277170980396 | recaption: 39.27473511270741
+INFO:root:image 33 | caption: 38.96907006953324 | recaption: 46.99479843329939
+INFO:root:Random Dataset similarity: 0.7769579435649671 | Filtered Dataset similarity: 0.4740248960926387
+INFO:root:Random Dataset similarity: 0.27684128164846367 | Filtered Dataset similarity: 0.4835636858717538
+INFO:root:Random Dataset similarity: 0.6413064271340639 | Filtered Dataset similarity: 0.5029712253146701
+INFO:root:Random Dataset similarity: 2.13211304800851 | Filtered Dataset similarity: 0.39831704898756376
+INFO:root:Random Dataset similarity: 1.6096214881310096 | Filtered Dataset similarity: 0.40446609664749317
+INFO:root:Random Dataset similarity: 0.48198678152901786 | Filtered Dataset similarity: 0.5669952646588882
+INFO:root:Random Dataset similarity: 0.4003604202768231 | Filtered Dataset similarity: 0.5316146324420797
+INFO:root:Random Dataset similarity: 0.9704109376689554 | Filtered Dataset similarity: 0.3839578067555147
+INFO:root:Random Dataset similarity: 0.6482343882105228 | Filtered Dataset similarity: 0.4927112210181452
+INFO:root:Random Dataset similarity: 0.670900762246256 | Filtered Dataset similarity: 0.3953941112740218
+INFO:root:Random Dataset similarity: 0.2698658521247633 | Filtered Dataset similarity: 0.5313358639663682
+INFO:root:Random Dataset similarity: 1.8687065691987343 | Filtered Dataset similarity: 0.43130948437955274
+INFO:root:Random Dataset similarity: 5.2126210530598955 | Filtered Dataset similarity: 0.4816296083707336
+INFO:root:Random Dataset similarity: 0.4907934831425468 | Filtered Dataset similarity: 0.5320361148774678
+INFO:root:Random Dataset similarity: 0.3195881393720519 | Filtered Dataset similarity: 0.67208740234375
+INFO:root:Random Dataset similarity: 1.7831497192382812 | Filtered Dataset similarity: 0.49108512728821996
+INFO:root:Random Dataset similarity: 0.42622645586386493 | Filtered Dataset similarity: 0.43000441757174457
+INFO:root:Random Dataset similarity: 0.9028913756817001 | Filtered Dataset similarity: 0.49108586615142397
+INFO:root:Random Dataset similarity: 0.33351172622369263 | Filtered Dataset similarity: 0.4058130173456101
+INFO:root:Random Dataset similarity: 1.0829350398137019 | Filtered Dataset similarity: 0.34011773748712226
+INFO:root:Random Dataset similarity: 0.8880166286892361 | Filtered Dataset similarity: 0.3165953836323302
+INFO:root:Random Dataset similarity: 0.41232346435961376 | Filtered Dataset similarity: 0.43705814115462766
+INFO:root:Random Dataset similarity: 0.60567138671875 | Filtered Dataset similarity: 0.5524081959443934
+INFO:root:Random Dataset similarity: 0.3439702052696078 | Filtered Dataset similarity: 0.3852661852082018
+INFO:root:Random Dataset similarity: 0.4309662638584308 | Filtered Dataset similarity: 0.7494809081361454
+INFO:root:Random Dataset similarity: 0.4442969396118856 | Filtered Dataset similarity: 0.5202451417113708
+INFO:root:Random Dataset similarity: 1.2721879482269287 | Filtered Dataset similarity: 5.828037261962891
+INFO:root:Random Dataset similarity: 0.5815452487989403 | Filtered Dataset similarity: 0.3360499490070813
+INFO:root:Random Dataset similarity: 0.4954756680868974 | Filtered Dataset similarity: 0.29973238953685855
+INFO:root:Random Dataset similarity: 0.3832512338891162 | Filtered Dataset similarity: 0.20148591913728633
+INFO:root:Random Dataset similarity: 0.5248944317853009 | Filtered Dataset similarity: 0.5220562580444804
+INFO:root:Random Dataset similarity: 0.28762278173060246 | Filtered Dataset similarity: 0.704692242050892
+INFO:root:Random Dataset similarity: 0.36519948986993317 | Filtered Dataset similarity: 0.6730813118925063
+INFO:root:Random Dataset similarity: 0.9154419581095378 | Filtered Dataset similarity: 0.7069530780498798
+INFO:root:Random Dataset similarity: 0.20327673317424957 | Filtered Dataset similarity: 0.24423620599199092
+INFO:root:Random Dataset similarity: 0.29647939581620064 | Filtered Dataset similarity: 3.780032653808594
+INFO:root:Random Dataset similarity: 0.35088444462528934 | Filtered Dataset similarity: 0.6221304086538462
+INFO:root:Random Dataset similarity: 0.8204109885475852 | Filtered Dataset similarity: 0.5209220845431568
+INFO:root:Random Dataset similarity: 0.4705938251201923 | Filtered Dataset similarity: 0.5256491524832589
+INFO:root:Random Dataset similarity: 0.3581309915640156 | Filtered Dataset similarity: 0.5545301816754544
+INFO:root:Random Dataset similarity: 0.6420363514872095 | Filtered Dataset similarity: 0.821648868513696
+INFO:root:Random Dataset similarity: 0.37608849573079994 | Filtered Dataset similarity: 0.25571274175876524
+INFO:root:Random Dataset similarity: 1.2122927332770894 | Filtered Dataset similarity: 0.6106974909855769
+INFO:root:Random Dataset similarity: 2.684704916817801 | Filtered Dataset similarity: 0.3823260498046875
+INFO:root:Random Dataset similarity: 0.13332467806541312 | Filtered Dataset similarity: 0.6466945237379808
+INFO:root:Random Dataset similarity: 1.0342996927132284 | Filtered Dataset similarity: 2.4005628313337053
+INFO:root:Random Dataset similarity: 0.6084802856445313 | Filtered Dataset similarity: 3.1660809326171875
+INFO:root:Random Dataset similarity: 0.29654576308062286 | Filtered Dataset similarity: 0.4956216479104662
+INFO:root:Random Dataset similarity: 0.1913652837844122 | Filtered Dataset similarity: 0.7220542717412486
+INFO:root:Random Dataset similarity: 1.099260417464512 | Filtered Dataset similarity: 0.5291178983800551
+INFO:root:Random Dataset similarity: 0.31309105350724903 | Filtered Dataset similarity: 0.3188718049422554
+INFO:root:Random Dataset similarity: 0.22637906074523925 | Filtered Dataset similarity: 3.8507799784342445
+INFO:root:Random Dataset similarity: 1.0193434982563798 | Filtered Dataset similarity: 0.31692539076177345
+INFO:root:Random Dataset similarity: 0.32603302236343124 | Filtered Dataset similarity: 0.5463426724042482
+INFO:root:Random Dataset similarity: 0.44534217582772784 | Filtered Dataset similarity: 0.29706948619348267
+INFO:root:Random Dataset similarity: 0.5036389176901148 | Filtered Dataset similarity: 0.47707219199528766
+INFO:root:Random Dataset similarity: 0.47123059648112364 | Filtered Dataset similarity: 0.5338487296268858
+INFO:root:Random Dataset similarity: 0.8031694914165296 | Filtered Dataset similarity: 0.49800044611880656
+INFO:root:Random Dataset similarity: 0.2773919770424672 | Filtered Dataset similarity: 0.2964472222411259
+INFO:root:Random Dataset similarity: 1.3968443467881946 | Filtered Dataset similarity: 0.6784717862568204
+INFO:root:Random Dataset similarity: 0.9839877453479139 | Filtered Dataset similarity: 0.30351417737129405
+INFO:root:Random Dataset similarity: 0.5383469332181491 | Filtered Dataset similarity: 0.310733642578125
+INFO:root:Random Dataset similarity: 0.29837912874911 | Filtered Dataset similarity: 0.29792068022935225
+INFO:root:Random Dataset similarity: 0.44314478314112105 | Filtered Dataset similarity: 0.31228343418666293
+INFO:root:Random Dataset similarity: 0.16496805404920917 | Filtered Dataset similarity: 0.572218499000065
+INFO:root:Random Dataset similarity: 0.36629047685168187 | Filtered Dataset similarity: 0.3770359170271412
+INFO:root:Random Dataset similarity: 0.5635661463583669 | Filtered Dataset similarity: 0.6036463157966435
+INFO:root:Random Dataset similarity: 0.3400265081847884 | Filtered Dataset similarity: 0.5257057875416591
+INFO:root:Random Dataset similarity: 0.2390026224070582 | Filtered Dataset similarity: 0.6371364013176661
+INFO:root:Random Dataset similarity: 0.8797804983038652 | Filtered Dataset similarity: 0.3330471827905064
+INFO:root:Random Dataset similarity: 0.22114204101562498 | Filtered Dataset similarity: 0.6636680250901442
+INFO:root:Random Dataset similarity: 0.39437854908130787 | Filtered Dataset similarity: 0.6359258790402093
+INFO:root:Random Dataset similarity: 0.34631209764696047 | Filtered Dataset similarity: 0.24724023405731538
+INFO:root:Random Dataset similarity: 0.26849065009116624 | Filtered Dataset similarity: 0.46788258649737013
+INFO:root:Random Dataset similarity: 0.3344553732432332 | Filtered Dataset similarity: 0.33526146500902193
+INFO:root:Random Dataset similarity: 1.2272879518108604 | Filtered Dataset similarity: 1.4219633502724731
+INFO:root:Random Dataset similarity: 5.444033813476563 | Filtered Dataset similarity: 0.7099991431603064
+INFO:root:Random Dataset similarity: 0.37898111494760667 | Filtered Dataset similarity: 0.34738902064732147
+INFO:root:Random Dataset similarity: 0.6424212004009046 | Filtered Dataset similarity: 0.354461041413401
+INFO:root:Random Dataset similarity: 5.828037261962891 | Filtered Dataset similarity: 0.2882440355088976
+INFO:root:Random Dataset similarity: 0.3931073937049279 | Filtered Dataset similarity: 0.5320503874747984
+INFO:root:Random Dataset similarity: 1.4907288603730253 | Filtered Dataset similarity: 0.30808467977851095
+INFO:root:Random Dataset similarity: 0.31551822129116264 | Filtered Dataset similarity: 0.6506013582449922
+INFO:root:Random Dataset similarity: 0.45342700347583165 | Filtered Dataset similarity: 0.3492682553287251
+INFO:root:Random Dataset similarity: 0.294568224610232 | Filtered Dataset similarity: 0.3971149285720322
+INFO:root:Random Dataset similarity: 0.43705814115462766 | Filtered Dataset similarity: 0.363091493572052
+INFO:root:Random Dataset similarity: 0.4435999161157853 | Filtered Dataset similarity: 0.696598828125
+INFO:root:Random Dataset similarity: 0.3067583528903162 | Filtered Dataset similarity: 0.3081683806557069
+INFO:root:Random Dataset similarity: 0.20244935050843255 | Filtered Dataset similarity: 0.3243918407206633
+INFO:root:Random Dataset similarity: 0.8148552788628473 | Filtered Dataset similarity: 0.3991025082699887
+INFO:root:Random Dataset similarity: 1.5811601118607954 | Filtered Dataset similarity: 0.22952456040815872
+INFO:root:Random Dataset similarity: 0.35088173828125 | Filtered Dataset similarity: 0.47653620793269236
+INFO:root:Random Dataset similarity: 0.17388581066596798 | Filtered Dataset similarity: 0.37520145485029494
+INFO:root:Random Dataset similarity: 0.6174296875 | Filtered Dataset similarity: 0.476409481272978
+INFO:root:Random Dataset similarity: 0.7580718648136339 | Filtered Dataset similarity: 0.6906018453931052
+INFO:root:Random Dataset similarity: 0.3292260637716528 | Filtered Dataset similarity: 0.5976878790403876
+INFO:root:Random Dataset similarity: 0.4063242132013494 | Filtered Dataset similarity: 0.2095034458207999
+INFO:root:Random Dataset similarity: 1.8636393229166666 | Filtered Dataset similarity: 0.3319431859203893
+INFO:root:Random Dataset similarity: 0.9792676938125512 | Filtered Dataset similarity: 0.28088351978975185
+INFO:root:Random Dataset similarity: 0.3235670477796943 | Filtered Dataset similarity: 0.5792023910088097
+INFO:root:Total caption score: 12.859793122945968
+INFO:root:Total recaption score: 15.508283482988798
+INFO:root:Total score random: 0.10677712576729911
+INFO:root:Total score selected: 0.19113678903290718
+INFO:root:Processing Video Index 125-149...
+INFO:root:image 37 | caption: 0.307764135546019 | recaption: 0.42913738108621713
+INFO:root:image 37 | caption: 0.6777738539122421 | recaption: 0.8854836463231602
+INFO:root:image 31 | caption: 1.1742211955602866 | recaption: 1.651022594718076
+INFO:root:image 33 | caption: 1.3434096093226022 | recaption: 1.8776796528783126
+INFO:root:image 37 | caption: 1.6334935451668602 | recaption: 2.18359639390227
+INFO:root:image 29 | caption: 2.5084125142313893 | recaption: 3.2295633659023393
+INFO:root:image 37 | caption: 2.331612063283795 | recaption: 2.9252998934355077
+INFO:root:image 39 | caption: 2.546429677737046 | recaption: 3.0827061565407834
+INFO:root:image 33 | caption: 3.4668450945745812 | recaption: 4.22659350629091
+INFO:root:image 37 | caption: 3.433832017055005 | recaption: 4.270403889548511
+INFO:root:image 35 | caption: 4.095253576352281 | recaption: 5.0196527741171
+INFO:root:image 35 | caption: 4.511050720405215 | recaption: 5.46349196018215
+INFO:root:image 35 | caption: 4.96962483950598 | recaption: 5.901626875281003
+INFO:root:image 27 | caption: 6.949334902732619 | recaption: 8.13008562765066
+INFO:root:image 39 | caption: 5.118783017885865 | recaption: 5.92950977326423
+INFO:root:image 29 | caption: 7.377172916743778 | recaption: 8.320849932541318
+INFO:root:image 5 | caption: 45.132559734740866 | recaption: 52.025126386083386
+INFO:root:image 25 | caption: 9.510464208065962 | recaption: 10.94427642279961
+INFO:root:image 21 | caption: 11.918358750344014 | recaption: 13.698135006216054
+INFO:root:image 57 | caption: 4.717745351996449 | recaption: 5.356652328411193
+INFO:root:image 35 | caption: 8.1523535651997 | recaption: 9.308076946081519
+INFO:root:image 35 | caption: 8.443817847038739 | recaption: 9.600254588419379
+INFO:root:image 37 | caption: 8.435127895819672 | recaption: 9.554186311288756
+INFO:root:image 33 | caption: 9.806858080453793 | recaption: 11.20523594140049
+INFO:root:image 5 | caption: 68.0414553475966 | recaption: 77.91371370738385
+INFO:root:image 3 | caption: 115.804092220563 | recaption: 132.9346018861671
+INFO:root:image 27 | caption: 13.41362332485164 | recaption: 15.434056838379615
+INFO:root:image 43 | caption: 8.703550961603199 | recaption: 10.083058079379553
+INFO:root:image 27 | caption: 14.430301917780437 | recaption: 16.705045905113348
+INFO:root:image 51 | caption: 7.841651364972655 | recaption: 9.107033082931897
+INFO:root:image 37 | caption: 11.226059609703338 | recaption: 12.983638024698905
+INFO:root:image 3 | caption: 141.5884762472339 | recaption: 164.66278627373603
+INFO:root:image 5 | caption: 85.08117734112905 | recaption: 100.75273920808928
+INFO:root:image 27 | caption: 16.165477800156378 | recaption: 19.084529419425426
+INFO:root:image 3 | caption: 149.45233801014356 | recaption: 177.99171417668433
+INFO:root:image 31 | caption: 14.858715252537047 | recaption: 17.695859110850453
+INFO:root:image 11 | caption: 43.16533739008813 | recaption: 51.170501366840085
+INFO:root:image 11 | caption: 44.45611361393549 | recaption: 52.31951789164625
+INFO:root:image 19 | caption: 26.46444656147209 | recaption: 31.07901475352905
+INFO:root:image 41 | caption: 12.5882964717105 | recaption: 14.746815317177225
+INFO:root:image 9 | caption: 58.655717807974575 | recaption: 68.6827516915005
+INFO:root:image 11 | caption: 48.61554980473946 | recaption: 57.19753034236226
+INFO:root:image 29 | caption: 18.906214554052298 | recaption: 22.152317989262094
+INFO:root:image 31 | caption: 18.014693018226264 | recaption: 21.097604402398947
+INFO:root:image 25 | caption: 22.764924336215355 | recaption: 26.76873312859609
+INFO:root:image 35 | caption: 16.590736839274918 | recaption: 19.507729047552516
+INFO:root:image 3 | caption: 197.81404575325132 | recaption: 232.31409876563546
+INFO:root:image 29 | caption: 21.048173947804013 | recaption: 24.643698188578668
+INFO:root:image 27 | caption: 22.954819044663093 | recaption: 27.020341629819388
+INFO:root:image 5 | caption: 126.45640568419829 | recaption: 148.31378950317315
+INFO:root:image 5 | caption: 129.00125838602122 | recaption: 151.58861504435154
+INFO:root:image 3 | caption: 218.63356767238074 | recaption: 256.5460513571834
+INFO:root:image 39 | caption: 17.19061133274302 | recaption: 20.20306497350981
+INFO:root:image 19 | caption: 36.07201857160579 | recaption: 42.21341969426201
+INFO:root:image 27 | caption: 25.73820564830539 | recaption: 30.135733590912963
+INFO:root:image 13 | caption: 54.32979939693807 | recaption: 63.65173495605642
+INFO:root:image 35 | caption: 20.568149222753018 | recaption: 24.071959433375167
+INFO:root:image 7 | caption: 104.34659336347735 | recaption: 122.16346341792215
+INFO:root:image 31 | caption: 23.889310540811827 | recaption: 27.95301116569205
+INFO:root:image 49 | caption: 15.348979796857511 | recaption: 17.935240605412904
+INFO:root:image 35 | caption: 21.840576508728702 | recaption: 25.514606398757913
+INFO:root:image 47 | caption: 16.53366224875859 | recaption: 19.261742013662875
+INFO:root:image 57 | caption: 13.863426208408569 | recaption: 16.136624668348883
+INFO:root:image 35 | caption: 22.795811549452885 | recaption: 26.654213983758424
+INFO:root:image 59 | caption: 13.655935849897237 | recaption: 16.06935811034442
+INFO:root:image 37 | caption: 22.02571914898126 | recaption: 25.95113940279911
+INFO:root:image 37 | caption: 22.316801561028125 | recaption: 26.357553147187
+INFO:root:image 5 | caption: 167.3928641647266 | recaption: 197.36281732075935
+INFO:root:image 7 | caption: 121.27697430248129 | recaption: 142.83301119361877
+INFO:root:image 11 | caption: 78.19683833695477 | recaption: 92.3507061240513
+INFO:root:image 45 | caption: 19.284526100735743 | recaption: 22.815013298808417
+INFO:root:image 45 | caption: 19.522907129947697 | recaption: 23.13986761054415
+INFO:root:image 17 | caption: 52.10503600631836 | recaption: 61.94211951915571
+INFO:root:image 37 | caption: 24.21842400077626 | recaption: 28.832780614400605
+INFO:root:image 57 | caption: 15.923536903606202 | recaption: 18.902184861056302
+INFO:root:image 31 | caption: 29.652521900689678 | recaption: 35.18488375001439
+INFO:root:image 53 | caption: 17.593098464867786 | recaption: 20.850062790745223
+INFO:root:image 35 | caption: 26.886934241591458 | recaption: 31.950825455966093
+INFO:root:image 35 | caption: 27.135277672713908 | recaption: 32.22949777938765
+INFO:root:image 41 | caption: 23.425251241699932 | recaption: 27.877460812274236
+INFO:root:image 37 | caption: 26.308369550592424 | recaption: 31.28594920188299
+INFO:root:image 45 | caption: 21.96287187691843 | recaption: 26.018306303647
+INFO:root:image 7 | caption: 142.94086486430382 | recaption: 169.34154305079872
+INFO:root:image 27 | caption: 37.451980588204826 | recaption: 44.60610258746113
+INFO:root:image 39 | caption: 26.14494576357736 | recaption: 31.250423040125025
+INFO:root:image 21 | caption: 49.11180194184372 | recaption: 58.73579424899707
+INFO:root:image 47 | caption: 22.240099376396167 | recaption: 26.505992599270012
+INFO:root:image 45 | caption: 23.39316340058922 | recaption: 28.05728176239465
+INFO:root:image 31 | caption: 34.36396268928069 | recaption: 41.18338833033078
+INFO:root:image 27 | caption: 39.68328776369608 | recaption: 47.75809088512547
+INFO:root:image 35 | caption: 30.811745203035162 | recaption: 37.11153810784052
+INFO:root:image 29 | caption: 37.57422492906273 | recaption: 45.2571756912268
+INFO:root:image 55 | caption: 20.103328901219125 | recaption: 24.131102188639403
+INFO:root:image 47 | caption: 23.678061464847964 | recaption: 28.563754591783116
+INFO:root:image 9 | caption: 125.36193819320053 | recaption: 150.98864302499325
+INFO:root:image 21 | caption: 54.04064140372392 | recaption: 65.20824455053787
+INFO:root:image 17 | caption: 67.3278155638762 | recaption: 81.32931292258922
+INFO:root:image 25 | caption: 46.26196036919302 | recaption: 55.79861169548868
+INFO:root:image 29 | caption: 40.352459306709015 | recaption: 48.60262043039675
+INFO:root:image 9 | caption: 131.54848391412614 | recaption: 158.4066666571368
+INFO:root:Random Dataset similarity: 0.8328421305620134 | Filtered Dataset similarity: 0.3799187640507005
+INFO:root:Random Dataset similarity: 0.3270593274407972 | Filtered Dataset similarity: 0.456346265236943
+INFO:root:Random Dataset similarity: 0.2601601278297028 | Filtered Dataset similarity: 0.5941550168484976
+INFO:root:Random Dataset similarity: 0.3054101626078288 | Filtered Dataset similarity: 0.33582871562302713
+INFO:root:Random Dataset similarity: 1.1211219850999827 | Filtered Dataset similarity: 0.527282545771295
+INFO:root:Random Dataset similarity: 0.48811322793193246 | Filtered Dataset similarity: 0.4435955529925467
+INFO:root:Random Dataset similarity: 3.429404296875 | Filtered Dataset similarity: 0.3097393551388302
+INFO:root:Random Dataset similarity: 0.3347636774394587 | Filtered Dataset similarity: 0.3074216422558144
+INFO:root:Random Dataset similarity: 5.928276062011719 | Filtered Dataset similarity: 0.7679848719124842
+INFO:root:Random Dataset similarity: 0.6694666045943116 | Filtered Dataset similarity: 0.5034710674463042
+INFO:root:Random Dataset similarity: 0.4980689154730903 | Filtered Dataset similarity: 0.505505855499752
+INFO:root:Random Dataset similarity: 0.6276497795811673 | Filtered Dataset similarity: 0.4523296474670031
+INFO:root:Random Dataset similarity: 1.265261513846261 | Filtered Dataset similarity: 0.48575053312340566
+INFO:root:Random Dataset similarity: 2.745864556760204 | Filtered Dataset similarity: 0.517714091709682
+INFO:root:Random Dataset similarity: 0.5088985351562499 | Filtered Dataset similarity: 0.295140130458734
+INFO:root:Random Dataset similarity: 2.671735127766927 | Filtered Dataset similarity: 0.4179941813151042
+INFO:root:Random Dataset similarity: 0.6005087890625 | Filtered Dataset similarity: 3.76419677734375
+INFO:root:Random Dataset similarity: 0.3915314737955729 | Filtered Dataset similarity: 0.5392511455829326
+INFO:root:Random Dataset similarity: 0.21292975619757848 | Filtered Dataset similarity: 0.6692345028831845
+INFO:root:Random Dataset similarity: 0.43948360071587794 | Filtered Dataset similarity: 0.30512281395923135
+INFO:root:Random Dataset similarity: 0.3645730154854911 | Filtered Dataset similarity: 0.5843860112404337
+INFO:root:Random Dataset similarity: 0.9103956523694491 | Filtered Dataset similarity: 0.35395830834818165
+INFO:root:Random Dataset similarity: 2.4039447021484373 | Filtered Dataset similarity: 0.5525623120759663
+INFO:root:Random Dataset similarity: 3.8983596165974936 | Filtered Dataset similarity: 0.6327983971798059
+INFO:root:Random Dataset similarity: 0.558638678656684 | Filtered Dataset similarity: 3.9591564941406245
+INFO:root:Random Dataset similarity: 2.4254244849795388 | Filtered Dataset similarity: 3.0784123738606772
+INFO:root:Random Dataset similarity: 0.45434794333502854 | Filtered Dataset similarity: 0.6713430074820842
+INFO:root:Random Dataset similarity: 0.38100850754889887 | Filtered Dataset similarity: 0.3791195027628128
+INFO:root:Random Dataset similarity: 0.7027395742910879 | Filtered Dataset similarity: 0.6468422972125771
+INFO:root:Random Dataset similarity: 0.6106303166351607 | Filtered Dataset similarity: 0.25735917617644755
+INFO:root:Random Dataset similarity: 2.6628888448079424 | Filtered Dataset similarity: 0.5082394161739865
+INFO:root:Random Dataset similarity: 0.4980516560872396 | Filtered Dataset similarity: 4.531250635782878
+INFO:root:Random Dataset similarity: 1.6394106547037761 | Filtered Dataset similarity: 1.9550674438476563
+INFO:root:Random Dataset similarity: 0.2991947234623016 | Filtered Dataset similarity: 0.4266147512607474
+INFO:root:Random Dataset similarity: 0.40691612506734914 | Filtered Dataset similarity: 6.230949401855469
+INFO:root:Random Dataset similarity: 0.4030791784018772 | Filtered Dataset similarity: 0.4708545131068076
+INFO:root:Random Dataset similarity: 0.4388995503270349 | Filtered Dataset similarity: 1.3003529635342685
+INFO:root:Random Dataset similarity: 0.2838145351866216 | Filtered Dataset similarity: 1.149016524806167
+INFO:root:Random Dataset similarity: 2.3109705788748607 | Filtered Dataset similarity: 0.8386962431714051
+INFO:root:Random Dataset similarity: 1.2035061085717917 | Filtered Dataset similarity: 0.34814659247478896
+INFO:root:Random Dataset similarity: 0.40939139776420047 | Filtered Dataset similarity: 1.5028152465820312
+INFO:root:Random Dataset similarity: 0.351547512612324 | Filtered Dataset similarity: 1.0025516856800427
+INFO:root:Random Dataset similarity: 0.4892559310610142 | Filtered Dataset similarity: 0.45670303181433936
+INFO:root:Random Dataset similarity: 0.46716126621876525 | Filtered Dataset similarity: 0.3744682188956968
+INFO:root:Random Dataset similarity: 0.3489658941224564 | Filtered Dataset similarity: 0.6077036696213942
+INFO:root:Random Dataset similarity: 0.3307795933314732 | Filtered Dataset similarity: 0.3872053842695933
+INFO:root:Random Dataset similarity: 0.5578149159749349 | Filtered Dataset similarity: 4.723926544189453
+INFO:root:Random Dataset similarity: 0.4478092920542196 | Filtered Dataset similarity: 0.6112052128232758
+INFO:root:Random Dataset similarity: 0.9197688356659116 | Filtered Dataset similarity: 0.5751867189512148
+INFO:root:Random Dataset similarity: 2.3169240315755206 | Filtered Dataset similarity: 2.4039447021484373
+INFO:root:Random Dataset similarity: 0.6206036376953125 | Filtered Dataset similarity: 3.274825541178385
+INFO:root:Random Dataset similarity: 0.41809480086616846 | Filtered Dataset similarity: 3.8983596165974936
+INFO:root:Random Dataset similarity: 4.110726356506348 | Filtered Dataset similarity: 0.6143249772552751
+INFO:root:Random Dataset similarity: 0.4933497725984619 | Filtered Dataset similarity: 0.743970538110284
+INFO:root:Random Dataset similarity: 0.2772055126371838 | Filtered Dataset similarity: 0.4299938060619213
+INFO:root:Random Dataset similarity: 0.508732224399949 | Filtered Dataset similarity: 1.0621344210833488
+INFO:root:Random Dataset similarity: 0.4998666863692434 | Filtered Dataset similarity: 0.42988644969706635
+INFO:root:Random Dataset similarity: 0.4916711604638851 | Filtered Dataset similarity: 1.803666251046317
+INFO:root:Random Dataset similarity: 0.5988907915106566 | Filtered Dataset similarity: 0.36771297454833984
+INFO:root:Random Dataset similarity: 0.27116857623429674 | Filtered Dataset similarity: 0.25068252099548366
+INFO:root:Random Dataset similarity: 0.6100398068705564 | Filtered Dataset similarity: 0.40691741458953373
+INFO:root:Random Dataset similarity: 3.0784123738606772 | Filtered Dataset similarity: 0.24277750651041666
+INFO:root:Random Dataset similarity: 1.0025516856800427 | Filtered Dataset similarity: 0.27235393464378427
+INFO:root:Random Dataset similarity: 0.5875359375 | Filtered Dataset similarity: 0.3840492815290179
+INFO:root:Random Dataset similarity: 3.0516281127929688 | Filtered Dataset similarity: 0.3483980814615885
+INFO:root:Random Dataset similarity: 0.4779592325797971 | Filtered Dataset similarity: 0.3356586878615585
+INFO:root:Random Dataset similarity: 0.269582282172309 | Filtered Dataset similarity: 0.4053860083558506
+INFO:root:Random Dataset similarity: 1.3308420181274414 | Filtered Dataset similarity: 2.3169240315755206
+INFO:root:Random Dataset similarity: 0.2672748838152204 | Filtered Dataset similarity: 1.8595702502192284
+INFO:root:Random Dataset similarity: 0.4610624313354492 | Filtered Dataset similarity: 1.4569717281120866
+INFO:root:Random Dataset similarity: 0.5047474694630456 | Filtered Dataset similarity: 0.24267760261656746
+INFO:root:Random Dataset similarity: 0.4071558349609375 | Filtered Dataset similarity: 0.3454649021314538
+INFO:root:Random Dataset similarity: 0.4248437448709953 | Filtered Dataset similarity: 0.6895287853623757
+INFO:root:Random Dataset similarity: 0.8193892594222183 | Filtered Dataset similarity: 0.3229008724814967
+INFO:root:Random Dataset similarity: 0.6603428348080143 | Filtered Dataset similarity: 0.19349866710227742
+INFO:root:Random Dataset similarity: 0.33142011667790855 | Filtered Dataset similarity: 0.42925352162054503
+INFO:root:Random Dataset similarity: 0.999631118774414 | Filtered Dataset similarity: 0.2853813315337559
+INFO:root:Random Dataset similarity: 0.25447278240169074 | Filtered Dataset similarity: 0.37787322998046874
+INFO:root:Random Dataset similarity: 1.1900787353515625 | Filtered Dataset similarity: 0.29140098487937843
+INFO:root:Random Dataset similarity: 0.7488736393048823 | Filtered Dataset similarity: 0.3648126918023909
+INFO:root:Random Dataset similarity: 0.7079426819111878 | Filtered Dataset similarity: 0.4211641851821938
+INFO:root:Random Dataset similarity: 0.44046852071449244 | Filtered Dataset similarity: 0.295055750466178
+INFO:root:Random Dataset similarity: 0.6909082321893601 | Filtered Dataset similarity: 2.081002527353715
+INFO:root:Random Dataset similarity: 0.6116179508405204 | Filtered Dataset similarity: 0.7027395742910879
+INFO:root:Random Dataset similarity: 0.7402727959962784 | Filtered Dataset similarity: 0.3833666134837479
+INFO:root:Random Dataset similarity: 0.5830149668040293 | Filtered Dataset similarity: 0.6992943173363095
+INFO:root:Random Dataset similarity: 0.25796499118485455 | Filtered Dataset similarity: 0.26233984971812757
+INFO:root:Random Dataset similarity: 1.9511228961709104 | Filtered Dataset similarity: 0.4125482678989281
+INFO:root:Random Dataset similarity: 1.2124560546875 | Filtered Dataset similarity: 0.45594205856323244
+INFO:root:Random Dataset similarity: 0.32388316966869213 | Filtered Dataset similarity: 0.4734598391901248
+INFO:root:Random Dataset similarity: 0.5896855404502467 | Filtered Dataset similarity: 0.2708601031387062
+INFO:root:Random Dataset similarity: 0.31151685431754966 | Filtered Dataset similarity: 0.4673883196951329
+INFO:root:Random Dataset similarity: 1.5092884410511365 | Filtered Dataset similarity: 0.28928375244140625
+INFO:root:Random Dataset similarity: 0.2534635324121309 | Filtered Dataset similarity: 0.32523075401360263
+INFO:root:Random Dataset similarity: 3.774037996927897 | Filtered Dataset similarity: 2.241450274432147
+INFO:root:Random Dataset similarity: 0.6368023100353423 | Filtered Dataset similarity: 0.49882611125504883
+INFO:root:Random Dataset similarity: 0.24351232192095587 | Filtered Dataset similarity: 0.7779520072189031
+INFO:root:Random Dataset similarity: 0.20771568015769679 | Filtered Dataset similarity: 0.49467890812800486
+INFO:root:Random Dataset similarity: 0.8780329777644231 | Filtered Dataset similarity: 0.5151773548885112
+INFO:root:Random Dataset similarity: 0.9583255979749892 | Filtered Dataset similarity: 1.7982230480806325
+INFO:root:Total caption score: 11.839363552271353
+INFO:root:Total recaption score: 14.256599999142313
+INFO:root:Total score random: 0.08624930381774902
+INFO:root:Total score selected: 0.16184007432725692
+INFO:root:Processing Video Index 150-174...
+INFO:root:Loaded hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K model config.
+INFO:root:Loading pretrained hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K weights (D:/Joshua/hf_cache\hub\models--laion--CLIP-ViT-g-14-laion2B-s12B-b42K\snapshots\4b0305adc6802b2632e11cbe6606a9bdd43d35c9\open_clip_pytorch_model.bin).
+INFO:root:Processing Video Index 100-100...
+INFO:root:image 13 | caption: 0.5198309762137276 | recaption: 0.4964055491017771
+INFO:root:Random Dataset similarity: 0.9600456153953468 | Filtered Dataset similarity: 0.4964055491017771
+INFO:root:Total caption score: 6.75780269077846
+INFO:root:Total recaption score: 6.453272138323102
+INFO:root:Total score random: 12.480593000139509
+INFO:root:Total score selected: 6.453272138323102
+INFO:root:Loaded hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K model config.
+INFO:root:Loading pretrained hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K weights (D:/Joshua/hf_cache\hub\models--laion--CLIP-ViT-g-14-laion2B-s12B-b42K\snapshots\4b0305adc6802b2632e11cbe6606a9bdd43d35c9\open_clip_pytorch_model.bin).
+INFO:root:Processing Video Index 101-101...
+INFO:root:Loaded hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K model config.
+INFO:root:Loading pretrained hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K weights (D:/Joshua/hf_cache\hub\models--laion--CLIP-ViT-g-14-laion2B-s12B-b42K\snapshots\4b0305adc6802b2632e11cbe6606a9bdd43d35c9\open_clip_pytorch_model.bin).
+INFO:root:Processing Video Index 102-102...
+INFO:root:image 39 | caption: 0.3913001186513807 | recaption: 0.3992394642325156
+INFO:root:Random Dataset similarity: 1.4027152167426216 | Filtered Dataset similarity: 1.6628197564019098
+INFO:root:Total caption score: 15.260704627403847
+INFO:root:Total recaption score: 15.57033910506811
+INFO:root:Total score random: 12.624436950683593
+INFO:root:Total score selected: 14.965377807617188
+INFO:root:Loaded hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K model config.
+INFO:root:Loading pretrained hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K weights (D:/Joshua/hf_cache\hub\models--laion--CLIP-ViT-g-14-laion2B-s12B-b42K\snapshots\4b0305adc6802b2632e11cbe6606a9bdd43d35c9\open_clip_pytorch_model.bin).
+INFO:root:Processing Video Index 100-124...

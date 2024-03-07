@@ -81,8 +81,8 @@ def eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, toke
             sim1 += max(100 * cosine(image_features1, text_features1), 0)
             sim2 += max(100 * cosine(image_features2, text_features2), 0)
         
-        sim1 = sim1.item() / len(frame_list1)
-        sim2 = sim2.item() / len(frame_list2)
+        sim1 = sim1.item() / length
+        sim2 = sim2.item() / length
 
         # Update the total score of each dataset
         total_score1 += sim1
