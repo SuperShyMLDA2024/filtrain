@@ -78,10 +78,9 @@ def eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, toke
                 image_features2 = model.encode_image(image_input2)
         
             # Calculate the similarity between the image and the caption of these two datasets
-            sim1 += cosine(image_features1, text_features1)
-            sim2 += cosine(image_features2, text_features2)
+            sim1 += max(100 * cosine(image_features1, text_features1), 0)
+            sim2 += max(100 * cosine(image_features2, text_features2), 0)
         
-
         sim1 = sim1.item() / len(frame_list1)
         sim2 = sim2.item() / len(frame_list2)
 
@@ -132,11 +131,11 @@ def eval_same_dataset(eval_dataset, preprocess, model, tokenizer, device, loggin
                 image_features = model.encode_image(image_input)
 
             # Calculate the similarity between the image and the caption
-            caption_image_sim += cosine(image_features, caption_features)
-            recaption_image_sim += cosine(image_features, recaption_features)
+            caption_image_sim += max(100 * cosine(image_features, caption_features), 0)
+            recaption_image_sim += max(100 * cosine(image_features, recaption_features), 0) 
 
         caption_score = caption_image_sim.item() / len(frame_list)
-        recaption_score = recaption_image_sim.item() / len(frame_list) 
+        recaption_score = recaption_image_sim.item() / len(frame_list)
         
         # Update the total score of each dataset
         total_caption_score += caption_score

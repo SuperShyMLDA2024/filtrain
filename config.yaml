@@ -1,5 +1,5 @@
 clip_idx_start: 100
 clip_idx_end: 199
-n_videos_per_batch: 20
-ratio_clips_per_video: 3
+n_videos_per_batch: 25
+clips_taken_per_batch: 100
 store_intermediate_json: False

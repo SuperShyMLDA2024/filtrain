@@ -117,10 +117,8 @@ if __name__ == '__main__':
     clip_idx_start = config["clip_idx_start"]
     clip_idx_end = config["clip_idx_end"]
     store_intermediate_json = config["store_intermediate_json"]
-    ratio_clips_per_video = config["ratio_clips_per_video"]
-
-    CLIPS_TAKEN_PER_BATCH = max(1, int(n_videos_per_batch * ratio_clips_per_video))
-    print(f'CLIPS_TAKEN_PER_BATCH: {CLIPS_TAKEN_PER_BATCH}')
+    clips_taken_per_batch = max(1, int(config["clips_taken_per_batch"]))
+    print(f'CLIPS_TAKEN_PER_BATCH: {clips_taken_per_batch}')
 
     with open(metafile_path, 'r') as f:
         data = json.load(f)
@@ -155,8 +153,9 @@ if __name__ == '__main__':
             # save the result
             with open(os.path.join(inference_output_dir, f'inference_result_{i}-{j}.json'), 'w') as f:
                 json.dump(res, f)
+            print(f"Saved to json: inference_result_{i}-{j}.json")
 
-        filtered_scenes = filter_scenes(res, CLIPS_TAKEN_PER_BATCH, classifier_model)
+        filtered_scenes = filter_scenes(res, clips_taken_per_batch, classifier_model)
         filtered_scenes = [dataset[idx] for idx in filtered_scenes]
         for scene in filtered_scenes:
             frames_path = scene['frames_path']
@@ -183,17 +182,8 @@ if __name__ == '__main__':
 
         print(f'Total time: {(time.time() - starttime):.2f}s')
 
-        if not os.path.exists(os.path.join(inference_output_dir, "filtered_scenes")):
-            os.makedirs(os.path.join(inference_output_dir, "filtered_scenes"))
-
-        json_filename = f'filtered_scenes/{i}-{j}.json'
-        with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
-            json.dump(json_info_selected, f)
-        
-        print(f"Saved to json: {json_filename}")
-
         # select CLIPS_TAKEN_PER_BATCH random idx from the dataset
-        random_scenes = select_random_scenes(dataset, CLIPS_TAKEN_PER_BATCH)
+        random_scenes = select_random_scenes(dataset, clips_taken_per_batch)
         random_scenes = [dataset[idx] for idx in random_scenes]
         for scene in random_scenes:
             frames_path = scene['frames_path']
@@ -222,8 +212,7 @@ if __name__ == '__main__':
             json_filename = f'random_scenes_{i}-{j}.json'
             with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
                 json.dump(json_info_random, f)
-
-        print(f"Saved to json: {json_filename}")
+            print(f"Saved to json: {json_filename}")
 
         # Run the evaluation
         print("Running the evaluation...")
@@ -242,16 +231,13 @@ if __name__ == '__main__':
         logging.info(f"Total score random: {total_score_random}")
         logging.info(f"Total score selected: {total_score_selected}")
 
-        evaluation_json = {
-            "total_caption_score": total_caption_score,
-            "total_recaption_score": total_recaption_score,
-            "total_score_random": total_score_random,
-            "total_score_selected": total_score_selected
-        }
+        json_info_selected["total_caption_score"] = total_caption_score
+        json_info_selected["total_recaption_score"] = total_recaption_score
+        json_info_selected["total_score_random"] = total_score_random
+        json_info_selected["total_score_selected"] = total_score_selected
 
-        if not os.path.exists(os.path.join(inference_output_dir, "evaluation_results")):
-            os.makedirs(os.path.join(inference_output_dir, "evaluation_results"))
-
-        # Save the evaluation results
-        with open(os.path.join(inference_output_dir, f"evaluation_results/{clip_idx_start}-{clip_idx_end}.json"), "w") as f:
-            json.dump(evaluation_json, f)
+        json_filename = f'{str(i).zfill(5)}-{str(j).zfill(5)}.json'
+        with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
+            json.dump(json_info_selected, f)
+        
+        print(f"Saved to json: {json_filename}")
