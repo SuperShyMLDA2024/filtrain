@@ -54,12 +54,10 @@ def eval_different_dataset(eval_dataset1, eval_dataset2, preprocess, model, toke
         sim1, sim2 = 0, 0
 
         length = min(len(frame_list1), len(frame_list2))
-        print(f'length: {length}')
 
         for i in range(0, length, 2):
             endpath1 = frame_list1[i]
             endpath2 = frame_list2[i]
-            print(f'{endpath1} | {endpath2}')
             imagepath1 = frames_path1 + '/' + endpath1
             imagepath2 = frames_path2 + '/' + endpath2
 
@@ -122,7 +120,6 @@ def eval_same_dataset(eval_dataset, preprocess, model, tokenizer, device, loggin
         for i in range(0, len(frame_list), 2):
             endpath = frame_list[i]
             imagepath = frames_path + '/' + endpath
-            print(endpath)
             image = PIL.Image.open(imagepath)
             image_input = preprocess(image).unsqueeze(0)
             image_input = image_input.to(device)

@@ -92,7 +92,8 @@ def get_metrics(dataset, model, device):
 
     return res
 
-def select_random_scenes(dataset, n_taken):
+def select_random_scenes(dataset, n_taken, seed=42):
+    torch.manual_seed(seed)
     ids = torch.arange(len(dataset))
     select_ids = ids[torch.randperm(len(dataset))[:n_taken]]
     return select_ids
