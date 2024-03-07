@@ -100,9 +100,6 @@ def select_random_scenes(dataset, n_taken):
 # returning the inference result in the form of
 # {'clip_id': {'static_diff': static_diff, ...}}
 
-N_TOTAL_VIDEOS = 18_750
-N_TOTAL_CLIPS = 1_500_000
-TOTAL_CLIPS_TAKEN = 10_000
 metafile_path = './metafiles/hdvg_0.json'
 classifier_filename = 'xgboost_model.pkl'
 api_key = os.getenv("GEMINI_API_KEY")
@@ -120,8 +117,9 @@ if __name__ == '__main__':
     clip_idx_start = config["clip_idx_start"]
     clip_idx_end = config["clip_idx_end"]
     store_intermediate_json = config["store_intermediate_json"]
+    ratio_clips_per_video = config["ratio_clips_per_video"]
 
-    CLIPS_TAKEN_PER_BATCH = max(1, int(n_videos_per_batch / N_TOTAL_VIDEOS * TOTAL_CLIPS_TAKEN))
+    CLIPS_TAKEN_PER_BATCH = max(1, int(n_videos_per_batch * ratio_clips_per_video))
     print(f'CLIPS_TAKEN_PER_BATCH: {CLIPS_TAKEN_PER_BATCH}')
 
     with open(metafile_path, 'r') as f:
