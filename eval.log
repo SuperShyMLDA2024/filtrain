@@ -573,3 +573,10 @@ INFO:root:Total score selected: 14.965377807617188
 INFO:root:Loaded hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K model config.
 INFO:root:Loading pretrained hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K weights (D:/Joshua/hf_cache\hub\models--laion--CLIP-ViT-g-14-laion2B-s12B-b42K\snapshots\4b0305adc6802b2632e11cbe6606a9bdd43d35c9\open_clip_pytorch_model.bin).
 INFO:root:Processing Video Index 100-124...
+INFO:root:Processing Video Index 400-424...
+INFO:root:Loaded hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K model config.
+INFO:root:Loading pretrained hf-hub:laion/CLIP-ViT-g-14-laion2B-s12B-b42K weights (C:\Users\jerem\.cache\huggingface\hub\models--laion--CLIP-ViT-g-14-laion2B-s12B-b42K\snapshots\4b0305adc6802b2632e11cbe6606a9bdd43d35c9\open_clip_pytorch_model.bin).
+INFO:root:image 33 | caption: 0.21956382928260082 | recaption: 0.2902134914024203
+INFO:root:image 29 | caption: 0.7208177510896763 | recaption: 0.8927445351314551
+INFO:root:image 33 | caption: 0.9774743998936881 | recaption: 1.214432854247107
+INFO:root:image 35 | caption: 1.200997629056199 | recaption: 1.454806118734388
