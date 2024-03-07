@@ -143,8 +143,6 @@ if __name__ == '__main__':
     eval_model, preprocess, tokenizer = get_eval_model()
     eval_model = eval_model.to(device)
 
-    evaluation_results = {}
-
     for i in range(clip_idx_start, clip_idx_end+1, n_videos_per_batch):
         j = i + n_videos_per_batch - 1
         print(f'Processing Video Index {i}-{j}...')
@@ -187,7 +185,10 @@ if __name__ == '__main__':
 
         print(f'Total time: {(time.time() - starttime):.2f}s')
 
-        json_filename = f'filtered_scenes_{i}-{j}.json'
+        if not os.path.exists(os.path.join(inference_output_dir, "filtered_scenes")):
+            os.makedirs(os.path.join(inference_output_dir, "filtered_scenes"))
+
+        json_filename = f'filtered_scenes/{i}-{j}.json'
         with open(os.path.join(inference_output_dir, json_filename), 'w') as f:
             json.dump(json_info_selected, f)
         
@@ -249,8 +250,10 @@ if __name__ == '__main__':
             "total_score_random": total_score_random,
             "total_score_selected": total_score_selected
         }
-        evaluation_results[f"video_{i}-{j}"] = evaluation_json
 
-    # Save the evaluation results
-    with open(os.path.join(inference_output_dir, f"evaluation_results_{clip_idx_start}-{clip_idx_end}.json"), "w") as f:
-        json.dump(evaluation_results, f)
+        if not os.path.exists(os.path.join(inference_output_dir, "evaluation_results")):
+            os.makedirs(os.path.join(inference_output_dir, "evaluation_results"))
+
+        # Save the evaluation results
+        with open(os.path.join(inference_output_dir, f"evaluation_results/{clip_idx_start}-{clip_idx_end}.json"), "w") as f:
+            json.dump(evaluation_json, f)
